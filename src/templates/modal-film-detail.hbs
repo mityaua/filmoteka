@@ -1,0 +1,36 @@
+<div class="film__modal">
+    <div class="">
+        <img src="" alt="">
+    </div>
+
+    <div class="">
+        <h2 class="film__titile">{{title}}</h2>
+        <ul class="film__list">
+            <li class="film__item">
+                <p class="film__vote">Vote / Votes</p>
+                <p class="">
+                    <span class="">{{vote_average}}</span>
+                    <span class="">{{vote_count}}</span>
+                </p>
+            </li>
+            <li class="">
+                <p class="">Popularity</p>
+                <p class="">{{popularity}}</p>
+            </li>
+            <li class="">
+                <p class="">Original title</p>
+                <p class="r">{{title}}</p>
+            </li>
+            <li class="">
+                <p class="">Genre</p>
+                <p class="">
+                    {{#each genres}}
+                    <span>{{this.name}}</span>
+                    {{/each}}
+                </p>
+            </li>
+        </ul>
+        <h3 class="">About</h3>
+        <p class="">
+            {{overview}}
+        </p>
