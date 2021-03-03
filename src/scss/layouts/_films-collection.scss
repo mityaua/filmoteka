@@ -1,0 +1,53 @@
+// ===== Styles for Films Collection =====
+
+@media screen and (max-width: $to-tablet) {
+  .collection {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media screen and (min-width: $tablet) and (max-width: $to-desktop) {
+  .collection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    &__item {
+      flex-basis: 293px;
+      height: 398px;
+    }
+
+    &__item:not(:nth-last-child(-n + 2)) {
+      margin-bottom: 30px;
+    }
+
+    &__item:nth-child(odd) {
+      margin-right: 30px;
+    }
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .collection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    &__item {
+      flex-basis: 274px;
+      height: 398px;
+    }
+
+    &__item:not(:nth-last-child(-n + 3)) {
+      margin-bottom: 30px;
+    }
+
+    &__item:not(:nth-child(3n)) {
+      margin-right: 30px;
+    }
+  }
+}
