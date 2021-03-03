@@ -3,18 +3,18 @@
 .container {
   display: block;
   margin: 0 auto;
-  min-width: $mobile;
+  width: $mobile;
   padding: 20px;
 
   // Container for tablets
 
   @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
-    max-width: $tablet;
+    width: $tablet;
   }
 
   // Container for desktop
 
   @media screen and (min-width: $desktop) {
-    max-width: $desktop;
+    width: $desktop;
   }
 }
