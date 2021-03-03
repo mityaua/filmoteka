@@ -7,6 +7,9 @@ html {
 // Базовые стили
 
 body {
+  background-color: $white-text-color;
+  color: $primary-text-color;
+
   font-family: $font-family;
   font-weight: $font-weight;
   font-size: $font-size;
