@@ -9,12 +9,9 @@
 @import './base/container';
 
 // Секции и блоки
-<<<<<<< HEAD
-@import './layouts/collection-item';
-=======
 @import './layouts/films-collection';
+@import './layouts/collection-item';
 @import './layouts/footer';
->>>>>>> dev
 
 // Компоненты
 @import './components/svg';
