@@ -1,10 +1,12 @@
 //  Переменные, миксины, плейсхолдеры
 @import './utils/vars';
+@import './utils/breakpoints';
 
 // Базовые стили
 @import 'modern-normalize/modern-normalize.css';
 @import './base/common';
 @import './base/fonts';
+@import './base/container';
 
 // Секции и блоки
 
