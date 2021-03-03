@@ -18,7 +18,10 @@
 
 .copyright {
   display: block;
-  margin-bottom: 10px;
+
+  @media screen and (max-width: $to-tablet) {
+    margin-bottom: 10px;
+  }
 
   @media screen and (min-width: $tablet) {
     display: inline-block;
@@ -35,10 +38,15 @@
 
   @media screen and (min-width: $tablet) {
     font-size: 16px;
-    ine-height: 1.187;
+    line-height: 1.187;
   }
 }
 
 .underline {
   text-decoration: underline;
 }
+
+// .footer-svg {
+//   margin-right: 10px;
+//   margin-left: 10px;
+// }
