@@ -1,0 +1,24 @@
+.card {
+  height: 100%;
+
+  &__img {
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+
+  &__wrap {
+    font-family: $font-family;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: $line-height;
+  }
+
+  &__title {
+    color: $primary-text-color;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    color: $accent-color;
+  }
+}
