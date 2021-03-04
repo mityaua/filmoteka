@@ -1,9 +1,8 @@
 .card {
-  height: 100%;
-
   &__img {
     border-radius: 5px;
     margin-bottom: 10px;
+    height: 398px;
   }
 
   &__wrap {
@@ -20,5 +19,23 @@
 
   &__text {
     color: $accent-color;
+  }
+}
+
+@media screen and (max-width: $to-tablet) {
+  .card__img {
+    width: 280px;
+  }
+}
+
+@media screen and (min-width: $tablet) and (max-width: $to-desktop) {
+  .card__img {
+    width: 294px;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .card__img {
+    width: 274px;
   }
 }
