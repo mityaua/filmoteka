@@ -1,0 +1,52 @@
+<div class="modal__container">
+    <div class="film__image">
+        {{#if poster_path}}
+        <img class="image" src="https://...{{poster_path}}" alt="{{title}}" />
+        {{/if}}
+        {{#unless poster_path}}
+        <img class="image" src="../images/cinema-background.jpg" alt="film photo">
+        {{/unless}}
+    </div>
+</div>
+
+<div class="film__information">
+    <div>
+        <h2 class="film__title">{{title}}</h2>
+        <ul class="film__list">
+            <li class="film__item">
+                <p class="film__details">Vote / Votes</p>
+                <p class="film__info  film__scores">
+                    <span class="">{{vote_average}}</span>
+                    <span class="">{{vote_count}}</span>
+                </p>
+            </li>
+            <li class="film__item">
+                <p class="film__details">Popularity</p>
+                <p class="film__info">{{popularity}}</p>
+            </li>
+            <li class="film__item">
+                <p class="film__details">Original title</p>
+                <p class="film__info">{{original_title}}</p>
+            </li>
+            <li class="film__item">
+                <p class="film__details">Genre</p>
+                <p class="film__info">
+                    {{#each genres}}
+                    <span>{{this.name}}</span>
+                    {{/each}}
+                </p>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <h3 class="film__about">About</h3>
+        <p class="film__description">
+            {{overview}}
+        </p>
+    </div>
+    <div class="film__button">
+        <button type='button' class="btn__watch">Add to watched</button>
+        <button type='button' class="btn__queue">Add to queue</button>
+    </div>
+</div>
+</div>

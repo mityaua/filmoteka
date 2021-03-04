@@ -12,3 +12,4 @@ async function fetchTrendingMovies() {
 }
 
 fetchTrendingMovies();
+ 
