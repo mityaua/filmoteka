@@ -1,5 +1,5 @@
 import renderCollection from './render-collection';
-import trendApi from './api/trending-movies';
+import trendApi from './api/api';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 
