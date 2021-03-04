@@ -1,45 +1,58 @@
 // ===== Styles for Films Collection =====
+.collection {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin-right: auto;
+  margin-left: auto;
+  min-width: 280px;
+
+  &__item {
+    display: block;
+  }
+}
 
 @media screen and (max-width: $to-tablet) {
   .collection {
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
+    padding: 20px;
+
+    &__item {
+      width: 100%;
+    }
+    &__item:not(:last-child) {
+      margin-bottom: 20px;
+    }
   }
 }
 
 @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
   .collection {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    padding-top: 60px;
+    padding-left: 75px;
+    padding-right: 75px;
 
     &__item {
-      flex-basis: 293px;
-      height: 398px;
-    }
-
-    &__item:not(:nth-last-child(-n + 2)) {
-      margin-bottom: 30px;
+      width: calc((100% - 30px) / 2);
     }
 
     &__item:nth-child(odd) {
       margin-right: 30px;
+    }
+
+    &__item:not(:nth-last-child(-n + 2)) {
+      margin-bottom: 30px;
     }
   }
 }
 
 @media screen and (min-width: $desktop) {
   .collection {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    padding-top: 60px;
+    padding-left: 71px;
+    padding-right: 71px;
 
     &__item {
-      flex-basis: 274px;
-      height: 398px;
+      width: calc((100% - 60px) / 3);
     }
 
     &__item:not(:nth-last-child(-n + 3)) {
