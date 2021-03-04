@@ -2,10 +2,10 @@
     <li class="collection__item">
       <article class="card">
         <a href="" class="card__link"">
-          <img class="card__img" src="https://www.themoviedb.org/t/p/w300{{poster_path}}" alt="{{title}}-poster"/>
+          <img class="card__img" src="https://www.themoviedb.org/t/p/w300{{poster_path}}" alt="{{title}}-poster" data-id="{{id}}"/>
           <div class="card__wrap">
-            <h2 class="card__title">{{title}}</h2>
-            <p class="card__text">{{genre_ids}} | {{release_date}}</p>
+            <h2 class="card__title">{{title}}</h2>            
+            <p class="card__text">{{#each genres}} {{name}}, {{/each}} | {{year}}</p>
           </div>
         </a>
       </article>

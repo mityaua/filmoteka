@@ -2,4 +2,4 @@
 import './scss/main.scss';
 
 // Скрипты
-import './js/api/trending-movies';
+import './js/start-page';
