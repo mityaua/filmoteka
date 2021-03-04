@@ -3,3 +3,4 @@ import './scss/main.scss';
 
 // Скрипты
 import './js/start-page';
+import './js/components/back-to-top';
