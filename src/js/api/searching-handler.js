@@ -1,3 +1,6 @@
+// import renderCollection from '../render-collection.js';
+import сollectionItemTpl from '../../templates/collection-item.hbs';
+
 // ===== Movies Searching Handler
 
 // Refs
@@ -34,7 +37,15 @@ async function movieSearcher(text) {
 
 //Function for Render
 function render(movies) {
-  console.log(movies);
+  const gallery = document.querySelector('.collection');
 
-  movies.map(movie => console.log(movie.genre_ids));
+  const markup = сollectionItemTpl(movies);
+
+  gallery.innerHTML = '';
+
+  gallery.insertAdjacentHTML('beforeend', markup);
+
+  // console.log(movies);
+
+  // movies.map(movie => console.log(movie.genre_ids));
 }
