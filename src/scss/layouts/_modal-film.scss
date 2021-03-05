@@ -70,7 +70,8 @@
   cursor: pointer;
   border: 1px solid $primary-text-color;
   transition: all $transition-duration $timing-function;
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: $accent-color;
     color: $white-text-color;
     border: 1px solid $accent-color;
