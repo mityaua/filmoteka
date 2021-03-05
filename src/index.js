@@ -5,4 +5,5 @@ import './scss/main.scss';
 import './js/start-page';
 import './js/search';
 import './js/render-search';
+import './js/movie-on-modal';
 import './js/components/back-to-top';
