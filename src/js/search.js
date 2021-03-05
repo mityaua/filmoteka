@@ -1,26 +1,34 @@
 import api from './api/api';
 import { formRef, inputRef } from './references/refs';
-
 import searchRender from './render-search';
-
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 
 //Listener
 formRef.addEventListener('submit', searchingHandler);
 
-//Searching Function
-function searchingHandler() {
+//Searching function
+function searchingHandler(event) {
   event.preventDefault();
 
-  let inputedText = inputRef.value;
+  const inputedText = inputRef.value;
 
-  if (inputedText.length <= 1)
-    return console.log('Please, enter more specific query');
+  if (inputedText.length <= 1) { // Нужна обработка нескольких пробелов!
+    console.log('Please, enter more specific query');
+    return;
+  }
 
   NProgress.start();
-
-  api.fetchmovieSearcher(inputedText).then(searchRender);
-
+  movieSearcher(inputedText.trim());
   NProgress.done();
+}
+
+// Outer fetch
+async function movieSearcher(searchText) {
+  try {
+    const result = await api.fetchmovieSearcher(searchText);
+    searchRender(result);
+  } catch (error) {
+    console.log(error);
+  }
 }
