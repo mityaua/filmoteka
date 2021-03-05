@@ -3,7 +3,7 @@
         {{#if poster_path}}
         <img class="image" src="https://...{{poster_path}}" alt="{{title}}" />
         {{/if}}
-        {{#unless infected}}
+        {{#unless poster_path}}
         <img class="image" src="../images/cinema-background.jpg" alt="film photo">
         {{/unless}}
     </div>
@@ -14,15 +14,16 @@
         <h2 class="film__title">{{title}}</h2>
         <ul class="film__list">
             <li class="film__item">
-                <p class="film__details">Vote / Votes</p>
-                <p class="film__info  film__scores">
-                    <span class="">{{vote_average}}</span>
-                    <span class="">{{vote_count}}</span>
+                <p class="film__details ">Vote / Votes</p>
+                <p class="film__info  film__info--uper">
+                    <span class="film__rating film__rating--orange">{{vote_average}}</span>
+                    <span class="film__rating--divider"> / </span>
+                    <span class="film__rating">{{vote_count}}</span>
                 </p>
             </li>
             <li class="film__item">
-                <p class="film__details">Popularity</p>
-                <p class="film__info">{{popularity}}</p>
+                <p class="film__details film__details--">Popularity</p>
+                <p class="film__info film__info--uper">{{popularity}}</p>
             </li>
             <li class="film__item">
                 <p class="film__details">Original title</p>
@@ -39,14 +40,14 @@
         </ul>
     </div>
     <div>
-        <h3 class="film__about">About</h3>
-        <p class="film__description">
+        <h3 class="film__about__title">About</h3>
+        <p class="film__about__text">
             {{overview}}
         </p>
     </div>
-    <div class="film__button">
-        <button type='button' class="btn__watch">Add to watched</button>
-        <button type='button' class="btn__queue">Add to queue</button>
+    <div class="film__button__wrapper">
+        <button type='film__button' class="btn__watch">Add to watched</button>
+        <button type='film__button' class="btn__queue">Add to queue</button>
     </div>
 </div>
 </div>
