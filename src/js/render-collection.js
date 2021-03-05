@@ -1,9 +1,8 @@
 import сollectionItemTpl from '../templates/collection-item.hbs';
+import {gallery} from './references/refs'
 
 // Функция отрисовки списка фильмов
 function renderCollection(data) {
-  const gallery = document.querySelector('.collection');
-
   const markup = сollectionItemTpl(data);
 
   gallery.insertAdjacentHTML('beforeend', markup);
