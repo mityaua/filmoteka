@@ -9,12 +9,23 @@
     <img class="card__img" src="https://subscribenow.com.au/time/asia/Solo/Content/Images/noCover.gif" loading="lazy" alt="{{title}}"
       title="{{title}}" data-id="{{id}}" />
     {{/if}}
-    <div class="card__wrap">
-      <h2 class="card__title">{{title}}</h2>
-      <p class="card__text">{{#if genres}} {{#each genres}} {{name}}, {{/each}} {{else}} N/A {{/if}} | {{#if year}} {{year}} {{else}} N/A
-        {{/if}}</p>
-    </div>
     </a>
+    <div class="card__wrap">
+      <a href="">
+        <h2 class="card__title" data-id="{{id}}">{{title}}</h2>
+      </a>
+      <div class="card__data">
+        <ul class="card__genres list">
+          {{#if genres}}
+          {{#each genres}}
+          <li class="card__genre"><a href="" class="card__text">{{name}},</a></li>
+          {{/each}}
+          {{else}}<li class="card__genre card__text">N/A</li>
+          {{/if}}
+        </ul>
+        <p class="card__text">{{#if year}}| {{year}}{{else}}| N/A{{/if}}</p>
+      </div>
+    </div>
   </article>
 </li>
 {{/each}}
