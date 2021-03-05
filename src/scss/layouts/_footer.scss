@@ -42,6 +42,12 @@
   }
 }
 
+.footer-link:hover,
+.footer:focus {
+  color: $accent-color;
+  transition: $transition-duration $timing-function;
+}
+
 .underline {
   text-decoration: underline;
 }

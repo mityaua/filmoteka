@@ -23,7 +23,10 @@
           {{else}}<li class="card__genre card__text">N/A</li>
           {{/if}}
         </ul>
-        <p class="card__text">{{#if year}}| {{year}}{{else}}| N/A{{/if}}</p>
+        {{#if year}}
+        <p class="card__text">| {{year}}</p>
+        {{else}}<p class="card__text">| N/A</p>
+        {{/if}}
       </div>
     </div>
   </article>
