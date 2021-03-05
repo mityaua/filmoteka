@@ -1,0 +1,114 @@
+.modal__container {
+  position: absolute;
+  margin: auto;
+  max-width: 280px;
+  padding: 48px 20px 41px 20px;
+  max-height: 100vh;
+  background-color: $white-text-color;
+}
+.img.image {
+  width: 240px;
+  margin: auto;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+.film__title {
+  font-size: 20px;
+  line-height: 1.15;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.film__list {
+  margin: 0;
+  padding: 0;
+}
+.film__item {
+  display: flex;
+  margin-bottom: 10px;
+}
+.film__details {
+  color: $detalis-film-color;
+}
+.film__info--uper {
+  text-transform: uppercase;
+  line-height: 1.17;
+}
+.film__rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.film__rating--orange {
+  color: $white-text-color;
+  background-color: $hover-rating-color;
+  margin-right: 11px;
+  border-radius: 5px;
+}
+.film__rating--divider {
+  margin-right: 3px;
+}
+.film__about__title {
+  text-transform: uppercase;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.film__about__text {
+  line-height: 1.67;
+  margin-bottom: 21px;
+}
+.film__button__wrapper {
+  display: flex;
+
+  justify-content: space-between;
+}
+.film__button {
+  width: 112px;
+  height: 44px;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid $primary-text-color;
+  transition: all $transition-duration $timing-function;
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
+    color: $white-text-color;
+    border: 1px solid $accent-color;
+  }
+}
+@media screen and (min-width: $to-tablet) {
+  .modal__container {
+    top: 50%;
+    left: 50%;
+    display: flex;
+    min-width: 618;
+    height: 562px;
+    padding: 42px 29px 40px 28px;
+  }
+}
+.image {
+  width: 264px;
+  height: 373px;
+}
+.film__button {
+  width: 125px;
+}
+@media screen and (min-width: $desktop) {
+  .modal__container {
+    width: 882px;
+    height: 568px;
+    padding: 50px 30px 40px 30px;
+  }
+  .image {
+    width: 396px;
+    height: 477.8px;
+  }
+}
+.film__title {
+  font-size: 30px;
+  line-height: 1.17;
+}
+.film__button {
+  width: 136px;
+}
