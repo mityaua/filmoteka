@@ -6,9 +6,30 @@
   max-height: 100vh;
   background-color: $white-text-color;
 }
-.film__image {
+.img.film__image {
   width: 240px;
   margin: auto;
   border-radius: 5px;
   margin-bottom: 30px;
+}
+.film__title {
+  font-size: 20px;
+  line-height: 1.15;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.film__list {
+  margin: 0;
+  padding: 0;
+}
+.film__item {
+  display: flex;
+  margin-bottom: 10px;
+}
+.film__details {
+  color: $detalis-film-color;
+}
+.film__info--uper {
+  text-transform: uppercase;
+  line-height: 1.17;
 }
