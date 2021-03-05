@@ -1,0 +1,28 @@
+.header_library {
+  background-color: #000;
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.56),
+      rgba(0, 0, 0, 0.56)
+    ),
+    url(../images/library/header-library-background-mobile@2x.jpg);
+  background-position: contain;
+
+  @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.56),
+        rgba(0, 0, 0, 0.56)
+      ),
+      url(../images/library/header-library-background-tablet@2x.jpg);
+  }
+
+  @media screen and (min-width: $desktop) {
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.56),
+        rgba(0, 0, 0, 0.56)
+      ),
+      url(../images/library/header-library-background-desktop@2x.jpg);
+  }
+}
