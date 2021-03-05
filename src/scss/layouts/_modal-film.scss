@@ -1,0 +1,14 @@
+.modal__container {
+  position: absolute;
+  margin: auto;
+  max-width: 280px;
+  padding: 48px 20px 41px 20px;
+  max-height: 100vh;
+  background-color: $white-text-color;
+}
+.film__image {
+  width: 240px;
+  margin: auto;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
