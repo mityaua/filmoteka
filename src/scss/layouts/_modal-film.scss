@@ -67,10 +67,12 @@
   text-align: center;
   text-transform: uppercase;
   border-radius: 5px;
-  
   cursor: pointer;
   border: 1px solid $primary-text-color;
-}
-&:hover {
+  transition: all $transition-duration $timing-function;
+  &:hover {
     background-color: $accent-color;
-    color: ;
+    color: $white-text-color;
+    border: 1px solid $accent-color;
+  }
+}
