@@ -33,3 +33,44 @@
   text-transform: uppercase;
   line-height: 1.17;
 }
+.film__rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.film__rating--orange {
+  color: $white-text-color;
+  background-color: $hover-rating-color;
+  margin-right: 11px;
+  border-radius: 5px;
+}
+.film__rating--divider {
+  margin-right: 3px;
+}
+.film__about__title {
+  text-transform: uppercase;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.film__about__text {
+  line-height: 1.67;
+  margin-bottom: 21px;
+}
+.film__button__wrapper {
+  display: flex;
+
+  justify-content: space-between;
+}
+.film__button {
+  width: 112px;
+  height: 44px;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 5px;
+  
+  cursor: pointer;
+  border: 1px solid $primary-text-color;
+}
+&:hover {
+    background-color: $accent-color;
+    color: ;
