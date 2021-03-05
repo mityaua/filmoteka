@@ -17,6 +17,18 @@
     text-transform: uppercase;
   }
 
+  &__data {
+    display: flex;
+  }
+
+  &__genres {
+    display: flex;
+  }
+
+  &__genre {
+    margin-right: 5px;
+  }
+
   &__text {
     color: $accent-color;
   }
