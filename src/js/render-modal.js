@@ -15,6 +15,6 @@ export default function renderMovieModal(data) {
   } catch (error) {
     console.error('Smth wrong with modal window' + error);
   }
-
+  
   NProgress.done();
 }

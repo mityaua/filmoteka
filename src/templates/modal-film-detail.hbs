@@ -7,47 +7,47 @@
         <img class="image" src="https://subscribenow.com.au/time/asia/Solo/Content/Images/noCover.gif" alt="film photo">
         {{/unless}}
     </div>
-</div>
 
-<div class="film__information">
-    <div>
-        <h2 class="film__title">{{title}}</h2>
-        <ul class="film__list">
-            <li class="film__item">
-                <p class="film__details ">Vote / Votes</p>
-                <p class="film__info  film__info--uper">
-                    <span class="film__rating film__rating--orange">{{vote_average}}</span>
-                    <span class="film__rating--divider"> / </span>
-                    <span class="film__rating">{{vote_count}}</span>
-                </p>
-            </li>
-            <li class="film__item">
-                <p class="film__details film__details--">Popularity</p>
-                <p class="film__info film__info--uper">{{popularity}}</p>
-            </li>
-            <li class="film__item">
-                <p class="film__details">Original title</p>
-                <p class="film__info">{{original_title}}</p>
-            </li>
-            <li class="film__item">
-                <p class="film__details">Genre</p>
-                <p class="film__info">
-                    {{#each genres}}
-                    <span>{{this.name}}</span>
-                    {{/each}}
-                </p>
-            </li>
-        </ul>
+
+    <div class="film__information">
+        <div>
+            <h2 class="film__title">{{title}}</h2>
+            <ul>
+                <li class="film__item">
+                    <p class="film__details ">Vote / Votes</p>
+                    <p class="film__info  film__info--uper">
+                        <span class=" film__rating--orange">{{vote_average}}</span>
+                        <span class="film__rating--divider"> / </span>
+                        <spa>{{vote_count}}</span>
+                    </p>
+                </li>
+                <li class="film__item">
+                    <p class="film__details ">Popularity</p>
+                    <p class="film__info film__info--uper">{{popularity}}</p>
+                </li>
+                <li class="film__item">
+                    <p class="film__details">Original title</p>
+                    <p class="film__info">{{original_title}}</p>
+                </li>
+                <li class="film__item">
+                    <p class="film__details">Genre</p>
+                    <p class="film__info">
+                        {{#each genres}}
+                        <span>{{this.name}}</span>
+                        {{/each}}
+                    </p>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="film__about__title">About</h3>
+            <p class="film__about__text">
+                {{overview}}
+            </p>
+        </div>
+        <div class="film__button__wrapper">
+            <button type="button" class=" film__button btn__watch">Add to watched</button>
+            <button type="button" class=" film__button btn__queue">Add to queue</button>
+        </div>
     </div>
-    <div>
-        <h3 class="film__about__title">About</h3>
-        <p class="film__about__text">
-            {{overview}}
-        </p>
-    </div>
-    <div class="film__button__wrapper">
-        <button type='film__button' class="btn__watch">Add to watched</button>
-        <button type='film__button' class="btn__queue">Add to queue</button>
-    </div>
-</div>
 </div>
