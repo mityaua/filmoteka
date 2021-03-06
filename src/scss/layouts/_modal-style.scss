@@ -1,4 +1,35 @@
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity $timing-function $transition-duration;
+}
+
+.modal.is-open {
+  opacity: 1;
+  pointer-events: initial;
+}
+
+.modal__backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
 .modal__container {
+  overflow-x: scroll;
+
+  position: relative;
   margin: auto;
   background-color: $white-text-color;
   font-family: $font-family;
@@ -7,13 +38,13 @@
   line-height: $line-height;
   color: $primary-text-color;
   max-height: 100vh;
-  min-width: 280px;
+  width: 280px;
   padding: 48px 20px 41px 20px;
 
   @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
     display: flex;
     margin: auto;
-    min-width: 618px;
+    width: 618px;
     height: 562px;
     padding: 42px 29px 40px 28px;
   }
@@ -25,6 +56,10 @@
   }
 }
 .image {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+
   min-width: 240px;
   height: 356px;
   border-radius: 5px;
@@ -121,4 +156,28 @@
 
 .film__button:first-child {
   margin-right: 15px;
+}
+
+.close__button {
+  position: absolute;
+  top: 2%;
+  right: 4%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color $transition-duration $timing-function;
+  outline: none;
+  // background-image: url('../../images/icon-close.svg');
+  background-position: center;
+  background-size: 60%;
+  background-repeat: no-repeat;
 }

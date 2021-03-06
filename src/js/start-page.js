@@ -1,5 +1,5 @@
 import renderCollection from './render-collection';
-import trendApi from './api/api';
+import trendApi from './api/api-service';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 import errorModal from './components/modal-error';

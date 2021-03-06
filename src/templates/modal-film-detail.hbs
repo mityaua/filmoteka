@@ -1,3 +1,5 @@
+<div class="modal__backdrop"></div>
+
 <div class="modal__container">
     <div class="film__image">
         {{#if poster_path}}
@@ -49,5 +51,6 @@
             <button type="button" class=" film__button btn__watch">Add to watched</button>
             <button type="button" class=" film__button btn__queue">Add to queue</button>
         </div>
+        <button type="button" class="close__button" data-action="close-modal"></button>
     </div>
 </div>
