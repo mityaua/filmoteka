@@ -1,5 +1,6 @@
 // Стили
 import './scss/main.scss';
+import 'animate.css/animate.css';
 
 // Скрипты
 import './js/start-page';

@@ -9,6 +9,12 @@ export default function renderMovieModal(data) {
     html: modalMarkup,
     showCloseButton: true,
     showConfirmButton: false,
+    showClass: {
+      popup: 'animate__animated animate__fadeIn',
+    },
+    // hideClass: {
+    //   popup: 'animate__animated animate__zoomOut',
+    // },
   });
 
   console.log(modalMarkup);
