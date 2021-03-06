@@ -1,8 +1,9 @@
 import api from './api/api';
-import { formRef, inputRef } from './references/refs';
 import searchRender from './render-search';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
+import errorModal from './components/modal-error';
+import { formRef, inputRef } from './references/refs';
 
 // Listener
 formRef.addEventListener('submit', searchingHandler);
@@ -13,7 +14,8 @@ function searchingHandler(event) {
 
   const inputedText = inputRef.value;
 
-  if (inputedText.length <= 1) { // Нужна обработка нескольких пробелов!
+  if (inputedText.length <= 1) {
+    // Нужна обработка нескольких пробелов!
     console.log('Please, enter more specific query');
     return;
   }
@@ -29,6 +31,7 @@ async function movieSearcher(searchText) {
     const result = await api.fetchMovieSearcher(searchText);
     searchRender(result);
   } catch (error) {
+    errorModal();
     console.error('Smth wrong with outer search fetch' + error);
   }
 }
