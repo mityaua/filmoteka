@@ -1,4 +1,4 @@
-import api from './api/api';
+import api from './api/api-service';
 import searchRender from './render-search';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';

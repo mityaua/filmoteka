@@ -1,4 +1,4 @@
-import api from './api/api';
+import api from './api/api-service';
 import renderMovieModal from './render-modal';
 import errorModal from './components/modal-error';
 import { gallery } from './references/refs';
