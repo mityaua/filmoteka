@@ -1,122 +1,123 @@
 .modal__container {
   margin: auto;
-  min-width: 280px;
-  padding: 48px 20px 41px 20px;
-  max-height: 100vh;
   background-color: $white-text-color;
   font-family: $font-family;
   font-weight: $font-weight;
   font-size: $font-size;
   line-height: $line-height;
   color: $primary-text-color;
+  max-height: 100vh;
+  min-width: 280px;
+  padding: 48px 20px 41px 20px;
 
-  .image {
-    min-width: 240px;
-    height: 356px;
-    border-radius: 5px;
-    margin-bottom: 30px;
-  }
-  .film__information {
-    text-align: start;
-  }
-
-  .film__title {
-    font-size: 20px;
-    line-height: 1.15;
-    margin-bottom: 20px;
-  }
-
-  .film__item {
+  @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
     display: flex;
-    margin-bottom: 10px;
+    min-width: 618px;
+    height: 562px;
+    padding: 42px 29px 40px 28px;
   }
-  .film__details {
-    color: $detalis-film-color;
-    min-width: 108px;
+  @media screen and (min-width: $desktop) {
+    display: flex;
+    width: 882px;
+    height: 568px;
+    padding: 50px 30px 40px 30px;
   }
+}
+.image {
+  min-width: 240px;
+  height: 356px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
+    min-width: 264px;
+    height: 373.55px;
+  }
+  @media screen and (min-width: $desktop) {
+    min-width: 396px;
+    height: 477.8px;
+  }
+}
+.film__image {
+  @media screen and (min-width: $tablet) {
+    margin-right: 30px;
+  }
+}
+.film__information {
+  text-align: start;
+}
 
-  .film__info--uper {
-    text-transform: uppercase;
+.film__title {
+  font-size: 20px;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  @media screen and (min-width: $desktop) {
+    font-size: 30px;
     line-height: 1.17;
   }
+}
 
-  .film__rating--orange {
-    padding-left: 10px;
-    padding-right: 10px;
+.film__item {
+  display: flex;
+  margin-bottom: 10px;
+}
+.film__details {
+  color: $detalis-film-color;
+  min-width: 108px;
+}
+
+.film__info--uper {
+  text-transform: uppercase;
+  line-height: 1.17;
+}
+
+.film__rating--orange {
+  padding-left: 10px;
+  padding-right: 10px;
+  color: $white-text-color;
+  background-color: $hover-rating-color;
+
+  border-radius: 5px;
+}
+.film__rating--divider {
+  margin-right: 3px;
+}
+
+.film__about__title {
+  text-transform: uppercase;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.film__about__text {
+  line-height: 1.67;
+  margin-bottom: 21px;
+}
+.film__button__wrapper {
+  display: flex;
+}
+.film__button {
+  width: 112px;
+  height: 44px;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 5px;
+  background-color: $white-text-color;
+  cursor: pointer;
+  border: 1px solid $primary-text-color;
+  transition: all $transition-duration $timing-function;
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
     color: $white-text-color;
-    background-color: $hover-rating-color;
+    border: 1px solid $accent-color;
+  }
+  @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
+    width: 125px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 136px;
+  }
+}
 
-    border-radius: 5px;
-  }
-  .film__rating--divider {
-    margin-right: 3px;
-  }
-
-  .film__about__title {
-    text-transform: uppercase;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-  .film__about__text {
-    line-height: 1.67;
-    margin-bottom: 21px;
-  }
-  .film__button__wrapper {
-    display: flex;
-  }
-  .film__button {
-    width: 112px;
-    height: 44px;
-    text-align: center;
-    text-transform: uppercase;
-    border-radius: 5px;
-    background-color: $white-text-color;
-    cursor: pointer;
-    border: 1px solid $primary-text-color;
-    transition: all $transition-duration $timing-function;
-    &:hover,
-    &:focus {
-      background-color: $accent-color;
-      color: $white-text-color;
-      border: 1px solid $accent-color;
-    }
-  }
-  .btn__watch {
-    margin-right: 15px;
-  }
-  // @media screen and (min-width: $to-tablet) {
-  //   .modal__container {
-  //     top: 50%;
-  //     left: 50%;
-  //     display: flex;
-  //     min-width: 618;
-  //     height: 562px;
-  //     padding: 42px 29px 40px 28px;
-  //   }
-  // }
-  // .image {
-  //   width: 264px;
-  //   height: 373px;
-  // }
-  // .film__button {
-  //   width: 125px;
-  // }
-  // @media screen and (min-width: $desktop) {
-  //   .modal__container {
-  //     width: 882px;
-  //     // height: 568px;
-  //     padding: 50px 30px 40px 30px;
-  //   }
-  //   .image {
-  //     width: 396px;
-  //     height: 477.8px;
-  //   }
-  // }
-  // .film__title {
-  //   font-size: 30px;
-  //   line-height: 1.17;
-  // }
-  // .film__button {
-  //   width: 136px;
-  // }
+.film__button:first-child {
+  margin-right: 15px;
 }
