@@ -7,15 +7,14 @@ document.addEventListener('DOMContentLoaded', startPage);
 
 // Функция отрисовки трендов на главной
 async function startPage() {
+  NProgress.start();
+
   try {
-    NProgress.start();
-
     const trendMovies = await trendApi.getFullTrendData();
-
     renderCollection(trendMovies);
-
-    NProgress.done();
   } catch (error) {
     console.error('Smth wrong with start page fetch' + error);
   }
+
+  NProgress.done();
 }
