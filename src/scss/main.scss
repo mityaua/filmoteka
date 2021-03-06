@@ -10,6 +10,8 @@
 
 // Секции и блоки
 @import './layouts/header';
+@import './layouts/header-library';
+@import './layouts/filter';
 @import './layouts/films-collection';
 @import './layouts/collection-item';
 @import './layouts/footer';
@@ -17,3 +19,4 @@
 
 // Компоненты
 @import './components/svg';
+@import './components/buttons';
