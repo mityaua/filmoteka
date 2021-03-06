@@ -27,6 +27,8 @@
 }
 
 .modal__container {
+  overflow-x: scroll;
+
   position: relative;
   margin: auto;
   background-color: $white-text-color;
@@ -36,13 +38,13 @@
   line-height: $line-height;
   color: $primary-text-color;
   max-height: 100vh;
-  min-width: 280px;
+  width: 280px;
   padding: 48px 20px 41px 20px;
 
   @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
     display: flex;
     margin: auto;
-    min-width: 618px;
+    width: 618px;
     height: 562px;
     padding: 42px 29px 40px 28px;
   }
@@ -54,6 +56,10 @@
   }
 }
 .image {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+
   min-width: 240px;
   height: 356px;
   border-radius: 5px;
