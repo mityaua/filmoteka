@@ -21,6 +21,26 @@ export default function renderMovieModal(data) {
       showClass: {
         popup: 'animate__animated animate__fadeIn',
       },
+      customClass: {
+        container: 'our-test-class',
+        popup: '...',
+        header: '...',
+        title: '...',
+        closeButton: '...',
+        icon: '...',
+        image: '...',
+        content: '...',
+        htmlContainer: '...',
+        input: '...',
+        inputLabel: '...',
+        validationMessage: '...',
+        actions: '...',
+        confirmButton: '...',
+        denyButton: '...',
+        cancelButton: '...',
+        loader: '...',
+        footer: '....',
+      },
     });
   } catch (error) {
     console.error('Smth wrong with modal window' + error);
