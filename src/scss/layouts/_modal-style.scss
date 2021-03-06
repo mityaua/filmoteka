@@ -5,7 +5,7 @@
   // max-height: 100vh;
   background-color: $white-text-color;
   .image {
-    width: 240px;
+    min-width: 240px;
     height: 356px;
     margin: auto;
     border-radius: 5px;
