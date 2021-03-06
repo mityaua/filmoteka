@@ -8,7 +8,9 @@ header {
   color: $white-text-color;
 
   background-color: #2a2a2a;
-  background-image: url(../images/header-background-mobile-2x.jpg);
+  background-image: 
+  linear-gradient(to right, $header-gradient-color, $header-gradient-color),
+  url(../images/header-background-mobile-2x.jpg);
   background-size: contain;
 
   @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
@@ -39,27 +41,44 @@ header {
   display: flex;
   align-items: center;
 
-  // &:hover + .logo__svg {
-  //   fill: $hover-rating-color;
-  // }
+  &:hover > .logo__svg {
+    stroke: $hover-rating-color;
+  }
+
+    &:visited {
+    color: $white-text-color;
+  }
 }
 
-header.a:visited {
-  color: $white-text-color;
+.menu__link {
+  &:visited {
+    color: $white-text-color;
+  }
+
+  &:hover {
+    color: $icon-film-color;
+
+    transition-property: stroke;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }  
 }
-
-
 
 .logo__svg {
   width: 20px;
   height: 20px;
   margin-right: 12px;
+  stroke: $icon-film-color;
 
   &:hover,
   &:focus,
   &:active {
-    fill: $hover-rating-color;
+    stroke: $hover-rating-color;
   }
+
+  transition-property: stroke;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .logo__text {
@@ -71,7 +90,7 @@ header.a:visited {
   @media screen and (max-width: $to-tablet) {
     display: none;
   }
-}
+} 
 
 .menu__item {
   position: relative;
@@ -130,6 +149,16 @@ header.a:visited {
     color: $white-text-color;
   }
 
+  &:hover,
+  &:focus {
+    border-bottom: 0.5px solid $hover-rating-color;
+  }
+
+  transition-property: border-bottom;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+
   @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
     width: 336px;
   }
@@ -157,10 +186,6 @@ header.a:visited {
   @media screen and (min-width: $desktop) {
     right: 33%;
   }
-
-  // &:hover + .search__button-icon {
-  //   fill: $hover-rating-color;
-  // }
 }
 
 .search__button-icon {
@@ -168,7 +193,15 @@ header.a:visited {
   right: 0;
   bottom: 2px;
   stroke: $white-text-color;
-}
 
-// Выяснить, почему не работает ховер на иконках
-// Выяснить, почему background-image ломает всё
+  &:hover,
+  &:focus,
+  &:active {
+    stroke: $hover-rating-color;
+    cursor: pointer;
+  }
+
+  transition-property: stroke;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
