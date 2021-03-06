@@ -1,5 +1,6 @@
 import api from './api/api';
 import renderMovieModal from './render-modal';
+import errorModal from './components/modal-error';
 import { gallery } from './references/refs';
 
 gallery.addEventListener('click', clickOnMovieHandler);
@@ -24,6 +25,7 @@ async function fetchById(id) {
 
     renderMovieModal(movieId);
   } catch (error) {
+    errorModal();
     console.error('Smth wrong with outer fetch by ID' + error);
   }
 }

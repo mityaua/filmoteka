@@ -2,6 +2,7 @@ import renderCollection from './render-collection';
 import trendApi from './api/api';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
+import errorModal from './components/modal-error';
 
 document.addEventListener('DOMContentLoaded', startPage);
 
@@ -13,6 +14,7 @@ async function startPage() {
     const trendMovies = await trendApi.getFullTrendData();
     renderCollection(trendMovies);
   } catch (error) {
+    errorModal();
     console.error('Smth wrong with start page fetch' + error);
   }
 

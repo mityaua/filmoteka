@@ -1,17 +1,16 @@
 import modalTemplate from '../templates/modal-film-detail.hbs';
+import modalComponent from './components/modal-for-film';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 
-import Swal from 'sweetalert2';
-import 'sweetalert2/src/sweetalert2.scss';
-
-// Функция отрисовки модального окна
+// Функция отрисовки модального окна по шаблону
 export default function renderMovieModal(data) {
   const modalMarkup = modalTemplate(data);
 
   NProgress.start();
 
   try {
+<<<<<<< HEAD
     // Тестово выводит модалку
 
     Swal.fire({
@@ -42,6 +41,10 @@ export default function renderMovieModal(data) {
         footer: '....',
       },
     });
+=======
+    // Выводит модалку
+    modalComponent(modalMarkup);
+>>>>>>> dev
   } catch (error) {
     console.error('Smth wrong with modal window' + error);
   }

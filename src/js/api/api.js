@@ -27,7 +27,7 @@ export default {
   },
 
   // Фетч по поисковому запросу
-  async fetchmovieSearcher(text) {
+  async fetchMovieSearcher(text) {
     const { data } = await axios.get(
       `${SEARCH_URL}?api_key=${API_KEY}&query=${text}`,
     );
