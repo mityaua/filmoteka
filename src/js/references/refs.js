@@ -4,5 +4,16 @@ const gallery = document.querySelector('.collection');
 const headerRef = document.querySelector('.header');
 const pageHome = document.querySelector('.menu__link-home');
 const pageLabraryRef = headerRef.querySelector('.menu__link-library');
+const modalBackdrop = document.querySelector('.modal__backdrop');
+const modalBox = document.getElementById('modal');
 
-export { formRef, inputRef, gallery, headerRef, pageHome, pageLabraryRef };
+export {
+  formRef,
+  inputRef,
+  gallery,
+  headerRef,
+  pageHome,
+  pageLabraryRef,
+  modalBackdrop,
+  modalBox,
+};
