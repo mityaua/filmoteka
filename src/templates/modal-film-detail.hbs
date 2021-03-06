@@ -34,9 +34,12 @@
                 <li class="film__item">
                     <p class="film__details">Genre</p>
                     <p class="film__info">
+                        {{#if genres}}
                         {{#each genres}}
                         <span>{{this.name}}</span>
                         {{/each}}
+                        {{else}}<span>N/A</span>
+                        {{/if}}
                     </p>
                 </li>
             </ul>
