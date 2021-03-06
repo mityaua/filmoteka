@@ -9,7 +9,7 @@
   height: 100vh;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 250ms linear;
+  transition: opacity $timing-function $transition-duration;
 }
 
 .modal.is-open {
@@ -17,7 +17,7 @@
   pointer-events: initial;
 }
 
-.modal__overlay {
+.modal__backdrop {
   position: absolute;
   top: 0;
   left: 0;
@@ -27,13 +27,7 @@
 }
 
 .modal__container {
-  // position: absolute;
-  // top: 0;
-  // left: 0;
-  // width: 100vw;
-  // height: 100vh;
-  // background-color: rgba(0, 0, 0, 0.8);
-
+  position: relative;
   margin: auto;
   background-color: $white-text-color;
   font-family: $font-family;
@@ -156,4 +150,28 @@
 
 .film__button:first-child {
   margin-right: 15px;
+}
+
+.close__button {
+  position: absolute;
+  top: 2%;
+  right: 4%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color $transition-duration $timing-function;
+  outline: none;
+  // background-image: url('../../images/icon-close.svg');
+  background-position: center;
+  background-size: 60%;
+  background-repeat: no-repeat;
 }
