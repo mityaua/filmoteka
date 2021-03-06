@@ -1,10 +1,6 @@
 import axios from 'axios';
 import allGenres from '../data/genres.json';
-
-const API_KEY = '249f222afb1002186f4d88b2b5418b55';
-const TREND_URL = 'https://api.themoviedb.org/3/trending/movie/week';
-const SEARCH_URL = 'https://api.themoviedb.org/3/search/movie';
-const ID_URL = 'https://api.themoviedb.org/3/movie/';
+import { API_KEY, TREND_URL, SEARCH_URL, ID_URL } from './api-vars';
 
 export default {
   // Фетч трендовых фильмов
@@ -22,43 +18,55 @@ export default {
 
   // Фетч полной информации о трендах
   async getFullTrendData() {
-    const movies = await this.fetchTrendingMovies();
-    const allGenres = await this.fetchGenres();
+    try {
+      const movies = await this.fetchTrendingMovies();
+      const allGenres = this.fetchGenres();
 
-    const fullTrendData = this.dataCombine(movies, allGenres);
+      const fullTrendData = this.dataCombine(movies, allGenres);
 
-    return fullTrendData;
+      return fullTrendData;
+    } catch (error) {
+      console.error('Smth wrong with api full trend fetch' + error);
+    }
   },
 
   // Фетч по поисковому запросу
   async fetchMovieSearcher(text) {
-    const { data } = await axios.get(
-      `${SEARCH_URL}?api_key=${API_KEY}&query=${text}`,
-    );
+    try {
+      const { data } = await axios.get(
+        `${SEARCH_URL}?api_key=${API_KEY}&query=${text}`,
+      );
 
-    const searchResults = data.results;
+      const searchResults = data.results;
 
-    const allGenres = await this.fetchGenres();
-    const fullSearchData = this.dataCombine(searchResults, allGenres);
+      const allGenres = this.fetchGenres();
+      const fullSearchData = this.dataCombine(searchResults, allGenres);
 
-    return fullSearchData;
+      return fullSearchData;
+    } catch (error) {
+      console.error('Smth wrong with api search fetch' + error);
+    }
   },
 
   // Фетч фильма по его ID
   async getMovieById(id) {
-    const { data } = await axios.get(`${ID_URL}${id}?api_key=${API_KEY}`);
+    try {
+      const { data } = await axios.get(`${ID_URL}${id}?api_key=${API_KEY}`);
 
-    return data;
+      return data;
+    } catch (error) {
+      console.error('Smth wrong with api ID fetch' + error);
+    }
   },
 
   // Запрос и обработка локальных жанров
-  async fetchGenres() {
+  fetchGenres() {
     const { genres } = allGenres;
     return genres;
   },
 
   // Слияние полной информации о фильме
-  async dataCombine(films, allGenres) {
+  dataCombine(films, allGenres) {
     return films.map(film => ({
       ...film,
       year: film.release_date ? film.release_date.split('-')[0] : '',
