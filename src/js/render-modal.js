@@ -2,6 +2,9 @@ import modalTemplate from '../templates/modal-film-detail.hbs';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 
+import Swal from 'sweetalert2';
+import 'sweetalert2/src/sweetalert2.scss';
+
 // Функция отрисовки модального окна
 export default function renderMovieModal(data) {
   const modalMarkup = modalTemplate(data);
@@ -9,7 +12,8 @@ export default function renderMovieModal(data) {
   NProgress.start();
 
   try {
-    // Тестово выводит модалку (убрать при замене на постоянную и убрать в индекс хтмл скрипт с CDN)
+    // Тестово выводит модалку
+
     Swal.fire({
       html: modalMarkup,
       showCloseButton: true,
