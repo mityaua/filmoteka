@@ -4,10 +4,10 @@ import searchRender from './render-search';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 
-//Listener
+// Listener
 formRef.addEventListener('submit', searchingHandler);
 
-//Searching function
+// Searching function
 function searchingHandler(event) {
   event.preventDefault();
 
@@ -23,10 +23,10 @@ function searchingHandler(event) {
   NProgress.done();
 }
 
-// Outer search fetch
+// Search fetch
 async function movieSearcher(searchText) {
   try {
-    const result = await api.fetchmovieSearcher(searchText);
+    const result = await api.fetchMovieSearcher(searchText);
     searchRender(result);
   } catch (error) {
     console.error('Smth wrong with outer search fetch' + error);

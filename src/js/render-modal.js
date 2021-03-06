@@ -3,7 +3,7 @@ import modalComponent from './components/modal-for-film';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 
-// Функция отрисовки модального окна
+// Функция отрисовки модального окна по шаблону
 export default function renderMovieModal(data) {
   const modalMarkup = modalTemplate(data);
 
