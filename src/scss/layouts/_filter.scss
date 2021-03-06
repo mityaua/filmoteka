@@ -1,0 +1,21 @@
+.filter {
+  //   margin-top: 8px;
+  text-align: center;
+
+  &__item {
+    width: 129.53px;
+    height: 44px;
+
+    @media screen and (min-width: $tablet) {
+      width: 136px;
+    }
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 17.94px;
+
+    @media screen and (min-width: $tablet) {
+      margin-right: 12px;
+    }
+  }
+}
