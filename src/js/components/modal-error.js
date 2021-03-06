@@ -6,5 +6,6 @@ export default function errorModal() {
     icon: 'warning',
     title: 'Oops...',
     text: 'Service temporarily unavailable',
+    confirmButtonColor: '#ff6b08',
   });
 }
