@@ -1,11 +1,9 @@
-import сollectionItemTpl from '../templates/collection-item.hbs';
-import {gallery} from './references/refs'
+import movieTpl from '../templates/film-detail.hbs';
+import { gallery } from './references/refs';
 
 // Функция отрисовки списка фильмов
-function renderCollection(data) {
-  const markup = сollectionItemTpl(data);
+export default function renderCollection(data) {
+  const markup = movieTpl(data);
 
   gallery.insertAdjacentHTML('beforeend', markup);
 }
-
-export default renderCollection;

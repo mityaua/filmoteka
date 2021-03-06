@@ -1,13 +1,11 @@
-import сollectionItemTpl from '../templates/collection-item.hbs';
+import movieTpl from '../templates/film-detail.hbs';
 import { gallery } from './references/refs';
 
-//Function for search render
-function searchRender(movies) {
-  const markup = сollectionItemTpl(movies);
+// Функция для отрисовки результатов поиска
+export default function searchRender(movies) {
+  const markup = movieTpl(movies);
 
   gallery.innerHTML = '';
 
   gallery.insertAdjacentHTML('beforeend', markup);
 }
-
-export default searchRender;

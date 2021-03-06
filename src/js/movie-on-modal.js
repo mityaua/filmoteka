@@ -1,41 +1,29 @@
-import axios from 'axios';
-import modalTemplate from '../templates/modal-film-detail.hbs';
+import api from './api/api';
+import renderMovieModal from './render-modal';
+import { gallery } from './references/refs';
 
-// ===== Get movie Info by Click =====
+gallery.addEventListener('click', clickOnMovieHandler);
 
-//Refs
-const collectionBox = document.querySelector('.collection');
+// Click Handler Function
+function clickOnMovieHandler(e) {
+  e.preventDefault();
 
-// BaseUrl
-const url = 'https://api.themoviedb.org/3/movie/';
-const apiKey = '249f222afb1002186f4d88b2b5418b55';
-
-//Listener
-collectionBox.addEventListener('click', clickOnMovieHandler);
-
-//Functions
-//Click Handler Function
-function clickOnMovieHandler() {
-  event.preventDefault();
-
-  if (event.target.nodeName !== 'IMG' && event.target.nodeName !== 'H2') return;
-  else {
-    let movieId = event.target.dataset.id;
-    getMovieData(movieId).then(renderMovieModal);
+  if (e.target.nodeName !== 'IMG' && e.target.nodeName !== 'H2') {
+    return;
   }
+
+  let movieId = e.target.dataset.id;
+
+  fetchById(movieId);
 }
 
-//Fetch Function
-async function getMovieData(movieId) {
-  const { data } = await axios.get(`${url}${movieId}?api_key=${apiKey}`);
+// Outer fetch by ID
+async function fetchById(id) {
+  try {
+    const movieId = await api.getMovieById(id);
 
-  console.log(data);
-  return data;
-}
-
-//Rendering Function
-function renderMovieModal(data) {
-  const modalMarkup = modalTemplate(data);
-
-  console.log(modalMarkup);
+    renderMovieModal(movieId);
+  } catch (error) {
+    console.error('Smth wrong with outer fetch by ID' + error);
+  }
 }
