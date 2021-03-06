@@ -1,5 +1,6 @@
 import axios from 'axios';
-import allGenres from '../data/genres.json';
+import getGenres from '../data/get-genres';
+import {dataCombine} from '../data/data-combine'
 import { API_KEY, TREND_URL, SEARCH_URL, ID_URL } from './api-vars';
 
 export default {
@@ -20,9 +21,9 @@ export default {
   async getFullTrendData() {
     try {
       const movies = await this.fetchTrendingMovies();
-      const allGenres = this.fetchGenres();
+      const allGenres = getGenres();
 
-      const fullTrendData = this.dataCombine(movies, allGenres);
+      const fullTrendData = dataCombine(movies, allGenres);
 
       return fullTrendData;
     } catch (error) {
@@ -39,8 +40,8 @@ export default {
 
       const searchResults = data.results;
 
-      const allGenres = this.fetchGenres();
-      const fullSearchData = this.dataCombine(searchResults, allGenres);
+      const allGenres = getGenres();
+      const fullSearchData = dataCombine(searchResults, allGenres);
 
       return fullSearchData;
     } catch (error) {
@@ -57,23 +58,5 @@ export default {
     } catch (error) {
       console.error('Smth wrong with api ID fetch' + error);
     }
-  },
-
-  // Запрос и обработка локальных жанров
-  fetchGenres() {
-    const { genres } = allGenres;
-    return genres;
-  },
-
-  // Слияние полной информации о фильме
-  dataCombine(films, allGenres) {
-    return films.map(film => ({
-      ...film,
-      year: film.release_date ? film.release_date.split('-')[0] : '',
-      genres: film.genre_ids
-        .map(id => allGenres.filter(element => element.id === id))
-        .slice(0, 3)
-        .flat(),
-    }));
   },
 };
