@@ -10,24 +10,11 @@ export default function modalForFilm(markup) {
       popup: 'animate__animated animate__fadeIn',
     },
     customClass: {
-      container: 'our-test-class', // Заменить на существующий внешний класс
+      container: '...', // Заменить на существующий внешний класс
       popup: '...',
-      header: '...',
-      title: '...',
       closeButton: '...',
-      icon: '...',
-      image: '...',
       content: '...',
       htmlContainer: '...',
-      input: '...',
-      inputLabel: '...',
-      validationMessage: '...',
-      actions: '...',
-      confirmButton: '...',
-      denyButton: '...',
-      cancelButton: '...',
-      loader: '...',
-      footer: '....',
     },
   });
 }
