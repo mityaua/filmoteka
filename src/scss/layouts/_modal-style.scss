@@ -12,6 +12,7 @@
 
   @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
     display: flex;
+    margin: auto;
     min-width: 618px;
     height: 562px;
     padding: 42px 29px 40px 28px;
