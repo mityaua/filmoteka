@@ -1,5 +1,4 @@
 import modalTemplate from '../templates/modal-film-detail.hbs';
-import modalComponent from './components/modal-for-film';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 
@@ -11,7 +10,7 @@ export default function renderMovieModal(data) {
 
   try {
     // Выводит модалку
-    modalComponent(modalMarkup);
+    console.log(modalMarkup);
   } catch (error) {
     console.error('Smth wrong with modal window' + error);
   }

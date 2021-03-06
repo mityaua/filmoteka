@@ -9,11 +9,15 @@ const ID_URL = 'https://api.themoviedb.org/3/movie/';
 export default {
   // Фетч трендовых фильмов
   async fetchTrendingMovies() {
-    const { data } = await axios.get(`${TREND_URL}?api_key=${API_KEY}`);
+    try {
+      const { data } = await axios.get(`${TREND_URL}?api_key=${API_KEY}`);
 
-    const trendingMovies = data.results;
+      const trendingMovies = data.results;
 
-    return trendingMovies;
+      return trendingMovies;
+    } catch (error) {
+      console.error('Smth wrong with api trending fetch' + error);
+    }
   },
 
   // Фетч полной информации о трендах
