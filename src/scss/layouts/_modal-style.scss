@@ -61,17 +61,16 @@
     line-height: 1.67;
     margin-bottom: 21px;
   }
-  // .film__button__wrapper {
-  //   // // display: flex;
-
-  //   // justify-content: space-between;
-  // }
+  .film__button__wrapper {
+    display: flex;
+  }
   .film__button {
     width: 112px;
     height: 44px;
     text-align: center;
     text-transform: uppercase;
     border-radius: 5px;
+    background-color: $white-text-color;
     cursor: pointer;
     border: 1px solid $primary-text-color;
     transition: all $transition-duration $timing-function;
@@ -81,6 +80,9 @@
       color: $white-text-color;
       border: 1px solid $accent-color;
     }
+  }
+  .btn__watch {
+    margin-right: 15px;
   }
   // @media screen and (min-width: $to-tablet) {
   //   .modal__container {
