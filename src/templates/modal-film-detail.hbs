@@ -15,7 +15,7 @@
             <ul>
                 <li class="film__item">
                     <p class="film__details ">Vote / Votes</p>
-                    <p class="film__info  film__info--uper">
+                    <p class="film__info--uper">
                         <span class=" film__rating--orange">{{vote_average}}</span>
                         <span class="film__rating--divider"> / </span>
                         <spa>{{vote_count}}</span>
@@ -23,15 +23,15 @@
                 </li>
                 <li class="film__item">
                     <p class="film__details ">Popularity</p>
-                    <p class="film__info film__info--uper">{{popularity}}</p>
+                    <p class="film__info--uper">{{popularity}}</p>
                 </li>
                 <li class="film__item">
                     <p class="film__details">Original title</p>
-                    <p class="film__info">{{original_title}}</p>
+                    <p>{{original_title}}</p>
                 </li>
                 <li class="film__item">
                     <p class="film__details">Genre</p>
-                    <p class="film__info">
+                    <p>
                         {{#each genres}}
                         <span>{{this.name}}</span>
                         {{/each}}
