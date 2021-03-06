@@ -16,6 +16,6 @@ async function startPage() {
 
     NProgress.done();
   } catch (error) {
-    console.log(error);
+    console.error('Smth wrong with start page fetch' + error);
   }
 }

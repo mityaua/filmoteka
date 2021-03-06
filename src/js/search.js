@@ -23,12 +23,12 @@ function searchingHandler(event) {
   NProgress.done();
 }
 
-// Outer fetch
+// Outer search fetch
 async function movieSearcher(searchText) {
   try {
     const result = await api.fetchmovieSearcher(searchText);
     searchRender(result);
   } catch (error) {
-    console.log(error);
+    console.error('Smth wrong with outer search fetch' + error);
   }
 }
