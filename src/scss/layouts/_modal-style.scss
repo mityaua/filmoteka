@@ -6,22 +6,22 @@
   font-size: $font-size;
   line-height: $line-height;
   color: $primary-text-color;
-  max-height: 100vh;
-  min-width: 280px;
-  padding: 48px 20px 41px 20px;
+  // max-height: 100vh;
+  // min-width: 280px;
+  // padding: 48px 20px 41px 20px;
 
   @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
     display: flex;
-    margin: auto;
-    min-width: 618px;
-    height: 562px;
-    padding: 42px 29px 40px 28px;
+    // margin: auto;
+    // min-width: 618px;
+    // height: 562px;
+    // padding: 42px 29px 40px 28px;
   }
   @media screen and (min-width: $desktop) {
     display: flex;
-    width: 882px;
-    height: 568px;
-    padding: 50px 30px 40px 30px;
+    // width: 882px;
+    // height: 568px;
+    // padding: 50px 30px 40px 30px;
   }
 }
 .image {
