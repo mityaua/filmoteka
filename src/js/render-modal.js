@@ -10,7 +10,6 @@ export default function renderMovieModal(data) {
   NProgress.start();
 
   try {
-<<<<<<< HEAD
     // Тестово выводит модалку
 
     Swal.fire({
@@ -41,10 +40,6 @@ export default function renderMovieModal(data) {
         footer: '....',
       },
     });
-=======
-    // Выводит модалку
-    modalComponent(modalMarkup);
->>>>>>> dev
   } catch (error) {
     console.error('Smth wrong with modal window' + error);
   }
