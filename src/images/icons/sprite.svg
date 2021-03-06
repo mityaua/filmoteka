@@ -1,11 +1,11 @@
 <svg class="hidden">
   <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="film">
-    <path d="M19.82 2H4.18A2.18 2.18 0 002 4.18v15.64A2.18 2.18 0 004.18 22h15.64A2.18 2.18 0 0022 19.82V4.18A2.18 2.18 0 0019.82 2zM7 2v20M17 2v20M2 12h20M2 7h5M2 17h5m10 0h5M17 7h5" stroke="#818181" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    <path d="M19.82 2H4.18A2.18 2.18 0 002 4.18v15.64A2.18 2.18 0 004.18 22h15.64A2.18 2.18 0 0022 19.82V4.18A2.18 2.18 0 0019.82 2zM7 2v20M17 2v20M2 12h20M2 7h5M2 17h5m10 0h5M17 7h5"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
   </symbol>
   <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 13" id="heart">
     <path d="M7 12.88l-.98-.98C2.38 8.68 0 6.51 0 3.85 0 1.68 1.68 0 3.85 0 5.04 0 6.23.56 7 1.47 7.77.56 8.96 0 10.15 0 12.32 0 14 1.68 14 3.85c0 2.66-2.38 4.83-6.02 8.05l-.98.98z" fill="#FF6B08"></path>
   </symbol>
   <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" id="search">
-    <path d="M5.5 9.5a4 4 0 100-8 4 4 0 000 8zm5 1L8.325 8.325" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"></path>
+    <path d="M5.5 9.5a4 4 0 100-8 4 4 0 000 8zm5 1L8.325 8.325" stroke-linecap="round" stroke-linejoin="round"></path>
   </symbol>
 </svg>
