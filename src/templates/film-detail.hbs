@@ -18,7 +18,7 @@
         <ul class="card__genres">
           {{#if genres}}
           {{#each genres}}
-          <li class="card__genre"><a href="" class="card__text">{{name}},</a></li>
+          <li class="card__genre"><a href="" class="card__text">{{name}}{{#unless @last}},{{/unless}}</a></li>
           {{/each}}
           {{else}}<li class="card__genre card__text">N/A</li>
           {{/if}}
