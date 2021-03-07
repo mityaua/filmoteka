@@ -1,5 +1,9 @@
 import * as basicLightbox from 'basiclightbox';
 import 'basicLightbox/src/styles/main.scss';
+import teamTemplate from '../templates/our-team.hbs';
+import team from '../team.json';
+const teamMarkup = teamTemplate;
+// console.log(teamMarkup);
 
 
 
@@ -12,14 +16,15 @@ window.addEventListener('keydown', closeModalHandler);
 
 function openModal(e) {
   e.preventDefault();
-  const content = basicLightbox.create(`<img width="1400" height="900" src="https://placehold.it/1400x900">  `
+  const content = basicLightbox.create(``
   );
-  content.show();
+  content.show(teamMarkup);
 }
+//  console.log(openModal);
 
 function closeModalHandler(e) {
   if (e.code === 'Escape') {
-    modal.close();
+    content.close();
     window.removeEventListener('keydown', closeModalHandler);
   }
   }
