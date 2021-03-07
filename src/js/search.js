@@ -14,10 +14,12 @@ function searchingHandler(event) {
 
   const inputedText = inputRef.value;
 
+  console.log(inputedText.length);
+
   if (inputedText.length <= 1) {
     // Нужна обработка нескольких пробелов!
     return (headerWarning.textContent =
-      'Search result not successful. Enter the correct movie name and');
+      'No matches found for your query. Enter the correct movie name.');
   }
 
   NProgress.start();
