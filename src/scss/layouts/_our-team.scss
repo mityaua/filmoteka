@@ -6,8 +6,8 @@
   line-height: $line-height;
   color: $primary-text-color;
   max-height: 100vh;
-  width: 290px;
-  padding: 20px;
+  width: 300px;
+  padding: 10px;
   @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
     display: flex;
     margin: auto;
@@ -23,14 +23,61 @@
   }
 }
 .team__title {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 30px;
   color: $hover-rating-color;
+  line-height: 1.17;
+  font-size: 36px;
+  @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
+    line-height: 1.24;
+    font-size: 30px;
+    @media screen and (min-width: $desktop) {
+      font-size: 36px;
+    }
+  }
 }
 .team__subtitle {
+  text-align: center;
   color: black;
+  margin-bottom: 10px;
+  font-size: 16px;
+  @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
+    font-size: 18px;
+    line-height: 1.19px;
+  }
+  @media screen and (min-width: $desktop) {
+    font-size: 20px;
+    line-height: 1.21px;
+  }
 }
+.team__text {
+  font-size: 14px;
+  color: $accent-color;
+  margin-top: 0;
+  margin-bottom: 16px;
+  line-height: 1.18;
+  text-align: center;
+  @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
+    font-size: 16px;
+    line-height: 1.17px;
+  }
+  @media screen and (min-width: $desktop) {
+    font-size: 18px;
+    line-height: 1.19px;
+  }
+}
+.team__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.team__item {
+  border-radius: 0px 0px 4px 4px;
+  width: calc((100% - 10px * 1) / 2);
+}
+
 .team__image {
-  min-width: 40px;
-  height: 40px;
+  min-width: 120px;
+  height: 130px;
   border-radius: 5px;
-  margin-bottom: 30px;
 }
