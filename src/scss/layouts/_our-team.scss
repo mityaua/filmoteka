@@ -1,7 +1,29 @@
-.team__content {
-  width: 600px;
-  height: 700px;
-  background-color: blanchedalmond;
+.team__conteiner {
+  background-color: $white-text-color;
+  font-family: $font-family;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  line-height: $line-height;
+  color: $primary-text-color;
+  max-height: 100vh;
+  width: 290px;
+  padding: 20px;
+  @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
+    display: flex;
+    margin: auto;
+    width: 728px;
+    height: 828px;
+    padding: 30px;
+  }
+  @media screen and (min-width: $desktop) {
+    display: flex;
+    width: 882px;
+    height: 882px;
+    padding: 30px;
+  }
+}
+.team__title {
+  color: $hover-rating-color;
 }
 .team__subtitle {
   color: black;
