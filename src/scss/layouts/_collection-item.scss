@@ -32,6 +32,20 @@
   &__text {
     color: $accent-color;
   }
+
+  &__year {
+    cursor: default;
+  }
+
+  &__release {
+    margin-left: 10px;
+    padding: 1px 10px;
+    border-radius: 5px;
+    background-color: $accent-color;
+    color: $white-text-color;
+
+    cursor: default;
+  }
 }
 
 @media screen and (max-width: $to-tablet) {

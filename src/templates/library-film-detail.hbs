@@ -22,10 +22,11 @@
                     {{else}}<li class="card__genre card__text">N/A</li>
                     {{/if}}
                 </ul>
-                {{#if release_date}}
-                <p class="card__text">| {{release_date}}</p>
+                {{#if year}}
+                <p class="card__year card__text">| {{year}}</p>
                 {{else}}<p class="card__text">| N/A</p>
                 {{/if}}
+                <p class="card__release card__text">{{vote_average}}</p>
             </div>
         </div>
     </article>
