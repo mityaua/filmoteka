@@ -1,51 +1,49 @@
-{{#each this}}
-<section class="section team">
-    <div class="team__container">
-        <h2 class="team__title">Наша команда</h2>
-        <ul class="team__list list" dataset="id">
-            <li class="team__item">
-                <img src="{{imageMember}}" alt="{{name}}" class="team__image" />
+<div class="team__content">
+    <h2>Team 4</h2>
+    {{#each this}}
+    <ul class="team__list list" data-id="{{this.id}}">
+        <li class="team__item">
+            <img src="{{imageMember}}" alt="{{name}}" class="team__image" />
 
-                <div class="team__content">
-                    <h3 class="team__subtitle">{{name}}</h3>
-                    <p lang="en" class="team__text text">{{position}}</p>
-                    <ul class="social list">
-                        {{!-- <li class="social__item">
-                            <a class="social__link" href="https://www.instagram.com/" target="_blank"
-                                aria-label="ссылка Инстаграм">
-                                <svg class="social__icon">
-                                    <use href="./img2/sprite.svg#icon-instagram"></use>
-                                </svg>
-                            </a>
-                        </li> --}}
-                        <li class="social__item">
-                            <a class="social__link" href="{{socialLink}}" target="_blank" aria-label="ссылка Гитхаб">
-                                <svg class="social__icon">
-                                    <use href="../image/icons/heart.svg"></use>
-                                </svg>
-                            </a>
-                        </li>
+            <div class="team__content">
+                <h3 class="team__subtitle">{{name}}</h3>
+                <p lang="en" class="team__text text">{{position}}</p>
+                <ul class="social list">
+                    {{!-- <li class="social__item">
+                        <a class="social__link" href="https://www.instagram.com/" target="_blank"
+                            aria-label="ссылка Инстаграм">
+                            <svg class="social__icon">
+                                <use href="./img2/sprite.svg#icon-instagram"></use>
+                            </svg>
+                        </a>
+                    </li> --}}
+                    <li class="social__item">
+                        <a class="social__link" href="{{socialLink}}" target="_blank" aria-label="ссылка Гитхаб">
+                            <svg class="social__icon">
+                                <use href="../image/icons/heart.svg"></use>
+                            </svg>
+                        </a>
+                    </li>
 
-                        {{!-- <li class="social__item">
-                            <a class="social__link" href="https://facebook.com/" target="_blank"
-                                aria-label="ссылка Фейсбук">
-                                <svg class="social__icon">
-                                    <use href="./img2/sprite.svg#icon-facebook"></use>
-                                </svg>
-                            </a>
-                        </li> --}}
-                        {{!-- <li class="social__item">
-                            <a class="social__link" href="https://www.linkedin.com/" target="_blank"
-                                aria-label="ссылка Линкедин">
-                                <svg class="social__icon">
-                                    <use href="./img2/sprite.svg#icon-linkedin"></use>
-                                </svg>
-                            </a>
-                        </li> --}}
-                    </ul>
-                </div>
-            </li>
-        </ul>
-    </div>
-</section>
-{{/each}}
+                    {{!-- <li class="social__item">
+                        <a class="social__link" href="https://facebook.com/" target="_blank"
+                            aria-label="ссылка Фейсбук">
+                            <svg class="social__icon">
+                                <use href="./img2/sprite.svg#icon-facebook"></use>
+                            </svg>
+                        </a>
+                    </li> --}}
+                    {{!-- <li class="social__item">
+                        <a class="social__link" href="https://www.linkedin.com/" target="_blank"
+                            aria-label="ссылка Линкедин">
+                            <svg class="social__icon">
+                                <use href="./img2/sprite.svg#icon-linkedin"></use>
+                            </svg>
+                        </a>
+                    </li> --}}
+                </ul>
+            </div>
+        </li>
+        {{/each}}
+    </ul>
+</div>

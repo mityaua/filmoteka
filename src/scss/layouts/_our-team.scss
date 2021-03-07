@@ -1,14 +1,11 @@
-.team__container {
-  width: 300px;
-  height: 100vh;
-  background-color: $white-text-color;
-  padding: 20px;
-  margin: auto;
+.team__content {
+  width: 600px;
+  height: 700px;
+  background-color: blanchedalmond;
 }
-// .team__title {
-// }
-// .team__list {
-// }
+.team__subtitle {
+  color: black;
+}
 .team__image {
   min-width: 40px;
   height: 40px;

@@ -3,33 +3,26 @@ import 'basicLightbox/src/styles/main.scss';
 import teamTemplate from '../templates/our-team.hbs';
 import team from '../team.json';
 
+function getTeamInfo(teamId) {
+  const teamMarkup = teamTemplate(teamId);
+  const modalContent = basicLightbox.create(teamMarkup
+  );
+  modalContent.show();
+  window.addEventListener('keydown', closeModalHandler);
 
-function getTeamInfo(id) {
-   
-  
- }
+  function closeModalHandler(e) {
+  if (e.code === 'Escape') {
+    content.close();
+    window.removeEventListener('keydown', closeModalHandler);
+  } }}
 
 
 const container = document.querySelector('#js-team-modal');
 
 container.addEventListener('click', openModal);
-window.addEventListener('keydown', closeModalHandler);
-
-
 function openModal(e) {
   e.preventDefault();
-  const teamMarkup = teamTemplate(team);
- console.log(teamMarkup);
-  const content = basicLightbox.create(teamMarkup
-  );
-  
-  content.show();
+  getTeamInfo(team);
 }
 
 
-function closeModalHandler(e) {
-  if (e.code === 'Escape') {
-    content.close();
-    window.removeEventListener('keydown', closeModalHandler);
-  }
-  }
