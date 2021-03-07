@@ -1,4 +1,4 @@
-import renderCollection from './render-collection';
+import {renderCollection} from './render-collection';
 import trendApi from './api/api-service';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';

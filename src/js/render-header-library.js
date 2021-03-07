@@ -1,4 +1,6 @@
+import { renderLibraryCollection } from './render-collection';
 import filterFilm from '../templates/header-library.hbs';
+import api from './api/api-service';
 import {
   formRef,
   headerRef,
@@ -7,12 +9,14 @@ import {
   gallery,
 } from './references/refs';
 import { load, save, remove } from './local-storage';
-import api from './api/api-service';
-import renderCollection from './render-collection';
-import { render } from 'nprogress';
+import NProgress from 'nprogress';
+import 'nprogress/nprogress.css';
 
 const writeEvent = event => {
+  NProgress.start();
+
   event.preventDefault();
+  
   const markup = filterFilm();
 
   formRef.remove();
@@ -20,10 +24,12 @@ const writeEvent = event => {
   headerRef.insertAdjacentHTML('beforeend', markup);
   headerRef.classList.add('header__library');
   pageHome.classList.remove('current');
-  pageLabraryRef.classList.add('current');
+  pageLabraryRef.classList.add('current');  
 
   clickWatched();
   // clickQueue();
+
+  NProgress.done();
 };
 
 const removeEvent = event => {
@@ -41,7 +47,7 @@ function clickWatched() {
     for (let id of arrId) {
       api.getMovieById(id).then(data => {
         console.log(data);
-        renderCollection(data);
+        renderLibraryCollection(data);
       });
     }
   }
