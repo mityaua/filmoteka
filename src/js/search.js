@@ -3,7 +3,7 @@ import searchRender from './render-search';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 import errorModal from './components/modal-error';
-import { formRef, inputRef } from './references/refs';
+import { formRef, inputRef, headerWarning } from './references/refs';
 
 // Listener
 formRef.addEventListener('submit', searchingHandler);
@@ -16,11 +16,12 @@ function searchingHandler(event) {
 
   if (inputedText.length <= 1) {
     // Нужна обработка нескольких пробелов!
-    console.log('Please, enter more specific query');
-    return;
+    return (headerWarning.textContent =
+      'Search result not successful. Enter the correct movie name and');
   }
 
   NProgress.start();
+  headerWarning.textContent = '';
   movieSearcher(inputedText.trim());
   NProgress.done();
 }
