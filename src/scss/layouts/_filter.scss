@@ -1,6 +1,6 @@
 .filter {
-  //   margin-top: 8px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
 
   &__item {
     width: 129.53px;
@@ -12,10 +12,10 @@
   }
 
   &__item:not(:last-child) {
-    margin-right: 17.94px;
+    margin-right: 19.94px;
 
     @media screen and (min-width: $tablet) {
-      margin-right: 12px;
+      margin-right: 15px;
     }
   }
 }
