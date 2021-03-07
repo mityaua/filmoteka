@@ -12,19 +12,17 @@ formRef.addEventListener('submit', searchingHandler);
 function searchingHandler(event) {
   event.preventDefault();
 
-  const inputedText = inputRef.value;
-
-  console.log(inputedText.length);
+  // Обработка нескольких пробелов и обрезка лишних! Need to test!
+  const inputedText = inputRef.value.replace(/\s+/g, ' ').trim();
 
   if (inputedText.length <= 1) {
-    // Нужна обработка нескольких пробелов!
     return (headerWarning.textContent =
       'No matches found for your query. Enter the correct movie name.');
   }
 
   NProgress.start();
   headerWarning.textContent = '';
-  movieSearcher(inputedText.trim());
+  movieSearcher(inputedText);
   NProgress.done();
 }
 
@@ -32,6 +30,12 @@ function searchingHandler(event) {
 async function movieSearcher(searchText) {
   try {
     const result = await api.fetchMovieSearcher(searchText);
+
+    if (result.length === 0) {
+      return (headerWarning.textContent =
+        'No matches found for your query. Enter the correct movie name.');
+    }
+
     searchRender(result);
   } catch (error) {
     errorModal();
