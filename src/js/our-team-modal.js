@@ -3,9 +3,11 @@ import 'basicLightbox/src/styles/main.scss';
 import teamTemplate from '../templates/our-team.hbs';
 import team from '../team.json';
 
-// const teamMarkup = teamTemplate;
-// // console.log(teamMarkup);
 
+function getTeamInfo(id) {
+   
+  
+ }
 
 
 const container = document.querySelector('#js-team-modal');
@@ -16,9 +18,11 @@ window.addEventListener('keydown', closeModalHandler);
 
 function openModal(e) {
   e.preventDefault();
-  const content = basicLightbox.create(`<div class="team__container">
-   </div>`
+  const teamMarkup = teamTemplate(team);
+ console.log(teamMarkup);
+  const content = basicLightbox.create(teamMarkup
   );
+  
   content.show();
 }
 
