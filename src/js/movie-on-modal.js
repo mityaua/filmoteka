@@ -26,7 +26,7 @@ async function fetchById(id) {
 
   try {
     const movieId = await api.getMovieById(id);
-
+    
     renderMovieModal(movieId);
   } catch (error) {
     errorModal();
