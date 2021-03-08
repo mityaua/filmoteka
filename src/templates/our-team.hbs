@@ -8,15 +8,19 @@
             <div class="team__content">
                 <h3 class="team__subtitle">{{name}}</h3>
                 <p lang="en" class="team__text text">{{position}}</p>
-                <ul class="social list">
-                    {{!-- <li class="social__item">
+                <a class="social__link" href="https://www.instagram.com/" target="_blank" aria-label="ссылка Инстаграм">
+                    <img src="../images/close.png" alt="">
+                </a>
+
+                {{!-- <ul class=" social list">
+                    <li class="social__item">
                         <a class="social__link" href="https://www.instagram.com/" target="_blank"
                             aria-label="ссылка Инстаграм">
                             <svg class="social__icon">
                                 <use href="./img2/sprite.svg#icon-instagram"></use>
                             </svg>
                         </a>
-                    </li> --}}
+                    </li>
                     <li class="social__item">
                         <a class="social__link" href="{{socialLink}}" target="_blank" aria-label="ссылка Гитхаб">
                             <svg class="social__icon">
@@ -25,7 +29,7 @@
                         </a>
                     </li>
 
-                    {{!-- <li class="social__item">
+                    <li class="social__item">
                         <a class="social__link" href="https://facebook.com/" target="_blank"
                             aria-label="ссылка Фейсбук">
                             <svg class="social__icon">
@@ -33,17 +37,10 @@
                             </svg>
                         </a>
                     </li> --}}
-                    {{!-- <li class="social__item">
-                        <a class="social__link" href="https://www.linkedin.com/" target="_blank"
-                            aria-label="ссылка Линкедин">
-                            <svg class="social__icon">
-                                <use href="./img2/sprite.svg#icon-linkedin"></use>
-                            </svg>
-                        </a>
-                    </li> --}}
-                </ul>
+                    {{!--
+                </ul> --}}
             </div>
         </li>
-        {{/each}}
     </ul>
+    {{/each}}
 </div>
