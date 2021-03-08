@@ -21,7 +21,7 @@ function getTeamInfo(teamId) {
 
   function closeModalHandler(e) {
   if (e.code === 'Escape') {
-    content.close();
+    modalContent.close();
     window.removeEventListener('keydown', closeModalHandler);
     }
 
