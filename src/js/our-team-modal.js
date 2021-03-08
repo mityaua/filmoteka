@@ -6,8 +6,10 @@ import teamTemplate from '../templates/our-team.hbs';
 import team from '../team.json';
 import errorModal from './components/modal-error';
 
+// Refs
+
 const modalContainer = document.querySelector('#js-team-modal');
-const btnCloseRef = document.querySelector('button[data-close-modal');
+
 
 modalContainer.addEventListener('click', openModal);
 
@@ -25,19 +27,29 @@ function openModal(e) {
 
   NProgress.done();
 }
-
+// Создаю функцию для получения данных с json
 function getTeamInfo(teamId) {
   const teamMarkup = teamTemplate(teamId);
   const modalContent = basicLightbox.create(teamMarkup);
 
-  modalContent.show();
+ modalContent.onclick =  modalContent.show();
 
-  window.addEventListener('keydown', closeModalHandler);
+  window.addEventListener('keydown',  closeModalByEsc);
 
-  function closeModalHandler(e) {
+  function closeModalByEsc(e) {
     if (e.code === 'Escape') {
       modalContent.close();
       window.removeEventListener('keydown', closeModalHandler);
     }
   }
+  const btnCloseRef = document.querySelector('.close__button');
+  btnCloseRef.addEventListener('click', closeModalbyBtn )
+  function closeModalbyBtn() {
+    modalContent.close();
+    // снимаю слушателя события с кнопки
+    btnCloseRef.removeEventListener('click', closeModalbyBtn)
+  }
+  
 }
+
+
