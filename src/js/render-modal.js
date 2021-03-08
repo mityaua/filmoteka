@@ -4,9 +4,6 @@ import 'nprogress/nprogress.css';
 import errorModal from './components/modal-error';
 import { modalBox } from './references/refs';
 
-//Listener for closing by ESC
-window.addEventListener('keydown', modalClosinByEsc);
-
 // Функция отрисовки модального окна по шаблону
 export default function renderMovieModal(data) {
   NProgress.start();
@@ -24,6 +21,7 @@ export default function renderMovieModal(data) {
 
     modalBackdrop.addEventListener('click', modalClosing);
     closeButton.addEventListener('click', modalClosing);
+    window.addEventListener('keydown', modalClosinByEsc);
   } catch (error) {
     errorModal();
     console.error('Smth wrong with modal window' + error);
@@ -32,12 +30,14 @@ export default function renderMovieModal(data) {
   NProgress.done();
 }
 
-//Closing functions
+// Закрытие модалки
 function modalClosing() {
   modalBox.classList.remove('is-open');
   document.body.style.overflow = '';
+  window.removeEventListener('keydown', modalClosinByEsc);
 }
 
+// Закрытие модалки по Escape
 function modalClosinByEsc(event) {
   if (event.code === 'Escape') {
     modalClosing();
