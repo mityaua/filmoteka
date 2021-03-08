@@ -32,14 +32,14 @@ function getTeamInfo(teamId) {
   const teamMarkup = teamTemplate(teamId);
   const modalContent = basicLightbox.create(teamMarkup);
 
- modalContent.onclick =  modalContent.show();
+ modalContent.show();
 
   window.addEventListener('keydown',  closeModalByEsc);
 
   function closeModalByEsc(e) {
     if (e.code === 'Escape') {
       modalContent.close();
-      window.removeEventListener('keydown', closeModalHandler);
+      window.removeEventListener('keydown', closeModalByEsc);
     }
   }
   const btnCloseRef = document.querySelector('.close__button');
