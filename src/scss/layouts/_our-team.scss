@@ -17,7 +17,7 @@
     padding: 30px;
   }
   @media screen and (min-width: $desktop) {
-    width: 1000px;
+    min-width: 1000px;
     height: 700px;
     padding: 30px;
   }
@@ -33,7 +33,7 @@
     font-size: 30px;
     margin-bottom: 20px;
     @media screen and (min-width: $desktop) {
-      margin-bottom: 30px;
+      margin-bottom: 50px;
       font-size: 36px;
       line-height: 1.27px;
     }
@@ -84,13 +84,18 @@
 
   width: calc((100% - 20px * 1) / 2);
 
-  &:nth-child(2n) {
-    margin-right: 0;
+  @media screen and (max-width: $to-tablet) {
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+    &:nth-last-child(-n + 2) {
+      margin-bottom: 0;
+    }
   }
 
-  &:nth-last-child(-n + 2) {
-    margin-bottom: 0;
-  }
   @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
     // margin-right: 10px;
     width: calc((100% - 5px * 2) / 3);
@@ -102,12 +107,14 @@
     }
   }
   @media screen and (min-width: $desktop) {
-    width: calc((100% - 10px * 5) / 6);
-    &:not(:last-child) {
-      margin-right: 30px;
+    margin-left: auto;
+    width: calc((100% - 5px * 5) / 6);
+    &:not(:nth-child(5n)) {
+      margin-right: 20px;
     }
     margin-bottom: 20px;
   }
+  margin-right: auto;
 }
 
 .team__image {
