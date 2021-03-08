@@ -72,12 +72,22 @@
   flex-wrap: wrap;
 }
 .team__item {
+  background-color: blanchedalmond;
   border-radius: 0px 0px 4px 4px;
-  width: calc((100% - 10px * 1) / 2);
+
+  width: calc((100% - 30px * 1) / 2);
+
+  &:nth-child(2n) {
+    margin-right: 0;
+  }
+
+  &:nth-last-child(-n + 2) {
+    margin-bottom: 0;
+  }
 }
 
 .team__image {
-  min-width: 120px;
-  height: 130px;
+  min-width: 100px;
+  height: 100px;
   border-radius: 5px;
 }
