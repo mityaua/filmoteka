@@ -49,6 +49,32 @@
     <!-- Trend movies list -->
     <div class="container">
       <ul class="collection"></ul>
+
+<!-- pagination -->
+<div class="pagination-container">
+  <button class="pagination-button arrow-left">
+    <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3.333 8h9.334M8 12.667L12.667 8 8 3.333" stroke="#000" stroke-width="1.333" stroke-linecap="round"
+        stroke-linejoin="round" />
+    </svg>
+  </button>
+  <button class="pagination-button first-button">1</button>
+  <span class="dots" id="previous">...</span>
+  <button class="pagination-button pagination--current" data-index="1">1</button>
+  <button class="pagination-button" data-index="2">2</button>
+  <button class="pagination-button" data-index="3">3</button>
+  <button class="pagination-button" data-index="4">4</button>
+  <button class="pagination-button" data-index="5">5</button>
+  <span class="dots" id="after">...</span>
+  <button class="pagination-button last-button">999</button>
+  <button class="pagination-button arrow-right">
+    <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12.667 8H3.333M8 12.667L3.333 8 8 3.333" stroke="#000" stroke-width="1.333" stroke-linecap="round"
+        stroke-linejoin="round" />
+    </svg>
+  </button>
+</div>
+
     </div>
 
     <!-- Footer -->
@@ -76,7 +102,7 @@
           <a
             href="https://github.com/mityaua/filmoteka"
             target="_blank"
-            class="footer-text footer-link underline"  id='js-team-modal'
+            class="footer-text footer-link underline"  id="js-team-modal"
             rel="noreferrer noopener"
             aria-label="Our Github"
             title="Our Github"
