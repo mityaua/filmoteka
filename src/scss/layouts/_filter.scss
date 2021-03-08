@@ -11,6 +11,14 @@
     }
   }
 
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    display: block;
+  }
+
   &__item:not(:last-child) {
     margin-right: 19.94px;
 
