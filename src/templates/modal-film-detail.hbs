@@ -3,7 +3,7 @@
 <div class="modal__container">
     <div class="film__image">
         {{#if poster_path}}
-        <img class="image" src="https://www.themoviedb.org/t/p/w300{{poster_path}}" alt="{{title}}" />
+        <img class="image" src="https://www.themoviedb.org/t/p/w500{{poster_path}}" alt="{{title}}" />
         {{/if}}
         {{#unless poster_path}}
         <img class="image" src="https://subscribenow.com.au/time/asia/Solo/Content/Images/noCover.gif" alt="film photo">
@@ -17,7 +17,7 @@
             <ul>
                 <li class="film__item">
                     <p class="film__details ">Vote / Votes</p>
-                    <p class="film__info  film__info--uper">
+                    <p class="film__info--uper">
                         <span class=" film__rating--orange">{{vote_average}}</span>
                         <span class="film__rating--divider"> / </span>
                         <spa>{{vote_count}}</span>
@@ -25,11 +25,11 @@
                 </li>
                 <li class="film__item">
                     <p class="film__details ">Popularity</p>
-                    <p class="film__info film__info--uper">{{popularity}}</p>
+                    <p class="film__info--uper">{{popularity}}</p>
                 </li>
                 <li class="film__item">
                     <p class="film__details">Original title</p>
-                    <p class="film__info">{{original_title}}</p>
+                    <p>{{original_title}}</p>
                 </li>
                 <li class="film__item">
                     <p class="film__details">Genre</p>

@@ -1,10 +1,12 @@
 // Принимает ключ `key` по которому будет произведена выборка.
 const load = key => {
   try {
-    const serializedState = localStorage.getItem(key);
+    // const serializedState = localStorage.getItem(key);
+    // return serializedState === null ? undefined : JSON.parse(serializedState);
+    let serializedState = localStorage.getItem(key);
 
-    return serializedState === null ? undefined : JSON.parse(serializedState);
-  } catch (err) {    
+    return (serializedState = JSON.parse(serializedState) || undefined);
+  } catch (err) {
     console.error('Get state error: ', err);
   }
 };
