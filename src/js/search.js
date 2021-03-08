@@ -3,7 +3,7 @@ import searchRender from './render-search';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 import errorModal from './components/modal-error';
-import { formRef, inputRef } from './references/refs';
+import { formRef, inputRef, headerWarning } from './references/refs';
 
 // Listener
 formRef.addEventListener('submit', searchingHandler);
@@ -12,16 +12,17 @@ formRef.addEventListener('submit', searchingHandler);
 function searchingHandler(event) {
   event.preventDefault();
 
-  const inputedText = inputRef.value;
+  // Обработка нескольких пробелов и обрезка лишних! Need to test!
+  const inputedText = inputRef.value.replace(/\s+/g, ' ').trim();
 
   if (inputedText.length <= 1) {
-    // Нужна обработка нескольких пробелов!
-    console.log('Please, enter more specific query');
-    return;
+    return (headerWarning.textContent =
+      'No matches found for your query. Enter the correct movie name.');
   }
 
   NProgress.start();
-  movieSearcher(inputedText.trim());
+  headerWarning.textContent = '';
+  movieSearcher(inputedText);
   NProgress.done();
 }
 
@@ -29,6 +30,12 @@ function searchingHandler(event) {
 async function movieSearcher(searchText) {
   try {
     const result = await api.fetchMovieSearcher(searchText);
+
+    if (result.length === 0) {
+      return (headerWarning.textContent =
+        'No matches found for your query. Enter the correct movie name.');
+    }
+
     searchRender(result);
   } catch (error) {
     errorModal();
