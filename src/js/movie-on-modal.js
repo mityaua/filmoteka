@@ -3,6 +3,8 @@ import renderMovieModal from './render-modal';
 import errorModal from './components/modal-error';
 import { gallery } from './references/refs';
 import { load, save, remove } from './local-storage';
+import NProgress from 'nprogress';
+import 'nprogress/nprogress.css';
 
 gallery.addEventListener('click', clickOnMovieHandler);
 
@@ -21,9 +23,11 @@ function clickOnMovieHandler(e) {
 
 // Outer fetch by ID
 async function fetchById(id) {
+  NProgress.start();
+
   try {
     const movieId = await api.getMovieById(id);
-
+    
     renderMovieModal(movieId);
 
     const btnQueue = document.querySelector('.btn__queue');
@@ -91,4 +95,6 @@ async function fetchById(id) {
       save('queue', queueList);
     }
   }
+  
+  NProgress.done();
 }

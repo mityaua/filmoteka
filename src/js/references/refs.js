@@ -6,6 +6,7 @@ const pageHome = document.querySelector('.menu__link-home');
 const pageLabraryRef = headerRef.querySelector('.menu__link-library');
 const modalBackdrop = document.querySelector('.modal__backdrop');
 const modalBox = document.getElementById('modal');
+const headerWarning = document.querySelector('.warning-notification');
 
 export {
   formRef,
@@ -16,4 +17,5 @@ export {
   pageLabraryRef,
   modalBackdrop,
   modalBox,
+  headerWarning,
 };
