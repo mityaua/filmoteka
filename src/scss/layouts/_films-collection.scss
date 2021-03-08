@@ -1,5 +1,6 @@
 // ===== Styles for Films Collection =====
 .collection {
+
   display: flex;
   flex-wrap: wrap;
   padding: 0;
@@ -45,9 +46,9 @@
 
 @media screen and (min-width: $desktop) {
   .collection {
-    padding-top: 40px;
-    padding-left: 51px;
-    padding-right: 51px;
+    padding-top: 20px;
+    padding-left: 71px;
+    padding-right: 71px;
 
     &__item {
       width: calc((100% - 60px) / 3);
