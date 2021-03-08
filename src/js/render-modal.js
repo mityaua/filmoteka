@@ -9,17 +9,21 @@ window.addEventListener('keydown', modalClosinByEsc);
 
 // Функция отрисовки модального окна по шаблону
 export default function renderMovieModal(data) {
-  const modalMarkup = modalTemplate(data);
-
   NProgress.start();
 
+  const modalMarkup = modalTemplate(data);
+
   try {
-    // Выводит модалку
-    // modalComponent(modalMarkup);
     modalBox.innerHTML = modalMarkup;
+
     modalBox.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+
     const modalBackdrop = document.querySelector('.modal__backdrop');
+    const closeButton = document.querySelector('[data-action="close-modal"]');
+
     modalBackdrop.addEventListener('click', modalClosing);
+    closeButton.addEventListener('click', modalClosing);
   } catch (error) {
     errorModal();
     console.error('Smth wrong with modal window' + error);
@@ -31,6 +35,7 @@ export default function renderMovieModal(data) {
 //Closing functions
 function modalClosing() {
   modalBox.classList.remove('is-open');
+  document.body.style.overflow = '';
 }
 
 function modalClosinByEsc(event) {
