@@ -1,82 +1,83 @@
 [
   {
    
-    "name": "vta",
-     "position": "tyuu",
+    "name": "Дмитрий",
+     "position": "Teamlead",
+    "imageMember": "https://subscribenow.com.au/time/asia/Solo/Content/Images/noCover.gif",
+    "socialLink": 
+        "https://github.com/vita-khutorianska"
+  },
+  {
+
+    "name": "Аня",
+    "position":  "Scrum master",
+    "imageMember": "https://subscribenow.com.au/time/asia/Solo/Content/Images/noCover.gif",
+    "socialLink": 
+        "https://github.com/vita-khutorianska"
+  },
+    
+    {"name": "Алик",
+     "position": "developer",
     "imageMember": "https://subscribenow.com.au/time/asia/Solo/Content/Images/noCover.gif",
     "socialLink": 
         "https://github.com/vita-khutorianska"
   },
    {
     
-    "name": "rfnz",
-     "position": "tyuu",
+    "name": "Иван",
+     "position": "Developer",
     "imageMember": "https://subscribenow.com.au/time/asia/Solo/Content/Images/noCover.gif",
     "socialLink": 
         "https://github.com/vita-khutorianska"
   },
    {
     
-    "name": "va",
-     "position": "tyuu",
-    "imageMember": "https://subscribenow.com.au/time/asia/Solo/Content/Images/noCover.gif",
-    "socialLink": 
-        "https://github.com/vita-khutorianska"
-  },
-   {
-    
-    "name": "via",
-     "position": "tyuu",
+    "name": "Сергей",
+     "position": "Developer",
     "imageMember": "https://subscribenow.com.au/time/asia/Solo/Content/Images/noCover.gif",
     "socialLink": 
         "https://github.com/vita-khutorianska"
   },
    {
 
-    "name": "via",
-   "position": "tyuu",
+    "name": "Александр",
+   "position": "Developer",
     "imageMember": "https://subscribenow.com.au/time/asia/Solo/Content/Images/noCover.gif",
     "socialLink": 
         "https://github.com/vita-khutorianska"
   },
    {
  
-    "name": "via",
-    "position": "tyuu",
+    "name": "Тарас",
+    "position": "Developer",
     "imageMember": "https://subscribenow.com.au/time/asia/Solo/Content/Images/noCover.gif",
     "socialLink": 
         "https://github.com/vita-khutorianska"
   },
-   {
-
-    "name": "a",
-    "position":  "tyuu",
-    "imageMember": "https://subscribenow.com.au/time/asia/Solo/Content/Images/noCover.gif",
-    "socialLink": 
-        "https://github.com/vita-khutorianska"
-  },
+   
    {
     
-    "name": "vkll",
-    "position": "tyuu",
+    "name": "Марина",
+    "position": "Developer",
     "imageMember": "https://subscribenow.com.au/time/asia/Solo/Content/Images/noCover.gif",
     "socialLink": 
         "https://github.com/vita-khutorianska"
   },
    {
    
-    "name": "vkll",
-   "position": "tyuu",
+    "name": "Вита",
+   "position": "Developer",
     "imageMember": "https://subscribenow.com.au/time/asia/Solo/Content/Images/noCover.gif",
     "socialLink": 
         "https://github.com/vita-khutorianska"
   },
    {
     
-    "name": "hjk",
-    "position": "tyuu",
+    "name": "Сергей",
+    "position": "Developer",
     "imageMember": "https://subscribenow.com.au/time/asia/Solo/Content/Images/noCover.gif",
     "socialLink": 
         "https://github.com/vita-khutorianska"
   }
+  
 ]

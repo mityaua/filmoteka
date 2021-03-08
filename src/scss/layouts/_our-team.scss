@@ -93,3 +93,26 @@
   height: 50px;
   border-radius: 5px;
 }
+.close__button {
+  position: absolute;
+  top: 2%;
+  right: 4%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  transition: background-color $transition-duration $timing-function;
+  outline: none;
+  background-image: url('../images/close-modal.svg');
+  background-position: center;
+  background-size: 60%;
+  background-repeat: no-repeat;
+}
