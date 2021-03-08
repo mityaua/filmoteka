@@ -15,6 +15,7 @@
   }
 
   font-weight: $font-weight;
+  line-height: $line-height;
 
   text-align: center;
   text-transform: uppercase;
@@ -25,8 +26,9 @@
   border-radius: 5px;
 
   &:hover,
-  :focus {
-    border: transparent;
+  :focus,
+  :active {
+    border: 1px solid $hover-rating-color;
     background: $hover-rating-color;
     box-shadow: (0px 8px 43px $button-header-library);
 
