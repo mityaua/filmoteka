@@ -1,5 +1,8 @@
 // ===== Styles for Films Collection =====
 .collection {
+
+outline: 1px solid green;
+
   display: flex;
   flex-wrap: wrap;
   padding: 0;
@@ -47,7 +50,7 @@
 
 @media screen and (min-width: $desktop) {
   .collection {
-    padding-top: 60px;
+    padding-top: 20px;
     padding-left: 71px;
     padding-right: 71px;
 
