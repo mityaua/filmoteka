@@ -25,10 +25,10 @@
 .team__title {
   text-align: center;
   margin-top: 0;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   color: $hover-rating-color;
   line-height: 1.17;
-  font-size: 36px;
+  font-size: 30px;
   @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
     line-height: 1.24;
     font-size: 30px;
@@ -74,8 +74,9 @@
 .team__item {
   background-color: blanchedalmond;
   border-radius: 0px 0px 4px 4px;
+  margin-right: 20x;
 
-  width: calc((100% - 30px * 1) / 2);
+  width: calc((100% - 20px * 1) / 2);
 
   &:nth-child(2n) {
     margin-right: 0;
@@ -87,7 +88,8 @@
 }
 
 .team__image {
+  margin: auto;
   min-width: 100px;
-  height: 100px;
+  height: 50px;
   border-radius: 5px;
 }
