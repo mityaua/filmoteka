@@ -3,7 +3,7 @@ $font-family: Roboto, sans-serif;
 $font-size: 12px;
 $font-weight: 500;
 $font-style: normal;
-$line-height: 1.3;
+$line-height: calc(16 / 12);
 
 // Текст в шапке и на акцентных элементах
 $white-text-color: #ffffff;

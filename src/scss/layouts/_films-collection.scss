@@ -17,8 +17,6 @@ outline: 1px solid green;
 
 @media screen and (max-width: $to-tablet) {
   .collection {
-    padding: 20px;
-
     &__item {
       width: 100%;
     }
@@ -30,9 +28,9 @@ outline: 1px solid green;
 
 @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
   .collection {
-    padding-top: 60px;
-    padding-left: 75px;
-    padding-right: 75px;
+    padding-top: 40px;
+    padding-left: 55px;
+    padding-right: 55px;
 
     &__item {
       width: calc((100% - 30px) / 2);
