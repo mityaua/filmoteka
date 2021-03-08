@@ -7,7 +7,7 @@
     ),
     url(../images/library/header-library-background-mobile@2x.jpg);
   background-repeat: no-repeat;
-  background-position: 50%;
+  background-position: top;
   background-size: cover;
 
   @media screen and (min-width: $tablet) and (max-width: $to-desktop) {

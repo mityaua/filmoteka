@@ -17,7 +17,9 @@ header {
       $header-gradient-color
     ),
     url(../images/header-background-mobile-2x.jpg);
-  background-size: auto;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
 
   @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
     padding: 45px 60px 20px;
