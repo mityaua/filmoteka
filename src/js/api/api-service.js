@@ -1,6 +1,6 @@
 import axios from 'axios';
 import getGenres from '../data/get-genres';
-import { dataCombine } from '../data/data-combine';
+import { dataCombine, createYear } from '../data/data-combine';
 import { API_KEY, TREND_URL, SEARCH_URL, ID_URL } from './api-vars';
 
 export default {
@@ -54,7 +54,12 @@ export default {
     try {
       const { data } = await axios.get(`${ID_URL}${id}?api_key=${API_KEY}`);
 
-      return data;
+      const result = {
+        ...data,
+        year: createYear(data),
+      }; 
+
+      return result;
     } catch (error) {
       console.error('Smth wrong with api ID fetch' + error);
     }
