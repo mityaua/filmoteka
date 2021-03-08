@@ -14,8 +14,6 @@
 
 @media screen and (max-width: $to-tablet) {
   .collection {
-    padding: 20px 0;
-
     &__item {
       width: 100%;
     }
@@ -27,7 +25,7 @@
 
 @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
   .collection {
-    padding-top: 60px;
+    padding-top: 40px;
     padding-left: 55px;
     padding-right: 55px;
 
@@ -47,7 +45,7 @@
 
 @media screen and (min-width: $desktop) {
   .collection {
-    padding-top: 60px;
+    padding-top: 40px;
     padding-left: 51px;
     padding-right: 51px;
 
