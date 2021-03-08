@@ -32,24 +32,28 @@ function getTeamInfo(teamId) {
   const teamMarkup = teamTemplate(teamId);
   const modalContent = basicLightbox.create(teamMarkup);
 
- modalContent.show();
+  
+  // modalContent.onclick =
+    modalContent.show();
+  //  document.body.style.overflow = 'hidden';
 
   window.addEventListener('keydown',  closeModalByEsc);
 
   function closeModalByEsc(e) {
     if (e.code === 'Escape') {
-      modalContent.close();
+     modalContent.onclick = modalContent.close();
       window.removeEventListener('keydown', closeModalByEsc);
     }
   }
   const btnCloseRef = document.querySelector('.close__button');
-  btnCloseRef.addEventListener('click', closeModalbyBtn )
+  btnCloseRef.addEventListener('click', closeModalbyBtn);
   function closeModalbyBtn() {
     modalContent.close();
     // снимаю слушателя события с кнопки
-    btnCloseRef.removeEventListener('click', closeModalbyBtn)
+    // document.body.style.overflow = '';
+    btnCloseRef.removeEventListener('click', closeModalbyBtn);
   }
-  
+  // console.log('overflow=',document.body.style.overflow = '')
 }
 
 
