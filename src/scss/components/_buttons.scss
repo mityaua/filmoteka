@@ -40,7 +40,7 @@
   }
 
   &__active {
-    border: transparent;
+    border: 1px solid $hover-rating-color;
     background: $hover-rating-color;
     box-shadow: (0px 8px 43px $button-header-library);
   }
