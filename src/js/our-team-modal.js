@@ -33,15 +33,15 @@ function getTeamInfo(teamId) {
   const teamMarkup = teamTemplate(teamId);
   const modalContent = basicLightbox.create(teamMarkup);
 
- 
     modalContent.show();
-  
 
   window.addEventListener('keydown',  closeModalByEsc);
 
   function closeModalByEsc(e) {
     if (e.code === 'Escape') {
-     modalContent.close();
+      modalContent.close();
+    // снимаю слушателя события с кнопки
+      
       window.removeEventListener('keydown', closeModalByEsc);
     }
   }
