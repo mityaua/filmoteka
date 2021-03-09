@@ -87,9 +87,6 @@
   margin-bottom: 15px;
 
   width: calc((100% - 20px * 1) / 2);
-  &:hover {
-    transform: translateY(-5px);
-  }
 
   @media screen and (max-width: $to-tablet) {
     &:first-child {
@@ -135,6 +132,10 @@
   height: 50px;
   border-radius: 5px;
   margin-bottom: 5px;
+  transition: 1s;
+  &:hover {
+    transform: scale(1.1);
+  }
   @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
     margin-bottom: 10px;
     min-width: 140px;
