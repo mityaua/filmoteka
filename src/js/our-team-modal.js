@@ -33,10 +33,9 @@ function getTeamInfo(teamId) {
   const teamMarkup = teamTemplate(teamId);
   const modalContent = basicLightbox.create(teamMarkup);
 
-  
-  // modalContent.onclick =
+ 
     modalContent.show();
-  //  document.body.style.overflow = 'hidden';
+  
 
   window.addEventListener('keydown',  closeModalByEsc);
 
@@ -51,10 +50,10 @@ function getTeamInfo(teamId) {
   function closeModalbyBtn() {
     modalContent.close();
     // снимаю слушателя события с кнопки
-    // document.body.style.overflow = '';
+    
     btnCloseRef.removeEventListener('click', closeModalbyBtn);
   }
-  // console.log('overflow=',document.body.style.overflow = '')
+  
 }
 
 
