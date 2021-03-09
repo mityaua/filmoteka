@@ -31,3 +31,5 @@ async function startPage() {
 
   NProgress.done();
 }
+
+export { startPage }

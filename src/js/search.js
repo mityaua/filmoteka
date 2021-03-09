@@ -38,14 +38,8 @@ async function movieSearcher(searchText) {
     const data = await api.fetchMovieSearcher(searchText);
 
     const result = data.fullSearchData;
-    const currentPage = data.currentPage;
     const totalPages = data.totalPages;
-    const totalResults = data.totalResults;
 
-    // console.log(result);
-    // console.log(currentPage);
-    // console.log(totalPages);
-    // console.log(totalResults);
 
     if (result.length === 0) {
       return (headerWarning.textContent =
@@ -58,3 +52,5 @@ async function movieSearcher(searchText) {
     console.error('Smth wrong with search form fetch' + error);
   }
 }
+
+export { movieSearcher }

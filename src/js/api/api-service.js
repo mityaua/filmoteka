@@ -1,5 +1,5 @@
 import axios from 'axios';
-// import getGenres from '../data/get-genres';
+import { currentPage } from '../pagination';
 import {
   dataCombine,
   createGenresFromID,
@@ -12,7 +12,7 @@ export default {
   // Фетч трендовых фильмов с полным ответом
   async fetchTrendingMovies() {
     try {
-      const response = await axios.get(`${TREND_URL}?api_key=${API_KEY}`);
+      const response = await axios.get(`${TREND_URL}?api_key=${API_KEY}&page=${currentPage}`);
 
       return response.data;
     } catch (error) {
@@ -26,19 +26,13 @@ export default {
       const data = await this.fetchTrendingMovies();
 
       const movies = data.results;
-      const currentPage = data.page;
+      
       const totalPages = data.total_pages;
-      const totalResults = data.total_results;
-
-      // console.log(movies);
-      // console.log(currentPage);
-      // console.log(totalPages);
-      // console.log(totalResults);
 
       const allGenres = getGenres();
       const fullTrendData = dataCombine(movies, allGenres);
 
-      return { fullTrendData, currentPage, totalPages, totalResults };
+      return { fullTrendData, totalPages };
     } catch (error) {
       console.error('Smth wrong with api get full trends' + error);
     }
@@ -48,23 +42,15 @@ export default {
   async fetchMovieSearcher(text) {
     try {
       const { data } = await axios.get(
-        `${SEARCH_URL}?api_key=${API_KEY}&query=${text}`,
-      );
-
+        `${SEARCH_URL}?api_key=${API_KEY}&query=${text}&page=${currentPage}`);
+      
       const searchResults = data.results;
-      const currentPage = data.page;
       const totalPages = data.total_pages;
-      const totalResults = data.total_results;
-
-      // console.log(searchResults);
-      // console.log(currentPage);
-      // console.log(totalPages);
-      // console.log(totalResults);
 
       const allGenres = getGenres();
       const fullSearchData = dataCombine(searchResults, allGenres);
 
-      return { fullSearchData, currentPage, totalPages, totalResults };
+      return { fullSearchData, totalPages };
     } catch (error) {
       console.error('Smth wrong with api search fetch' + error);
     }

@@ -9,6 +9,7 @@ import './js/search';
 import './js/movie-on-modal';
 import './js/our-team-modal';
 import './js/components/back-to-top';
+import './js/pagination';
 
 // Переключатель темы
 import './js/theme-change';
