@@ -1,10 +1,8 @@
 .team__conteiner {
+  overflow-y: scroll;
   background-color: $white-text-color;
   font-family: $font-family;
-  font-weight: 500px;
   font-size: $font-size;
-  line-height: $line-height;
-  color: $primary-text-color;
   width: 300px;
   max-width: 528px;
   max-height: 100vh;
@@ -22,46 +20,40 @@
     padding: 30px;
   }
 }
+//  Заголовок
+.title-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
+    margin-bottom: 30px;
+    margin-top: 50px;
+  }
+  @media screen and (min-width: $desktop) {
+  }
+}
+
 .team__title {
+  align-items: center;
   font-size: 14px;
   font-weight: 400px;
-  margin-bottom: 10px;
-  color: $hover-rating-color;
+  margin-left: 48px;
+  // color: $hover-rating-color;
 
   @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
     line-height: 1.16;
-    font-size: 30px;
     margin-bottom: 20px;
+    color: $accent-color;
     @media screen and (min-width: $desktop) {
       margin-bottom: 50px;
       font-size: 36px;
     }
   }
 }
-.team__subtitle {
-  color: black;
-  font-size: 12px;
-  @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
-    margin-bottom: 20px;
-    font-size: 18px;
-    line-height: 1.19px;
-  }
-  @media screen and (min-width: $desktop) {
-    margin-bottom: 20px;
-    font-size: 20px;
-    line-height: 1.21px;
-  }
-}
-.title-wrapper {
-  display: flex;
-  justify-content: center;
-  // justify-content: last baseline;
-  margin-bottom: 5px;
-}
-
 .goitLogo {
-  height: 18px;
-  width: 55px;
+  height: 20px;
+  width: 60px;
   margin-right: 10px;
   @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
     height: 23px;
@@ -74,24 +66,8 @@
     margin-right: 20px;
   }
 }
-.team__text {
-  font-size: 10px;
-  color: $accent-color;
-  line-height: 1.18;
-  @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
-    margin-bottom: 10px;
-    font-size: 16px;
-    line-height: 1.17px;
-  }
-  @media screen and (min-width: $desktop) {
-    margin-bottom: 10px;
-    font-size: 18px;
-    line-height: 1.19px;
-  }
-}
-.social__link {
-  margin-bottom: 30px;
-}
+
+// Карточка участника
 .team__content {
   text-align: center;
 }
@@ -101,7 +77,8 @@
 }
 .team__item {
   border-radius: 0px 0px 4px 4px;
-  margin-right: 20x;
+  margin-right: 15px;
+  margin-bottom: 15px;
 
   width: calc((100% - 20px * 1) / 2);
 
@@ -149,6 +126,7 @@
   min-width: 100px;
   height: 50px;
   border-radius: 5px;
+  margin-bottom: 5px;
   @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
     margin-bottom: 10px;
     min-width: 140px;
@@ -159,6 +137,44 @@
     min-width: 150px;
     height: 174px;
   }
+}
+.team__subtitle {
+  font-weight: 400px;
+  font-size: 14px;
+  @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
+        margin-bottom: 15px;
+    font-size: 20px;
+    line-height: 1.12;
+}
+  }
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 20px;
+    font-size: 20px;
+    line-height: 1.21px;
+  }
+}
+
+.team__text {
+  color: $accent-color;
+  line-height: 1.12;
+  @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.17px;
+  }
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 10px;
+    font-size: 18px;
+    line-height: 1.19px;
+  }
+}
+.social__link {
+  margin-bottom: 30px;
+}
+
+.social__icon {
+  display: inline-block;
+  margin: 0;
 }
 .close__button {
   position: absolute;
