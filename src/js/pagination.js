@@ -112,14 +112,14 @@ function onPaginationClick(event) {
         }
     
 
-        gallery.innerHTML = '';
+        // gallery.innerHTML = '';
 
-        console.log(movieSearcher)
+        // console.log(movieSearcher)
 
-        if (inputRef.value !== '') {
-            movieSearcher(inputRef.value);
-            console.log('123');
-        } else { startPage() }
+        // if (inputRef.value !== '') {
+        //     movieSearcher(inputRef.value);
+        //     console.log('123');
+        // } else { startPage() }
     }
 }
 
