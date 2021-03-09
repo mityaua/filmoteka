@@ -9,3 +9,7 @@ import './js/search';
 import './js/movie-on-modal';
 import './js/our-team-modal';
 import './js/components/back-to-top';
+
+// Переключатель темы
+import './js/theme-change';
+import './js/local-storage_theme-switch';
