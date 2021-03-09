@@ -125,7 +125,10 @@
   }
   margin-right: auto;
 }
-
+.image__scale {
+  display: inline-block;
+  overflow: hidden;
+}
 .team__image {
   margin: auto;
   min-width: 100px;
