@@ -6,7 +6,9 @@
       $header-gradient-color
     ),
     url(../images/library/header-library-background-mobile@2x.jpg);
-  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
     background-image: linear-gradient(

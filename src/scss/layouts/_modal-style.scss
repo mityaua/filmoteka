@@ -27,7 +27,7 @@
 }
 
 .modal__container {
-  overflow-x: scroll;
+  overflow-x: auto;
 
   position: relative;
   margin: auto;
@@ -60,16 +60,16 @@
   margin-left: auto;
   display: block;
 
-  min-width: 240px;
+  max-width: 240px;
   height: 356px;
   border-radius: 5px;
   margin-bottom: 30px;
   @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
-    min-width: 264px;
+    max-width: 264px;
     height: 373.55px;
   }
   @media screen and (min-width: $desktop) {
-    min-width: 396px;
+    max-width: 396px;
     height: 477.8px;
   }
 }
@@ -161,7 +161,7 @@
 .close__button {
   position: absolute;
   top: 2%;
-  right: 4%;
+  right: 2%;
   display: flex;
   align-items: center;
   justify-content: center;

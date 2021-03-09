@@ -1,4 +1,5 @@
 .card {
+
   &__img {
     border-radius: 5px;
     margin-bottom: 10px;
@@ -31,6 +32,20 @@
 
   &__text {
     color: $accent-color;
+  }
+
+  &__year {
+    cursor: default;
+  }
+
+  &__release {
+    margin-left: 10px;
+    padding: 0 10px;
+    border-radius: 5px;
+    background-color: $accent-color;
+    color: $white-text-color;
+
+    cursor: default;
   }
 }
 

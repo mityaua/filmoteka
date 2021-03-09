@@ -1,0 +1,47 @@
+.pagination-container {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination-button:not(:last-child),
+.dots {
+  margin-right: 16px;
+}
+
+.pagination-button {
+  padding: 0;
+  background-color: $white-text-color;
+  border: none;
+  color: $primary-text-color;
+  cursor: pointer;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.333;
+}
+
+.pagination--current {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: $accent-color;
+  color: $white-text-color;
+}
+
+.dots,
+.first-button,
+.last-button {
+  @media screen and (max-width: $to-tablet) {
+    display: none;
+  }
+}
+.arrow-left,
+.arrow-right {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: $secondary-background-color;
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+}

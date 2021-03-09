@@ -3,10 +3,10 @@
 <div class="modal__container">
     <div class="film__image">
         {{#if poster_path}}
-        <img class="image" src="https://www.themoviedb.org/t/p/w300{{poster_path}}" alt="{{title}}" />
+        <img class="image" src="https://www.themoviedb.org/t/p/w500{{poster_path}}" onerror="this.onerror=null;this.src='https://subscribenow.com.au/time/asia/Solo/Content/Images/noCover.gif'" alt="{{title}}" title="{{title}}" />
         {{/if}}
         {{#unless poster_path}}
-        <img class="image" src="https://subscribenow.com.au/time/asia/Solo/Content/Images/noCover.gif" alt="film photo">
+        <img class="image" src="https://i.pinimg.com/originals/74/3d/b2/743db230d891b47c1d8c66b161111b91.jpg" alt="film photo">
         {{/unless}}
     </div>
 
@@ -51,8 +51,8 @@
             </p>
         </div>
         <div class="film__button__wrapper">
-            <button type="button" class=" film__button btn__watch" data-id="{{id}}">Add to watched</button>
-            <button type="button" class=" film__button btn__queue" data-id="{{id}}">Add to queue</button>
+            <button type="button"  class=" film__button btn__watch" data-id="{{id}}">Add to watched</button>
+            <button type="button"  class=" film__button btn__queue" data-id="{{id}}">Add to queue</button>
         </div>
         <button type="button" class="close__button" data-action="close-modal"></button>
     </div>
