@@ -80,7 +80,7 @@ body.dark-theme {
 }
 
 .theme-switch__toggle:checked + .theme-switch__track {
-  background-color: #d3d3d4;
+  background-color: $accent-color;
 }
 
 .theme-switch__toggle:checked ~ .theme-switch__marker {
@@ -89,15 +89,9 @@ body.dark-theme {
 
 .theme-switch__toggle:focus + .theme-switch__track,
 .theme-switch__toggle:active + .theme-switch__track {
-  box-shadow: 0 0 0 3px #2196f3;
+  box-shadow: 0 0 0 3px $accent-color;
 }
 .dark-theme {
   color: lightgrey;
   background-color: #222;
 }
-// .footer.dark-theme {
-//   background-color: #333;
-// }
-// .footer-text.dark-theme {
-//   color: lightgrey;
-// }

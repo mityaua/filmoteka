@@ -1,4 +1,6 @@
 import '../templates/film-detail.hbs';
+import NProgress from 'nprogress';
+import 'nprogress/nprogress.css';
 
 const bodyRef = document.querySelector('body');
 const toggleRef = document.querySelector('#theme-switch-toggle');
@@ -23,6 +25,15 @@ toggleRef.addEventListener('change', event => {
     footerTextDarkTheme.classList.add('dark-theme');
   }
 });
+
+NProgress.start();
+try {
+  const cardTitle = document.querySelector('.card__title');
+  console.log(cardTitle);
+} catch (error) {
+  console.log(error);
+}
+NProgress.done();
 
 export {
   bodyRef,
