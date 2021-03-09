@@ -13,7 +13,6 @@ export default {
   async fetchTrendingMovies() {
     try {
       const response = await axios.get(`${TREND_URL}?api_key=${API_KEY}&page=${currentPage}`);
-      console.log(currentPage);
 
       return response.data;
     } catch (error) {
@@ -29,17 +28,11 @@ export default {
       const movies = data.results;
       
       const totalPages = data.total_pages;
-      const totalResults = data.total_results;
-
-      // console.log(movies);
-      // console.log(currentPage);
-      console.log(totalPages);
-      // console.log(totalResults);
 
       const allGenres = getGenres();
       const fullTrendData = dataCombine(movies, allGenres);
 
-      return { fullTrendData, currentPage, totalPages, totalResults };
+      return { fullTrendData, totalPages };
     } catch (error) {
       console.error('Smth wrong with api get full trends' + error);
     }
@@ -53,17 +46,11 @@ export default {
       
       const searchResults = data.results;
       const totalPages = data.total_pages;
-      const totalResults = data.total_results;
-
-      // console.log(searchResults);
-      // console.log(currentPage);
-      // console.log(totalPages);
-      // console.log(totalResults);
 
       const allGenres = getGenres();
       const fullSearchData = dataCombine(searchResults, allGenres);
 
-      return { fullSearchData, totalPages, totalResults };
+      return { fullSearchData, totalPages };
     } catch (error) {
       console.error('Smth wrong with api search fetch' + error);
     }
