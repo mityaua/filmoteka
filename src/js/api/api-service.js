@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { currentPage } from '../pagination';
-// import getGenres from '../data/get-genres';
 import {
   dataCombine,
   createGenresFromID,
