@@ -9,27 +9,7 @@
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
   </head>
   <body>
-    <div class="toolbar container">
-      <!-- Разметка переключателя темы -->
-      <div class="theme-switch">
-        <svg class="theme-switch__icon" role="img" aria-label="Иконка солнца">
-          <use href="./images/icons/sprite.svg#sun"></use>
-        </svg>
     
-        <div class="theme-switch__control">
-          <input class="theme-switch__toggle" type="checkbox" name="theme" id="theme-switch-toggle"
-            aria-label="Переключить между тёмной и светлой темой" />
-          <label aria-hidden="true" class="theme-switch__track" for="theme-switch-toggle">
-          </label>
-          <div aria-hidden="true" class="theme-switch__marker"></div>
-        </div>
-    
-        <svg class="theme-switch__icon" aria-label="Иконка луны">
-          <use href="./images/icons/sprite.svg#moon"></use>
-        </svg>
-      </div>
-    </div>
-
     <!-- Page header -->
     <header class="header">
           
@@ -55,6 +35,7 @@
           </ul>
         </nav>
       </div>
+      
       <form id="search-form" action="" class="search">
         <input class="search__input" type="text" placeholder="Поиск фильмов" />
         <button class="search__button" type="submit">
@@ -68,6 +49,27 @@
       <p class="warning-notification"></p>
     </header>
 
+    <div class="toolbar container">
+      <!-- Разметка переключателя темы -->
+      <div class="theme-switch">
+        <svg class="theme-switch__icon" role="img" aria-label="Иконка солнца">
+          <use href="./images/icons/sprite.svg#sun"></use>
+        </svg>
+    
+        <div class="theme-switch__control">
+          <input class="theme-switch__toggle" type="checkbox" name="theme" id="theme-switch-toggle"
+            aria-label="Переключить между тёмной и светлой темой" />
+          <label aria-hidden="true" class="theme-switch__track" for="theme-switch-toggle">
+          </label>
+          <div aria-hidden="true" class="theme-switch__marker"></div>
+        </div>
+    
+        <svg class="theme-switch__icon" aria-label="Иконка луны">
+          <use href="./images/icons/sprite.svg#moon"></use>
+        </svg>
+      </div>
+    </div>
+
     
     <!-- Trend movies list -->
     <div class="container">
@@ -76,10 +78,10 @@
 
     <!-- Footer -->
     <footer class="footer">
-      <span class="footer-text copyright"
+      <span class="footer-text copyright footer-text-js"
         >&copy; 2021 | All Rights Reserved |&#160;</span
       >
-      <span class="footer-text"
+      <span class="footer-text footer-span-js"
         >Developed with&nbsp;
         <svg
           class="footer-svg"
@@ -99,7 +101,7 @@
           <a
             href="https://github.com/mityaua/filmoteka"
             target="_blank"
-            class="footer-text footer-link underline"
+            class="footer-text footer-link underline footer-link-js"
             rel="noreferrer noopener"
             aria-label="Our Github"
             title="Our Github"

@@ -1,9 +1,16 @@
-import { bodyRef, toggleRef } from './theme-change';
+import {
+  bodyRef,
+  toggleRef,
+  footerDarktheme,
+  copyrighttDarkTheme,
+  footerTextDarkTheme,
+} from './theme-change';
 
 const Theme = {
   LIGHT: 'light-theme',
   DARK: 'dark-theme',
 };
+
 const savedTheme = localStorage.getItem('theme');
 
 toggleRef.addEventListener('change', event => {
@@ -12,6 +19,7 @@ toggleRef.addEventListener('change', event => {
 
 updataTheme();
 checkboxChecked();
+updataThemeFooter();
 
 function updataTheme() {
   if (savedTheme) {
@@ -22,5 +30,13 @@ function updataTheme() {
 function checkboxChecked() {
   if (savedTheme === 'dark-theme') {
     toggleRef.setAttribute('checked', true);
+  }
+}
+
+function updataThemeFooter() {
+  if (savedTheme === 'dark-theme') {
+    footerDarktheme.classList.add('dark-theme');
+    copyrighttDarkTheme.classList.add('dark-theme');
+    footerTextDarkTheme.classList.add('dark-theme');
   }
 }
