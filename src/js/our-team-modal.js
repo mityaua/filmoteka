@@ -41,7 +41,7 @@ function getTeamInfo(teamId) {
 
   function closeModalByEsc(e) {
     if (e.code === 'Escape') {
-     modalContent.onclick = modalContent.close();
+     modalContent.close();
       window.removeEventListener('keydown', closeModalByEsc);
     }
   }
