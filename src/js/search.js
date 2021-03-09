@@ -38,13 +38,12 @@ async function movieSearcher(searchText) {
     const data = await api.fetchMovieSearcher(searchText);
 
     const result = data.fullSearchData;
-    const currentPage = data.currentPage;
     const totalPages = data.totalPages;
     const totalResults = data.totalResults;
 
     // console.log(result);
-    // console.log(currentPage);
-    // console.log(totalPages);
+    
+    
     // console.log(totalResults);
 
     if (result.length === 0) {
@@ -53,8 +52,12 @@ async function movieSearcher(searchText) {
     }
 
     searchRender(result);
+    return totalPages;
+// console.log(totalPages);
   } catch (error) {
     errorModal();
     console.error('Smth wrong with search form fetch' + error);
   }
 }
+
+export { movieSearcher }
