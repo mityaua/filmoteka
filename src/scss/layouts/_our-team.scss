@@ -146,12 +146,12 @@
   @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
     margin-bottom: 15px;
     font-size: 21px;
-    line-height: 1.1;
+    line-height: 1;
   }
   @media screen and (min-width: $desktop) {
     margin-bottom: 20px;
     font-size: 20px;
-    line-height: 1.21px;
+    line-height: 1.15px;
   }
 }
 
@@ -164,9 +164,9 @@
     line-height: 1.15px;
   }
   @media screen and (min-width: $desktop) {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     font-size: 18px;
-    line-height: 1.19px;
+    line-height: 1.1px;
   }
 }
 // .social__link {
