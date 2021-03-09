@@ -7,6 +7,7 @@
   max-width: 528px;
   max-height: 100vh;
   padding: 30px 20px 30px 20px;
+  color: $primary-text-color;
 
   @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
     margin: auto;
