@@ -1,6 +1,6 @@
 import api from './api/api-service';
 import renderMovieModal from './render-modal';
-import errorModal from './components/modal-error';
+import {errorModal} from './components/notify';
 import { gallery } from './references/refs';
 import { load, save, remove } from './local-storage';
 import NProgress from 'nprogress';

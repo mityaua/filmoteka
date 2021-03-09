@@ -4,7 +4,7 @@ import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 import teamTemplate from '../templates/our-team.hbs';
 import team from '../team.json';
-import errorModal from './components/modal-error';
+import {errorModal} from './components/notify';
 
 const modalContainer = document.querySelector('#js-team-modal');
 const btnCloseRef = document.querySelector('button[data-close-modal');

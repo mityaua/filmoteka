@@ -1,7 +1,7 @@
 import modalTemplate from '../templates/modal-film-detail.hbs';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
-import errorModal from './components/modal-error';
+import {errorModal} from './components/notify';
 import { modalBox } from './references/refs';
 
 // Функция отрисовки модального окна по шаблону

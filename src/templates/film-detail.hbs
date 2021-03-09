@@ -3,10 +3,11 @@
   <article class="card">
     <a href="" class="card__link"">
           {{#if poster_path}}
-          <img class=" card__img" src="https://www.themoviedb.org/t/p/w300{{poster_path}}" loading="lazy" alt="{{title}}" title="{{title}}"
-      data-id="{{id}}" />
+          <img class=" card__img" src="https://www.themoviedb.org/t/p/w300{{poster_path}}"
+      onerror="this.onerror=null;this.src='https://subscribenow.com.au/time/asia/Solo/Content/Images/noCover.gif'" loading="lazy"
+      alt="{{title}}" title="{{title}}" data-id="{{id}}" />
     {{else}}
-    <img class="card__img" src="https://subscribenow.com.au/time/asia/Solo/Content/Images/noCover.gif" loading="lazy" alt="{{title}}"
+    <img class="card__img" src="https://i.pinimg.com/originals/74/3d/b2/743db230d891b47c1d8c66b161111b91.jpg" loading="lazy" alt="{{title}}"
       title="{{title}}" data-id="{{id}}" />
     {{/if}}
     </a>
