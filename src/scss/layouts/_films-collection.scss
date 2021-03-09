@@ -1,11 +1,7 @@
 // ===== Styles for Films Collection =====
 .collection {
-
   display: flex;
   flex-wrap: wrap;
-  padding-top: 20px;
-  margin-right: auto;
-  margin-left: auto;
   min-width: 280px;
 
   &__item {
@@ -15,9 +11,12 @@
 
 @media screen and (max-width: $to-tablet) {
   .collection {
+    padding-top: 20px;
+
     &__item {
       width: 100%;
     }
+
     &__item:not(:last-child) {
       margin-bottom: 20px;
     }
@@ -47,8 +46,8 @@
 @media screen and (min-width: $desktop) {
   .collection {
     padding-top: 60px;
-    padding-left: 71px;
-    padding-right: 71px;
+    padding-left: 51px;
+    padding-right: 51px;
 
     &__item {
       width: calc((100% - 60px) / 3);
