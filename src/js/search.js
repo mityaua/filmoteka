@@ -39,12 +39,7 @@ async function movieSearcher(searchText) {
 
     const result = data.fullSearchData;
     const totalPages = data.totalPages;
-    const totalResults = data.totalResults;
 
-    // console.log(result);
-    
-    
-    // console.log(totalResults);
 
     if (result.length === 0) {
       return (headerWarning.textContent =
@@ -52,8 +47,6 @@ async function movieSearcher(searchText) {
     }
 
     searchRender(result);
-    return totalPages;
-// console.log(totalPages);
   } catch (error) {
     errorModal();
     console.error('Smth wrong with search form fetch' + error);
