@@ -11,7 +11,7 @@
   @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
     margin: auto;
     width: 628px;
-    height: 828px;
+    height: 628px;
     padding: 30px;
   }
   @media screen and (min-width: $desktop) {
@@ -25,19 +25,20 @@
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
-  margin-top: 20px;
+  margin-top: 0px;
   @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
     margin-bottom: 30px;
-    margin-top: 50px;
+    margin-top: 30px;
   }
   @media screen and (min-width: $desktop) {
+    margin-top: 30px;
+    margin-bottom: 30px;
   }
 }
 
 .team__title {
   align-items: center;
-  font-size: 14px;
-  font-weight: 400px;
+  font-size: 20px;
   margin-left: 48px;
   // color: $hover-rating-color;
 
@@ -46,24 +47,25 @@
     margin-bottom: 20px;
     color: $accent-color;
     @media screen and (min-width: $desktop) {
-      margin-bottom: 50px;
-      font-size: 36px;
+      margin-top: 10px;
+      margin-bottom: 40px;
+      // font-size: 36px;
     }
   }
 }
 .goitLogo {
-  height: 20px;
-  width: 60px;
+  height: 24px;
+  width: 65px;
   margin-right: 10px;
   @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
     height: 23px;
-    width: 55px;
-    margin-right: 20px;
+    width: 65px;
+    margin-right: 15px;
   }
   @media screen and (min-width: $desktop) {
-    height: 35px;
-    width: 95px;
-    margin-right: 20px;
+    height: 26px;
+    width: 80px;
+    margin-right: 15px;
   }
 }
 
@@ -142,10 +144,9 @@
   font-weight: 400px;
   font-size: 14px;
   @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
-        margin-bottom: 15px;
-    font-size: 20px;
-    line-height: 1.12;
-}
+    margin-bottom: 15px;
+    font-size: 21px;
+    line-height: 1.1;
   }
   @media screen and (min-width: $desktop) {
     margin-bottom: 20px;
@@ -158,9 +159,9 @@
   color: $accent-color;
   line-height: 1.12;
   @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
-    margin-bottom: 10px;
-    font-size: 16px;
-    line-height: 1.17px;
+    margin-bottom: 15px;
+    font-size: 17px;
+    line-height: 1.15px;
   }
   @media screen and (min-width: $desktop) {
     margin-bottom: 10px;
@@ -168,13 +169,23 @@
     line-height: 1.19px;
   }
 }
-.social__link {
-  margin-bottom: 30px;
-}
+// .social__link {
+//   margin-bottom: 30px;
+// }
 
 .social__icon {
   display: inline-block;
+  width: 25px;
+  height: 25px;
   margin: 0;
+  @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
+    width: 30px;
+    height: 30px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 30px;
+    height: 30px;
+  }
 }
 .close__button {
   position: absolute;
