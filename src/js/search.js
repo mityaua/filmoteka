@@ -2,7 +2,8 @@ import api from './api/api-service';
 import searchRender from './render-search';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
-import errorModal from './components/modal-error';
+import { errorModal, showEastereggs } from './components/notify';
+import showConfetti from './components/confetti';
 import { formRef, inputRef, headerWarning } from './references/refs';
 
 // Listener
@@ -20,6 +21,11 @@ function searchingHandler(event) {
       'No matches found for your query. Enter the correct movie name.');
   }
 
+  if (inputedText === 'goit' || inputedText === 'go it') {
+      showConfetti();
+      showEastereggs();
+    }
+
   NProgress.start();
   headerWarning.textContent = '';
   movieSearcher(inputedText);
@@ -29,7 +35,17 @@ function searchingHandler(event) {
 // Search fetch
 async function movieSearcher(searchText) {
   try {
-    const result = await api.fetchMovieSearcher(searchText);
+    const data = await api.fetchMovieSearcher(searchText);
+
+    const result = data.fullSearchData;
+    const currentPage = data.currentPage;
+    const totalPages = data.totalPages;
+    const totalResults = data.totalResults;
+
+    // console.log(result);
+    // console.log(currentPage);
+    // console.log(totalPages);
+    // console.log(totalResults);
 
     if (result.length === 0) {
       return (headerWarning.textContent =
@@ -39,6 +55,6 @@ async function movieSearcher(searchText) {
     searchRender(result);
   } catch (error) {
     errorModal();
-    console.error('Smth wrong with outer search fetch' + error);
+    console.error('Smth wrong with search form fetch' + error);
   }
 }

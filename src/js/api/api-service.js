@@ -1,33 +1,46 @@
 import axios from 'axios';
-import getGenres from '../data/get-genres';
-import { dataCombine } from '../data/data-combine';
+// import getGenres from '../data/get-genres';
+import {
+  dataCombine,
+  createGenresFromID,
+  createYear,
+  getGenres,
+} from '../data/data-combine';
 import { API_KEY, TREND_URL, SEARCH_URL, ID_URL } from './api-vars';
 
 export default {
-  // Фетч трендовых фильмов
+  // Фетч трендовых фильмов с полным ответом
   async fetchTrendingMovies() {
     try {
-      const { data } = await axios.get(`${TREND_URL}?api_key=${API_KEY}`);
+      const response = await axios.get(`${TREND_URL}?api_key=${API_KEY}`);
 
-      const trendingMovies = data.results;
-
-      return trendingMovies;
+      return response.data;
     } catch (error) {
       console.error('Smth wrong with api trending fetch' + error);
     }
   },
 
-  // Фетч полной информации о трендах
+  // Получение полной информации о трендах c данными для пагинации
   async getFullTrendData() {
     try {
-      const movies = await this.fetchTrendingMovies();
-      const allGenres = getGenres();
+      const data = await this.fetchTrendingMovies();
 
+      const movies = data.results;
+      const currentPage = data.page;
+      const totalPages = data.total_pages;
+      const totalResults = data.total_results;
+
+      // console.log(movies);
+      // console.log(currentPage);
+      // console.log(totalPages);
+      // console.log(totalResults);
+
+      const allGenres = getGenres();
       const fullTrendData = dataCombine(movies, allGenres);
 
-      return fullTrendData;
+      return { fullTrendData, currentPage, totalPages, totalResults };
     } catch (error) {
-      console.error('Smth wrong with api full trend fetch' + error);
+      console.error('Smth wrong with api get full trends' + error);
     }
   },
 
@@ -39,11 +52,19 @@ export default {
       );
 
       const searchResults = data.results;
+      const currentPage = data.page;
+      const totalPages = data.total_pages;
+      const totalResults = data.total_results;
+
+      // console.log(searchResults);
+      // console.log(currentPage);
+      // console.log(totalPages);
+      // console.log(totalResults);
 
       const allGenres = getGenres();
       const fullSearchData = dataCombine(searchResults, allGenres);
 
-      return fullSearchData;
+      return { fullSearchData, currentPage, totalPages, totalResults };
     } catch (error) {
       console.error('Smth wrong with api search fetch' + error);
     }
@@ -54,7 +75,15 @@ export default {
     try {
       const { data } = await axios.get(`${ID_URL}${id}?api_key=${API_KEY}`);
 
-      return data;
+      const result = {
+        ...data,
+        year: createYear(data),
+        customGenres: createGenresFromID(data),
+      };
+
+      // console.log(result);
+
+      return result;
     } catch (error) {
       console.error('Smth wrong with api ID fetch' + error);
     }
