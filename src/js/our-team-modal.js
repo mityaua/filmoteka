@@ -4,7 +4,8 @@ import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 import teamTemplate from '../templates/our-team.hbs';
 import team from '../team.json';
-import {errorModal} from './components/notify';
+import { errorModal } from './components/notify';
+import showConfetti from './components/confetti';
 
 // Refs
 
@@ -15,7 +16,7 @@ modalContainer.addEventListener('click', openModal);
 
 function openModal(e) {
   e.preventDefault();
-
+   showConfetti();
   NProgress.start();
 
   try {
