@@ -28,7 +28,7 @@ function openModal(e) {
 
   NProgress.done();
 }
-// Создаю функцию для получения данных с json
+// Function for getting data from Json
 function getTeamInfo(teamId) {
   const teamMarkup = teamTemplate(teamId);
   const modalContent = basicLightbox.create(teamMarkup);
@@ -40,7 +40,7 @@ function getTeamInfo(teamId) {
   function closeModalByEsc(e) {
     if (e.code === 'Escape') {
       modalContent.close();
-    // снимаю слушателя события с кнопки
+    
       
       window.removeEventListener('keydown', closeModalByEsc);
     }
@@ -49,8 +49,7 @@ function getTeamInfo(teamId) {
   btnCloseRef.addEventListener('click', closeModalbyBtn);
   function closeModalbyBtn() {
     modalContent.close();
-    // снимаю слушателя события с кнопки
-    
+     
     btnCloseRef.removeEventListener('click', closeModalbyBtn);
   }
   
