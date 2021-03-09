@@ -6,6 +6,10 @@ import { errorModal, showEastereggs } from './components/notify';
 import showConfetti from './components/confetti';
 import { formRef, inputRef, headerWarning } from './references/refs';
 
+// DOM
+let btns = document.querySelectorAll('.pagination-button');
+const btn1Ref = document.querySelector('[data-index="1"]');
+
 // Listener
 formRef.addEventListener('submit', searchingHandler);
 
@@ -13,7 +17,10 @@ formRef.addEventListener('submit', searchingHandler);
 function searchingHandler(event) {
   event.preventDefault();
 
-  // Обработка нескольких пробелов и обрезка лишних! Need to test!
+  const page = 1;
+  btns.forEach(el => el.classList.remove('pagination--current'));
+  btn1Ref.classList.add('pagination--current');
+
   const inputedText = inputRef.value.replace(/\s+/g, ' ').trim();
 
   if (inputedText.length <= 1) {
@@ -22,24 +29,24 @@ function searchingHandler(event) {
   }
 
   if (inputedText === 'goit' || inputedText === 'go it') {
-      showConfetti();
-      showEastereggs();
-    }
+    showConfetti();
+    showEastereggs();
+  }
 
   NProgress.start();
   headerWarning.textContent = '';
-  movieSearcher(inputedText);
+  movieSearcher(inputedText, page);
   NProgress.done();
 }
 
 // Search fetch
-async function movieSearcher(searchText) {
+async function movieSearcher(searchText, pageNumber) {
   try {
-    const data = await api.fetchMovieSearcher(searchText);
+    const data = await api.fetchMovieSearcher(searchText, pageNumber);
 
     const result = data.fullSearchData;
     const totalPages = data.totalPages;
-
+    const totalResults = data.totalPages;
 
     if (result.length === 0) {
       return (headerWarning.textContent =
@@ -53,4 +60,4 @@ async function movieSearcher(searchText) {
   }
 }
 
-export { movieSearcher }
+export { movieSearcher };

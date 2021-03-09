@@ -25,32 +25,34 @@ export default {
     try {
       const data = await this.fetchTrendingMovies();
 
-      const movies = data.results;
-      
+      const movies = data.results;      
       const totalPages = data.total_pages;
+      const totalResults = data.total_results;
 
       const allGenres = getGenres();
       const fullTrendData = dataCombine(movies, allGenres);
 
-      return { fullTrendData, totalPages };
+      return { fullTrendData, totalPages, totalResults };
     } catch (error) {
       console.error('Smth wrong with api get full trends' + error);
     }
   },
 
   // Фетч по поисковому запросу
-  async fetchMovieSearcher(text) {
+  async fetchMovieSearcher(text, page) {
     try {
       const { data } = await axios.get(
-        `${SEARCH_URL}?api_key=${API_KEY}&query=${text}&page=${currentPage}`);
+        `${SEARCH_URL}?api_key=${API_KEY}&query=${text}&page=${page}`,
+      );
       
       const searchResults = data.results;
       const totalPages = data.total_pages;
+      const totalResults = data.total_results;
 
       const allGenres = getGenres();
       const fullSearchData = dataCombine(searchResults, allGenres);
 
-      return { fullSearchData, totalPages };
+      return { fullSearchData, totalPages, totalResults };
     } catch (error) {
       console.error('Smth wrong with api search fetch' + error);
     }
