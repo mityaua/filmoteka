@@ -11,6 +11,7 @@ import {
 import { load, save, remove } from './local-storage';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
+import { addedClassButton, removedClassButton } from './make-active-button';
 
 const writeEvent = event => {
   NProgress.start();
@@ -26,8 +27,11 @@ const writeEvent = event => {
   pageHome.classList.remove('current');
   pageLabraryRef.classList.add('current');
 
-  clickQueue();
-  clickWatched();
+  const btnWatchedLib = document.querySelector('.js-btn-watched');
+  const btnQueueLib = document.querySelector('.js-btn-queue');
+
+  clickWatched(btnWatchedLib, btnQueueLib);
+  clickQueue(btnWatchedLib, btnQueueLib);
 
   NProgress.done();
 };
@@ -36,40 +40,42 @@ const removeEvent = event => {
   pageLabraryRef.removeEventListener(event, writeEvent);
 };
 
-function clickWatched() {
-  const btnWatchedLib = document.querySelector('.js-btn-watched');
+function clickWatched(btnWatchedLib, btnQueueLib) {
   btnWatchedLib.addEventListener('click', renderWatched);
 
-  renderWatched();
+  function renderWatched() {
+    gallery.innerHTML = '';
+    const arrId = load('watched');
+    console.log(arrId);
+
+    addedClassButton(btnWatchedLib);
+    removedClassButton(btnQueueLib);
+
+    for (let id of arrId) {
+      api.getMovieById(id).then(data => {
+        renderLibraryCollection(data);
+      });
+    }
+  }
 }
 
-function clickQueue() {
-  const btnQueueLib = document.querySelector('.js-btn-queue');
+function clickQueue(btnWatchedLib, btnQueueLib) {
   btnQueueLib.addEventListener('click', renderQueue);
 
-  renderQueue();
-}
+  function renderQueue() {
+    gallery.innerHTML = '';
+    const arrId = load('queue');
+    console.log(arrId);
 
-function renderQueue() {
-  gallery.innerHTML = '';
-  const arrId = load('queue');
-  console.log(arrId);
-  for (let id of arrId) {
-    api.getMovieById(id).then(data => {
-      renderLibraryCollection(data);
-    });
+    addedClassButton(btnQueueLib);
+    removedClassButton(btnWatchedLib);
+
+    for (let id of arrId) {
+      api.getMovieById(id).then(data => {
+        renderLibraryCollection(data);
+      });
+    }
   }
 }
 
-function renderWatched() {
-  gallery.innerHTML = '';
-  const arrId = load('watched');
-  console.log(arrId);
-  for (let id of arrId) {
-    api.getMovieById(id).then(data => {
-      renderLibraryCollection(data);
-    });
-  }
-}
-
-export { writeEvent, removeEvent, renderWatched };
+export { writeEvent, removeEvent };
