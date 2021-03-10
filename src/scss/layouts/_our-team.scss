@@ -138,8 +138,7 @@
 .team__image {
   margin: auto;
   min-width: 100px;
-  height: 50px;
-  border-radius: 5px;
+  border-radius: 10px;
   margin-bottom: 5px;
   transition: 1s;
   &:hover {
@@ -148,12 +147,10 @@
   @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
     margin-bottom: 10px;
     min-width: 140px;
-    height: 120px;
   }
   @media screen and (min-width: $desktop) {
     margin-bottom: 20px;
     min-width: 150px;
-    height: 174px;
   }
 }
 .team__subtitle {
