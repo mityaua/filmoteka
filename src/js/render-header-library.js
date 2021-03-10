@@ -54,7 +54,7 @@ function clickWatched(btnWatchedLib, btnQueueLib) {
 
     addedClassButton(btnWatchedLib);
     removedClassButton(btnQueueLib);
-    if (!arrId) {
+    if (!arrId || arrId.length === 0) {
       plugLib();
     } else {
       for (let id of arrId) {
@@ -76,7 +76,7 @@ function clickQueue(btnWatchedLib, btnQueueLib) {
 
     addedClassButton(btnQueueLib);
     removedClassButton(btnWatchedLib);
-    if (!arrId) {
+    if (!arrId || arrId.length === 0) {
       plugLib();
     } else {
       for (let id of arrId) {
