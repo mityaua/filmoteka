@@ -29,7 +29,7 @@ const writeEvent = event => {
   headerRef.classList.add('header__library');
   pageHomeRef.classList.remove('current');
   pageLabraryRef.classList.add('current');
-  headerWarning.classList.add('none');
+  headerWarning.classList.add('visually-hidden');
   pagiCont.classList.add('opacity');
 
   const btnWatchedLib = document.querySelector('.js-btn-watched');
