@@ -16,7 +16,7 @@ const writeEvent = event => {
   NProgress.start();
 
   event.preventDefault();
-  
+
   const markup = filterFilm();
 
   formRef.remove();
@@ -24,10 +24,10 @@ const writeEvent = event => {
   headerRef.insertAdjacentHTML('beforeend', markup);
   headerRef.classList.add('header__library');
   pageHome.classList.remove('current');
-  pageLabraryRef.classList.add('current');  
+  pageLabraryRef.classList.add('current');
 
+  clickQueue();
   clickWatched();
-  // clickQueue();
 
   NProgress.done();
 };
@@ -37,24 +37,39 @@ const removeEvent = event => {
 };
 
 function clickWatched() {
-  gallery.innerHTML = '';
   const btnWatchedLib = document.querySelector('.js-btn-watched');
   btnWatchedLib.addEventListener('click', renderWatched);
 
-  function renderWatched() {
-    const arrId = load('watched');
-    console.log(arrId);
-    for (let id of arrId) {
-      api.getMovieById(id).then(data => {
-        console.log(data);
-        renderLibraryCollection(data);
-      });
-    }
-  }
-
-  // function clickQueue() {
-  //
-  // }
+  renderWatched();
 }
 
-export { writeEvent, removeEvent };
+function clickQueue() {
+  const btnQueueLib = document.querySelector('.js-btn-queue');
+  btnQueueLib.addEventListener('click', renderQueue);
+
+  renderQueue();
+}
+
+function renderQueue() {
+  gallery.innerHTML = '';
+  const arrId = load('queue');
+  console.log(arrId);
+  for (let id of arrId) {
+    api.getMovieById(id).then(data => {
+      renderLibraryCollection(data);
+    });
+  }
+}
+
+function renderWatched() {
+  gallery.innerHTML = '';
+  const arrId = load('watched');
+  console.log(arrId);
+  for (let id of arrId) {
+    api.getMovieById(id).then(data => {
+      renderLibraryCollection(data);
+    });
+  }
+}
+
+export { writeEvent, removeEvent, renderWatched };
