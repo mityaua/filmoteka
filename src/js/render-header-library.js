@@ -1,5 +1,6 @@
 import { renderLibraryCollection } from './render-collection';
 import filterFilm from '../templates/header-library.hbs';
+import clearLibrary from '../templates/no-film.hbs';
 import api from './api/api-service';
 import {
   formRef,
@@ -12,6 +13,7 @@ import { load, save, remove } from './local-storage';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 import { addedClassButton, removedClassButton } from './make-active-button';
+import { startPage } from './start-page';
 
 const writeEvent = event => {
   NProgress.start();
@@ -81,16 +83,30 @@ function clickQueue(btnWatchedLib, btnQueueLib) {
 
 function renderAllList() {
   gallery.innerHTML = '';
+
   const arrWatchId = load('watched');
   const arrQueueId = load('queue');
   const arrAllId = [...arrWatchId, ...arrQueueId];
   console.log(arrAllId);
 
-  for (let id of arrAllId) {
-    api.getMovieById(id).then(data => {
-      renderLibraryCollection(data);
-    });
+  const clearMarkup = clearLibrary();
+
+  if (!arrWatchId && !arrQueueId) {
+    console.log('Пошли выберем тебе фильмы');
+    gallery.insertAdjacentHTML('beforeend', clearMarkup);
+
+    const btnGoHome = document.querySelector('.clear-list__link');
+    btnGoHome.addEventListener('click', refreshPage);
+  } else {
+    for (let id of arrAllId) {
+      api.getMovieById(id).then(data => {
+        renderLibraryCollection(data);
+      });
+    }
   }
+}
+function refreshPage() {
+  document.location.reload();
 }
 
 export { writeEvent, removeEvent };
