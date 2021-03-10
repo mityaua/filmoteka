@@ -8,12 +8,12 @@ import {
   pageHomeRef,
   pageLabraryRef,
   gallery,
+  pagiCont,
 } from './references/refs';
 import { load, save, remove } from './local-storage';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 import { addedClassButton, removedClassButton } from './make-active-button';
-import { startPage } from './start-page';
 
 const writeEvent = event => {
   NProgress.start();
@@ -28,6 +28,7 @@ const writeEvent = event => {
   headerRef.classList.add('header__library');
   pageHomeRef.classList.remove('current');
   pageLabraryRef.classList.add('current');
+  pagiCont.classList.add('visually-hidden');
 
   const btnWatchedLib = document.querySelector('.js-btn-watched');
   const btnQueueLib = document.querySelector('.js-btn-queue');
@@ -53,11 +54,14 @@ function clickWatched(btnWatchedLib, btnQueueLib) {
 
     addedClassButton(btnWatchedLib);
     removedClassButton(btnQueueLib);
-
-    for (let id of arrId) {
-      api.getMovieById(id).then(data => {
-        renderLibraryCollection(data);
-      });
+    if (!arrId) {
+      plugLib();
+    } else {
+      for (let id of arrId) {
+        api.getMovieById(id).then(data => {
+          renderLibraryCollection(data);
+        });
+      }
     }
   }
 }
@@ -72,11 +76,14 @@ function clickQueue(btnWatchedLib, btnQueueLib) {
 
     addedClassButton(btnQueueLib);
     removedClassButton(btnWatchedLib);
-
-    for (let id of arrId) {
-      api.getMovieById(id).then(data => {
-        renderLibraryCollection(data);
-      });
+    if (!arrId) {
+      plugLib();
+    } else {
+      for (let id of arrId) {
+        api.getMovieById(id).then(data => {
+          renderLibraryCollection(data);
+        });
+      }
     }
   }
 }
@@ -89,14 +96,8 @@ function renderAllList() {
   const arrAllId = [...arrWatchId, ...arrQueueId];
   console.log(arrAllId);
 
-  const clearMarkup = clearLibrary();
-
   if (!arrWatchId && !arrQueueId) {
-    console.log('Пошли выберем тебе фильмы');
-    gallery.insertAdjacentHTML('beforeend', clearMarkup);
-
-    const btnGoHome = document.querySelector('.clear-list__link');
-    btnGoHome.addEventListener('click', refreshPage);
+    plugLib();
   } else {
     for (let id of arrAllId) {
       api.getMovieById(id).then(data => {
@@ -105,8 +106,17 @@ function renderAllList() {
     }
   }
 }
+
 function refreshPage() {
   document.location.reload();
 }
 
+function plugLib() {
+  const clearMarkup = clearLibrary();
+  console.log('Пошли выберем тебе фильмы');
+  gallery.insertAdjacentHTML('beforeend', clearMarkup);
+
+  const btnGoHome = document.querySelector('.clear-list__link');
+  btnGoHome.addEventListener('click', refreshPage);
+}
 export { writeEvent, removeEvent };
