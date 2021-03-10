@@ -29,7 +29,7 @@ const writeEvent = event => {
 
   const btnWatchedLib = document.querySelector('.js-btn-watched');
   const btnQueueLib = document.querySelector('.js-btn-queue');
-
+  renderAllList();
   clickWatched(btnWatchedLib, btnQueueLib);
   clickQueue(btnWatchedLib, btnQueueLib);
 
@@ -75,6 +75,20 @@ function clickQueue(btnWatchedLib, btnQueueLib) {
         renderLibraryCollection(data);
       });
     }
+  }
+}
+
+function renderAllList() {
+  gallery.innerHTML = '';
+  const arrWatchId = load('watched');
+  const arrQueueId = load('queue');
+  const arrAllId = [...arrWatchId, ...arrQueueId];
+  console.log(arrAllId);
+
+  for (let id of arrAllId) {
+    api.getMovieById(id).then(data => {
+      renderLibraryCollection(data);
+    });
   }
 }
 
