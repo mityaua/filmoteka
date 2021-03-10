@@ -24,7 +24,7 @@ const writeEvent = event => {
 
   headerRef.insertAdjacentHTML('beforeend', markup);
   headerRef.classList.add('header__library');
-  pageHome.classList.remove('current');
+  pageHomeRef.classList.remove('current');
   pageLabraryRef.classList.add('current');
 
   const btnWatchedLib = document.querySelector('.js-btn-watched');
