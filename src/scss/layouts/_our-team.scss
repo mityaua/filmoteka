@@ -23,7 +23,7 @@
 }
 .ref__readme {
   list-style: none;
-  color: black;
+  color: $primary-text-color;
 }
 // Title
 .title-wrapper {
@@ -43,6 +43,9 @@
 
 .team__title {
   font-size: 20px;
+  &:hover {
+    color: $hover-rating-color;
+  }
 
   @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
     line-height: 1.16;
@@ -56,6 +59,9 @@
 }
 .under {
   color: $hover-rating-color;
+  &:hover {
+    color: $primary-text-color;
+  }
 }
 .goitLogo {
   height: 24px;
