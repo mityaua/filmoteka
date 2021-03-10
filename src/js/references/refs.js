@@ -7,7 +7,7 @@ const pageLabraryRef = document.querySelector('.menu__link-library');
 const modalBackdrop = document.querySelector('.modal__backdrop');
 const modalBox = document.getElementById('modal');
 const headerWarning = document.querySelector('.warning-notification');
-
+const pagiCont = document.querySelector('.pagination-container');
 export {
   formRef,
   inputRef,
@@ -18,4 +18,5 @@ export {
   modalBackdrop,
   modalBox,
   headerWarning,
+  pagiCont,
 };
