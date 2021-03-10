@@ -1,5 +1,5 @@
 import { renderCollection } from './render-collection';
-import trendApi from './api/api-service';
+import api from './api/api-service';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 import {errorModal} from './components/notify';
@@ -11,17 +11,11 @@ async function startPage() {
   NProgress.start();
 
   try {
-    const data = await trendApi.getFullTrendData();
+    const data = await api.getFullTrendData();
 
     const movies = data.fullTrendData;
-    const currentPage = data.currentPage;
     const totalPages = data.totalPages;
     const totalResults = data.totalResults;
-
-    // console.log(movies);
-    // console.log(currentPage);
-    // console.log(totalPages);
-    // console.log(totalResults);
 
     renderCollection(movies);
   } catch (error) {
@@ -31,3 +25,5 @@ async function startPage() {
 
   NProgress.done();
 }
+
+export { startPage }

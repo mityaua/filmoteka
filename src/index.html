@@ -45,30 +45,32 @@
         </button>
       </form>
 
+      <div class="toolbar container">
+        <!-- Разметка переключателя темы -->
+        <div class="theme-switch">
+          <svg class="theme-switch__icon" role="img" aria-label="Иконка солнца">
+            <use href="./images/icons/sprite.svg#sun"></use>
+          </svg>
+      
+          <div class="theme-switch__control">
+            <input class="theme-switch__toggle" type="checkbox" name="theme" id="theme-switch-toggle"
+              aria-label="Переключить между тёмной и светлой темой" />
+            <label aria-hidden="true" class="theme-switch__track" for="theme-switch-toggle">
+            </label>
+            <div aria-hidden="true" class="theme-switch__marker"></div>
+          </div>
+      
+          <svg class="theme-switch__icon" aria-label="Иконка луны">
+            <use href="./images/icons/sprite.svg#moon"></use>
+          </svg>
+        </div>
+      </div>
+
       <!-- Уведомление об ошибке -->
       <p class="warning-notification"></p>
     </header>
 
-    <div class="toolbar container">
-      <!-- Разметка переключателя темы -->
-      <div class="theme-switch">
-        <svg class="theme-switch__icon" role="img" aria-label="Иконка солнца">
-          <use href="./images/icons/sprite.svg#sun"></use>
-        </svg>
     
-        <div class="theme-switch__control">
-          <input class="theme-switch__toggle" type="checkbox" name="theme" id="theme-switch-toggle"
-            aria-label="Переключить между тёмной и светлой темой" />
-          <label aria-hidden="true" class="theme-switch__track" for="theme-switch-toggle">
-          </label>
-          <div aria-hidden="true" class="theme-switch__marker"></div>
-        </div>
-    
-        <svg class="theme-switch__icon" aria-label="Иконка луны">
-          <use href="./images/icons/sprite.svg#moon"></use>
-        </svg>
-      </div>
-    </div>
 
     
     <!-- Trend movies list -->
@@ -91,7 +93,7 @@
   <button class="pagination-button" data-index="4">4</button>
   <button class="pagination-button" data-index="5">5</button>
   <span class="dots" id="after">...</span>
-  <button class="pagination-button last-button">999</button>
+  <button class="pagination-button last-button">1000</button>
   <button class="pagination-button arrow-right">
     <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M12.667 8H3.333M8 12.667L3.333 8 8 3.333" stroke="#000" stroke-width="1.333" stroke-linecap="round"
