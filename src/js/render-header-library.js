@@ -9,6 +9,7 @@ import {
   pageLabraryRef,
   gallery,
   pagiCont,
+  headerWarning,
 } from './references/refs';
 import { load, save, remove } from './local-storage';
 import NProgress from 'nprogress';
@@ -28,7 +29,8 @@ const writeEvent = event => {
   headerRef.classList.add('header__library');
   pageHomeRef.classList.remove('current');
   pageLabraryRef.classList.add('current');
-  pagiCont.classList.add('visually-hidden');
+  headerWarning.classList.add('none');
+  pagiCont.classList.add('opacity');
 
   const btnWatchedLib = document.querySelector('.js-btn-watched');
   const btnQueueLib = document.querySelector('.js-btn-queue');
@@ -54,7 +56,7 @@ function clickWatched(btnWatchedLib, btnQueueLib) {
 
     addedClassButton(btnWatchedLib);
     removedClassButton(btnQueueLib);
-    if (!arrId) {
+    if (!arrId || arrId.length === 0) {
       plugLib();
     } else {
       for (let id of arrId) {
@@ -76,7 +78,7 @@ function clickQueue(btnWatchedLib, btnQueueLib) {
 
     addedClassButton(btnQueueLib);
     removedClassButton(btnWatchedLib);
-    if (!arrId) {
+    if (!arrId || arrId.length === 0) {
       plugLib();
     } else {
       for (let id of arrId) {

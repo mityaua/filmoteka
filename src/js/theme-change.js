@@ -11,13 +11,12 @@ toggleRef.addEventListener('change', event => {
   if (bodyRef.classList.contains('dark-theme')) {
     bodyRef.classList.remove('dark-theme');
     bodyRef.classList.add('light-theme');
-    footerDarktheme.classList.remove('dark-theme');
+    footerDarktheme.classList.add('light-theme');
     copyrighttDarkTheme.classList.remove('dark-theme');
     footerTextDarkTheme.classList.remove('dark-theme');
   } else {
     bodyRef.classList.remove('light-theme');
     bodyRef.classList.add('dark-theme');
-
     footerDarktheme.classList.add('dark-theme');
     copyrighttDarkTheme.classList.add('dark-theme');
     footerTextDarkTheme.classList.add('dark-theme');
