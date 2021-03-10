@@ -24,12 +24,13 @@ const writeEvent = event => {
 
   headerRef.insertAdjacentHTML('beforeend', markup);
   headerRef.classList.add('header__library');
-  pageHomeRef.classList.remove('current');
+  pageHome.classList.remove('current');
   pageLabraryRef.classList.add('current');
 
   const btnWatchedLib = document.querySelector('.js-btn-watched');
   const btnQueueLib = document.querySelector('.js-btn-queue');
 
+  renderAllList();
   clickWatched(btnWatchedLib, btnQueueLib);
   clickQueue(btnWatchedLib, btnQueueLib);
 
@@ -41,10 +42,10 @@ const removeEvent = event => {
 };
 
 function clickWatched(btnWatchedLib, btnQueueLib) {
-  gallery.innerHTML = '';
   btnWatchedLib.addEventListener('click', renderWatched);
 
   function renderWatched() {
+    gallery.innerHTML = '';
     const arrId = load('watched');
     console.log(arrId);
 
@@ -53,7 +54,6 @@ function clickWatched(btnWatchedLib, btnQueueLib) {
 
     for (let id of arrId) {
       api.getMovieById(id).then(data => {
-        console.log(data);
         renderLibraryCollection(data);
       });
     }
@@ -61,12 +61,35 @@ function clickWatched(btnWatchedLib, btnQueueLib) {
 }
 
 function clickQueue(btnWatchedLib, btnQueueLib) {
-  gallery.innerHTML = '';
   btnQueueLib.addEventListener('click', renderQueue);
 
   function renderQueue() {
+    gallery.innerHTML = '';
+    const arrId = load('queue');
+    console.log(arrId);
+
     addedClassButton(btnQueueLib);
     removedClassButton(btnWatchedLib);
+
+    for (let id of arrId) {
+      api.getMovieById(id).then(data => {
+        renderLibraryCollection(data);
+      });
+    }
+  }
+}
+
+function renderAllList() {
+  gallery.innerHTML = '';
+  const arrWatchId = load('watched');
+  const arrQueueId = load('queue');
+  const arrAllId = [...arrWatchId, ...arrQueueId];
+  console.log(arrAllId);
+
+  for (let id of arrAllId) {
+    api.getMovieById(id).then(data => {
+      renderLibraryCollection(data);
+    });
   }
 }
 
