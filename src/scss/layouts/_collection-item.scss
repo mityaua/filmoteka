@@ -40,8 +40,12 @@
     cursor: default;
   }
 
+  &__year--library {
+    margin-right: 5px;
+  }
+
   &__release {
-    margin-left: 5px;
+    // margin-left: 5px;
     padding: 0 10px;
     border-radius: 5px;
     background-color: $accent-color;
