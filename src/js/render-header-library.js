@@ -4,7 +4,7 @@ import api from './api/api-service';
 import {
   formRef,
   headerRef,
-  pageHome,
+  pageHomeRef,
   pageLabraryRef,
   gallery,
 } from './references/refs';
@@ -29,6 +29,7 @@ const writeEvent = event => {
 
   const btnWatchedLib = document.querySelector('.js-btn-watched');
   const btnQueueLib = document.querySelector('.js-btn-queue');
+
   renderAllList();
   clickWatched(btnWatchedLib, btnQueueLib);
   clickQueue(btnWatchedLib, btnQueueLib);

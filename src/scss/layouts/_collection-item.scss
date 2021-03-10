@@ -20,10 +20,12 @@
 
   &__data {
     display: flex;
+    flex-wrap: wrap;
   }
 
   &__genres {
-    display: flex;
+    display: inline-flex;
+    flex-wrap: wrap;
   }
 
   &__genre {
@@ -38,8 +40,12 @@
     cursor: default;
   }
 
+  &__year--library {
+    margin-right: 5px;
+  }
+
   &__release {
-    margin-left: 10px;
+    // margin-left: 5px;
     padding: 0 10px;
     border-radius: 5px;
     background-color: $accent-color;
