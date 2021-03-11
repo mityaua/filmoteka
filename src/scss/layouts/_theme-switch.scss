@@ -16,6 +16,13 @@ body.dark-theme {
   }
   & .pagination--current {
     background-color: $accent-color;
+  
+  & .card__title {
+    color: #cccccc
+  }
+
+  & .card__text {
+    color: #ff8800
   }
 }
 
