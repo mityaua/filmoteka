@@ -1,4 +1,5 @@
 import modalTemplate from '../templates/modal-film-detail.hbs';
+import prodCompany from '../templates/production-company.hbs'
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 import {errorModal} from './components/notify';
@@ -15,6 +16,8 @@ export default function renderMovieModal(data) {
 
     modalBox.classList.add('is-open');
     document.body.style.overflow = 'hidden';
+
+    writeLogoProdCompany(data );
 
     const modalBackdrop = document.querySelector('.modal__backdrop');
     const closeButton = document.querySelector('[data-action="close-modal"]');
@@ -42,4 +45,14 @@ function modalClosinByEsc(event) {
   if (event.code === 'Escape') {
     modalClosing();
   }
+}
+
+function writeLogoProdCompany({ production_companies }) {
+  // console.log(production_companies);
+
+  const bun = document.querySelector('.film__information');
+
+  const markup = prodCompany(production_companies);
+
+  bun.insertAdjacentHTML('beforeend', markup);
 }
