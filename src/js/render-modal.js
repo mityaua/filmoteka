@@ -47,13 +47,13 @@ function modalClosinByEsc(event) {
   }
 }
 
-// Отрисовка логтипов киностудий
+// Отрисовка логотипов киностудий
 function writeLogoProdCompany({ production_companies, overview }) {
-  if (overview.length > 665) {
+  if (overview.length > 484) {
     return;
   }
 
-  const bun = document.querySelector('.film__information');
+  const bun = document.querySelector('.modal__container');
 
   const markup = prodCompany(production_companies);
 
