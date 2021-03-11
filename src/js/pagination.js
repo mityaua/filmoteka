@@ -106,14 +106,32 @@ function onPaginationClick(event) {
     }
 
     gallery.innerHTML = '';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 
     if (inputRef.value !== '') {
       movieSearcher(inputRef.value, currentPage);
-      console.log('123');
     } else {
       startPage();
     }
   }
 }
 
-export { currentPage };
+let pageSize = 9;
+
+function defineResultsPerPage() {
+  if (window.innerWidth >= 1024) {
+    pageSize = 9;
+  } else if (window.innerWidth >= 768 && window.innerWidth < 1024) {
+    pageSize = 8;
+  } else if (window.innerWidth < 768) {
+    pageSize = 4;
+  }
+  return pageSize;
+}
+
+const secret = {
+  r: 'goit',
+  e: 'go it',
+}
+
+export { currentPage, defineResultsPerPage, secret };

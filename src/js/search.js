@@ -1,9 +1,13 @@
 import api from './api/api-service';
 import searchRender from './render-search';
+import { dataCombine, getGenres } from './data/data-combine';
+import { defineResultsPerPage, secret } from './pagination';
+
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 import { errorModal, showEastereggs } from './components/notify';
 import showConfetti from './components/confetti';
+
 import { formRef, inputRef, headerWarning } from './references/refs';
 
 // DOM
@@ -28,7 +32,7 @@ function searchingHandler(event) {
       'No matches found for your query. Enter the correct movie name.');
   }
 
-  if (inputedText === 'goit' || inputedText === 'go it') {
+  if (inputedText === secret.r || inputedText === secret.e) {
     showConfetti();
     showEastereggs();
   }
@@ -44,20 +48,26 @@ async function movieSearcher(searchText, pageNumber) {
   try {
     const data = await api.fetchMovieSearcher(searchText, pageNumber);
 
-    const result = data.fullSearchData;
-    const totalPages = data.totalPages;
-    const totalResults = data.totalPages;
+    const result = data.results;
+
+    const allGenres = getGenres();
+    const fullSearchData = dataCombine(result, allGenres);
+    const size = defineResultsPerPage();
 
     if (result.length === 0) {
       return (headerWarning.textContent =
         'No matches found for your query. Enter the correct movie name.');
     }
 
-    searchRender(result);
+    searchRender(cutItems(fullSearchData, size));
   } catch (error) {
     errorModal();
     console.error('Smth wrong with search form fetch' + error);
   }
+}
+
+function cutItems(array, number) {
+  return array.slice(0, number);
 }
 
 export { movieSearcher };

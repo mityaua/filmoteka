@@ -1,38 +1,16 @@
 import axios from 'axios';
-import { currentPage } from '../pagination';
-import {
-  dataCombine,
-  createGenresFromID,
-  createYear,
-  getGenres,
-} from '../data/data-combine';
+import { createGenresFromID, createYear } from '../data/data-combine';
 import { API_KEY, TREND_URL, SEARCH_URL, ID_URL } from './api-vars';
 
 export default {
-  // Фетч трендовых фильмов с полным ответом
-  async fetchTrendingMovies() {
+  // Получение полной информации о трендах
+  async getTrendData(page) {
     try {
-      const response = await axios.get(`${TREND_URL}?api_key=${API_KEY}&page=${currentPage}`);
+      const { data } = await axios.get(
+        `${TREND_URL}?api_key=${API_KEY}&page=${page}`,
+      );
 
-      return response.data;
-    } catch (error) {
-      console.error('Smth wrong with api trending fetch' + error);
-    }
-  },
-
-  // Получение полной информации о трендах c данными для пагинации
-  async getFullTrendData() {
-    try {
-      const data = await this.fetchTrendingMovies();
-
-      const movies = data.results;      
-      const totalPages = data.total_pages;
-      const totalResults = data.total_results;
-
-      const allGenres = getGenres();
-      const fullTrendData = dataCombine(movies, allGenres);
-
-      return { fullTrendData, totalPages, totalResults };
+      return data;
     } catch (error) {
       console.error('Smth wrong with api get full trends' + error);
     }
@@ -44,15 +22,8 @@ export default {
       const { data } = await axios.get(
         `${SEARCH_URL}?api_key=${API_KEY}&query=${text}&page=${page}`,
       );
-      
-      const searchResults = data.results;
-      const totalPages = data.total_pages;
-      const totalResults = data.total_results;
 
-      const allGenres = getGenres();
-      const fullSearchData = dataCombine(searchResults, allGenres);
-
-      return { fullSearchData, totalPages, totalResults };
+      return data;
     } catch (error) {
       console.error('Smth wrong with api search fetch' + error);
     }
@@ -68,8 +39,6 @@ export default {
         year: createYear(data),
         customGenres: createGenresFromID(data),
       };
-
-      // console.log(result);
 
       return result;
     } catch (error) {

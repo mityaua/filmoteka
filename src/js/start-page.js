@@ -1,8 +1,11 @@
-import { renderCollection } from './render-collection';
 import api from './api/api-service';
+import { renderCollection } from './render-collection';
+import { dataCombine, getGenres } from './data/data-combine';
+import { currentPage, defineResultsPerPage } from './pagination';
+
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
-import {errorModal} from './components/notify';
+import { errorModal } from './components/notify';
 
 document.addEventListener('DOMContentLoaded', startPage);
 
@@ -11,13 +14,15 @@ async function startPage() {
   NProgress.start();
 
   try {
-    const data = await api.getFullTrendData();
+    const data = await api.getTrendData(currentPage);
 
-    const movies = data.fullTrendData;
-    const totalPages = data.totalPages;
-    const totalResults = data.totalResults;
+    const movies = data.results;
 
-    renderCollection(movies);
+    const allGenres = getGenres();
+    const fullTrendData = dataCombine(movies, allGenres);
+    const size = defineResultsPerPage();
+
+    renderCollection(cutItems(fullTrendData, size));
   } catch (error) {
     errorModal();
     console.error('Smth wrong with start page fetch' + error);
@@ -26,4 +31,15 @@ async function startPage() {
   NProgress.done();
 }
 
-export { startPage }
+function cutItems(array, number) {
+  return array.slice(0, number);
+}
+
+// Рефреш страницы при изменении ширины вьюпорта спустя секудну
+// window.onresize = function () {
+//   setTimeout(() => {
+//     location.reload();
+//   }, 1000);
+// };
+
+export { startPage };
