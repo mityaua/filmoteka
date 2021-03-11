@@ -6,6 +6,17 @@ body.light-theme {
 body.dark-theme {
   background-color: #333333;
   color: $white-text-color;
+
+  & .pagination-button {
+    background-color: #333333;
+    color: lightgrey;
+  }
+  & .arrow-right {
+    stroke: darkgrey
+  }
+  & .pagination--current {
+    background-color: $accent-color;
+  }
 }
 
 .toolbar {
