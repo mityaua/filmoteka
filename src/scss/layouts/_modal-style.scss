@@ -186,29 +186,45 @@
 .company {
   display: none;
 
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 470px;
+  }
+
+  &__item {
+    display: block;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  &__img {
+    max-height: 25px;
+  }
+
+  @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
+    display: block;
+    position: absolute;
+    bottom: 5%;
+    right: 25%;
+    left: 25%;
+
+    &__img {
+      max-height: 40px;
+    }
+  }
+
   @media screen and (min-width: $desktop) {
     display: block;
     position: absolute;
-    bottom: 7%;
-
-    &__list {
-      display: flex;
-      // flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-around;
-      max-width: 470px;
-    }
-
-    &__item {
-      display: block;
-    }
-
-    &__item:not(:last-child) {
-      margin-right: 10px;
-    }
+    bottom: 10%;
+    right: 5%;
 
     &__img {
-      max-height: 44px;
+      max-height: 54px;
     }
   }
 }
