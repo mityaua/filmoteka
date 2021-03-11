@@ -182,3 +182,30 @@
   background-size: 60%;
   background-repeat: no-repeat;
 }
+
+.company {
+  display: none;
+
+  @media screen and (min-width: $desktop) {
+    display: block;
+    position: absolute;
+    bottom: 7%;
+
+    &__list {
+      display: flex;
+      // flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    &__item {
+      display: block;
+      margin: 5px;
+    }
+
+    &__img {
+      // max-width: 50%;
+      max-height: 50px;
+    }
+  }
+}
