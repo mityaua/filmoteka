@@ -6,6 +6,14 @@ body.light-theme {
 body.dark-theme {
   background-color: #333333;
   color: $white-text-color;
+  
+  & .card__title {
+    color: #cccccc
+  }
+
+  & .card__text {
+    color: #ff8800
+  }
 }
 
 .toolbar {
