@@ -47,11 +47,8 @@ function modalClosinByEsc(event) {
   }
 }
 
+// Отрисовка логтипов киностудий
 function writeLogoProdCompany({ production_companies, overview }) {
-  // console.log(production_companies);
-  console.log(overview.length);
-  console.log(overview);
-
   if (overview.length > 665) {
     return;
   }
