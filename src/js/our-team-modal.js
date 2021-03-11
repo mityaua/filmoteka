@@ -4,16 +4,19 @@ import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 import teamTemplate from '../templates/our-team.hbs';
 import team from '../team.json';
-import {errorModal} from './components/notify';
+import { errorModal } from './components/notify';
+import showConfetti from './components/confetti';
+
+// Refs
 
 const modalContainer = document.querySelector('#js-team-modal');
-const btnCloseRef = document.querySelector('button[data-close-modal');
+
 
 modalContainer.addEventListener('click', openModal);
 
 function openModal(e) {
   e.preventDefault();
-
+   showConfetti();
   NProgress.start();
 
   try {
@@ -25,19 +28,31 @@ function openModal(e) {
 
   NProgress.done();
 }
-
+// Function for getting data from Json
 function getTeamInfo(teamId) {
   const teamMarkup = teamTemplate(teamId);
   const modalContent = basicLightbox.create(teamMarkup);
 
-  modalContent.show();
+    modalContent.show();
 
-  window.addEventListener('keydown', closeModalHandler);
+  window.addEventListener('keydown',  closeModalByEsc);
 
-  function closeModalHandler(e) {
+  function closeModalByEsc(e) {
     if (e.code === 'Escape') {
       modalContent.close();
-      window.removeEventListener('keydown', closeModalHandler);
+    
+      
+      window.removeEventListener('keydown', closeModalByEsc);
     }
   }
+  const btnCloseRef = document.querySelector('.close__button');
+  btnCloseRef.addEventListener('click', closeModalbyBtn);
+  function closeModalbyBtn() {
+    modalContent.close();
+     
+    btnCloseRef.removeEventListener('click', closeModalbyBtn);
+  }
+  
 }
+
+

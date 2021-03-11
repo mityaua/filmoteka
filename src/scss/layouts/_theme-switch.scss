@@ -5,7 +5,32 @@ body.light-theme {
 
 body.dark-theme {
   background-color: #333333;
-  color: $white-text-color;
+  color: $white-text-color;  
+
+    & .pagination-button {
+    background-color: #333333;
+    color: lightgrey;
+  }
+  & .arrow-right {
+    stroke: darkgrey
+  }
+  & .pagination--current {
+    background-color: $accent-color;
+  }
+  
+  & .card__title {
+    color: #cccccc
+  }
+
+  & .card__text {
+    color: #ff8800
+  }
+  & .footer-text {
+    color: lightgrey;
+  }
+  & .footer-link:hover {
+    color: $accent-color;
+  }
 }
 
 .toolbar {
