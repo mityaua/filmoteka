@@ -1,7 +1,7 @@
 import api from './api/api-service';
 import searchRender from './render-search';
 import { dataCombine, getGenres } from './data/data-combine';
-import { defineResultsPerPage, secret } from './pagination';
+import { defineResultsPerPage, secret } from './components/pagination';
 
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';

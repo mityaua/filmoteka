@@ -1,7 +1,7 @@
 import api from './api/api-service';
 import { renderCollection } from './render-collection';
 import { dataCombine, getGenres } from './data/data-combine';
-import { currentPage, defineResultsPerPage } from './pagination';
+import { currentPage, defineResultsPerPage } from './components/pagination';
 
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
