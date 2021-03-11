@@ -1,9 +1,17 @@
 .card {
-
   &__img {
     border-radius: 5px;
     margin-bottom: 10px;
     height: 398px;
+
+    &:hover,
+    :focus {
+      box-shadow: (7px -7px 21px $button-header-library);
+
+      transition-property: background-color;
+      transition-duration: 250ms;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
   }
 
   &__wrap {
