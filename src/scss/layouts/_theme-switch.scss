@@ -25,6 +25,12 @@ body.dark-theme {
   & .card__text {
     color: #ff8800
   }
+  & .footer-text {
+    color: lightgrey;
+  }
+  & .footer-link:hover {
+    color: $accent-color;
+  }
 }
 
 .toolbar {

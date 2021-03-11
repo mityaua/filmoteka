@@ -2,8 +2,7 @@ import {
   bodyRef,
   toggleRef,
   footerDarktheme,
-  copyrighttDarkTheme,
-  footerTextDarkTheme,
+  
 } from './theme-change';
 
 const Theme = {
@@ -36,7 +35,6 @@ function checkboxChecked() {
 function updataThemeFooter() {
   if (savedTheme === 'dark-theme') {
     footerDarktheme.classList.add('dark-theme');
-    copyrighttDarkTheme.classList.add('dark-theme');
-    footerTextDarkTheme.classList.add('dark-theme');
+   
   }
 }
