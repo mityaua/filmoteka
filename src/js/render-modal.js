@@ -1,8 +1,8 @@
 import modalTemplate from '../templates/modal-film-detail.hbs';
-import prodCompany from '../templates/production-company.hbs'
+import prodCompany from '../templates/production-company.hbs';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
-import {errorModal} from './components/notify';
+import { errorModal } from './components/notify';
 import { modalBox } from './references/refs';
 
 // Функция отрисовки модального окна по шаблону
@@ -17,7 +17,7 @@ export default function renderMovieModal(data) {
     modalBox.classList.add('is-open');
     document.body.style.overflow = 'hidden';
 
-    writeLogoProdCompany(data );
+    writeLogoProdCompany(data);
 
     const modalBackdrop = document.querySelector('.modal__backdrop');
     const closeButton = document.querySelector('[data-action="close-modal"]');
@@ -47,8 +47,14 @@ function modalClosinByEsc(event) {
   }
 }
 
-function writeLogoProdCompany({ production_companies }) {
+function writeLogoProdCompany({ production_companies, overview }) {
   // console.log(production_companies);
+  console.log(overview.length);
+  console.log(overview);
+
+  if (overview.length > 665) {
+    return;
+  }
 
   const bun = document.querySelector('.film__information');
 
