@@ -5,9 +5,9 @@ body.light-theme {
 
 body.dark-theme {
   background-color: #333333;
-  color: $white-text-color;
+  color: $white-text-color;  
 
-  & .pagination-button {
+    & .pagination-button {
     background-color: #333333;
     color: lightgrey;
   }
@@ -16,6 +16,7 @@ body.dark-theme {
   }
   & .pagination--current {
     background-color: $accent-color;
+  }
   
   & .card__title {
     color: #cccccc
