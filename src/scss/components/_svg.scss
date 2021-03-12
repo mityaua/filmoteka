@@ -3,7 +3,13 @@
   height: 24px;
 
   animation: tada;
-  animation-duration: 2s;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+
+  &:hover,
+  &:focus {
+    animation-play-state: paused;
+  }
 }
 .icon-heart {
   width: 14px;
