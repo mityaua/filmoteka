@@ -13,7 +13,7 @@
   }
 }
 
-// .pagination-button:not(:last-child),
+.pagination-button:not(:last-child),
 .dots {
   margin-right: 16px;
 }
@@ -28,8 +28,8 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 1.333;
-  width: 40px;
-  height: 40px;
+  // width: 40px;
+  // height: 40px;
 }
 
 .pagination--current {
@@ -47,6 +47,7 @@
     display: none;
   }
 }
+
 .arrow-left,
 .arrow-right {
   width: 40px;
@@ -55,16 +56,14 @@
   background-color: $secondary-background-color;
   transform: matrix(-1, 0, 0, 1, 0, 0);
   stroke: #000;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .arrow-left {
   background-image: url(../images/icons/arrow-left.svg);
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 .arrow-right {
   background-image: url(../images/icons/arrow-right.svg);
-  background-position: center;
-  background-repeat: no-repeat;
 }
