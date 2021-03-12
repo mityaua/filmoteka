@@ -11,7 +11,7 @@ import {
   pagiCont,
   headerWarning,
 } from './references/refs';
-import { load, save, remove } from './local-storage';
+import { load, save, remove } from './storage/local-storage';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 import { addedClassButton, removedClassButton } from './make-active-button';

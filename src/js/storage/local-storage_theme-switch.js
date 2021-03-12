@@ -1,4 +1,4 @@
-import { bodyRef, toggleRef, footerDarktheme } from './theme-change';
+import { bodyRef, toggleRef, footerDarktheme } from '../components/theme-change';
 
 const Theme = {
   LIGHT: 'light-theme',
