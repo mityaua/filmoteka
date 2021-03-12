@@ -1,0 +1,38 @@
+<div class="team__container">
+    <div class="title-wrapper">
+        {{!-- <img class="goitLogo" src="../images/goit.png" alt="goit"> --}}
+
+        <a class="ref__readme" href="https://github.com/mityaua/filmoteka/blob/main/README.md" target="_blank" rel="noreferrer noopener"
+            aria-label="Our Github">
+            <img class="goitLogo" src="https://goit.ua/wp-content/themes/1/images/Layer.png" alt="GoIT" title="Our Github">
+        </a>
+        <h2 lang="en" class="team__title">TEAM<span class='under'>__</span>FOUR</h2>
+
+        {{!-- --}}
+    </div>
+
+    <div class="team__content">
+        <ul class="team__list list">
+            {{#each this}}
+            <li class="team__item">
+                <div class="img__scale"><img src="{{imageMember}}" alt="{{name}}" class="team__image" /></div>
+
+                {{!-- <div class="team__content"> --}}
+                    <p lang="en" class="team__subtitle">{{name}}</p>
+                    <p lang="en" class="team__text text">{{position}}</p>
+                    <a class="social__link" href="{{socialLink}}" target="_blank" aria-label="ссылка Инстаграм">
+                        {{!-- <svg class="social__icon">
+                            <use href="../images/icons/sprite/svg#icon-github"></use>
+                        </svg> --}}
+                        <img class="social__icon"
+                            src="data:image/png;base64,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"
+                            alt="icon github">
+                        {{!-- <img class="social__icon" src="../images/git.png" alt="giticon"> --}}
+                    </a>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+
+    <button type=" button" class="close__button"></button>
+</div>

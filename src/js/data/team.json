@@ -1,0 +1,76 @@
+[
+  {
+   
+    "name": "Дмитрий",
+     "position": "Teamlead",
+    "imageMember": "https://avatars.githubusercontent.com/u/20481332?s=400&u=cfb2ee1c8f13ec4311b7a65074acca19adc8a22c&v=4.png",
+    "socialLink": 
+        "https://github.com/mityaua"
+  },
+  {
+
+    "name": "Аня",
+    "position":  "Scrum master",
+    "imageMember": "https://avatars.githubusercontent.com/u/66438969?s=400&u=fcf2a9a93ae8f59316d8cdc514109816ea4e9d7b&v=4.jpg",
+    "socialLink": 
+        "https://github.com/AnnaOlenchuk"
+  },
+    
+    {"name": "Алик",
+     "position": "Developer",
+    "imageMember": "https://avatars.githubusercontent.com/u/68939826?s=400&u=543643c41b3a1531de23d8ff69cdac4dd362f46a&v=4.jpg",
+    "socialLink": 
+        "https://github.com/ragimovalik"
+  },
+   {
+    
+    "name": "Иван",
+     "position": "Developer",
+    "imageMember": "https://avatars.githubusercontent.com/u/69088937?s=400&v=4.png",
+    "socialLink": 
+        "https://github.com/Kuchvara"
+  },
+   {
+    
+    "name": "Сергей",
+     "position": "Developer",
+    "imageMember": "https://avatars.githubusercontent.com/u/60856278?s=400&u=a61a9b3394e1b73a15c661cf3c5f8d8396d493aa&v=4.png",
+    "socialLink": 
+        "https://github.com/sgcruiser"
+  },
+   {
+
+    "name": "Александр",
+   "position": "Developer",
+    "imageMember": "https://avatars.githubusercontent.com/u/68742649?s=400&u=bd2ac1701604b016d7e4dc24da2b2623cfbcf024&v=4.png",
+    "socialLink": 
+        "https://github.com/Glasgalas"
+  },
+   {
+ 
+    "name": "Тарас",
+    "position": "Developer",
+    "imageMember": "https://avatars.githubusercontent.com/u/68924583?s=400&u=f383f6d616f95281426955d9b1359c1eaa16abc5&v=4.png",
+    "socialLink": 
+        "https://github.com/taras-vlas"
+  },
+   
+   {
+    
+    "name": "Марина",
+    "position": "Developer",
+    "imageMember": "https://avatars.githubusercontent.com/u/68333655?s=400&u=983b648674fae5f5faf7ec5e06fd24e50b92922d&v=4.jpg",
+    "socialLink": 
+        "https://github.com/MarinaKryuchko88"
+  },
+   {
+   
+    "name": "Вита",
+   "position": "Developer",
+    "imageMember": "https://avatars.githubusercontent.com/u/68947467?s=400&u=87d288cfd25d50360e791e30a7dcd57b537a2987&v=4.jpg",
+    "socialLink": 
+        "https://github.com/vita-khutorianska"
+  }
+
+  
+]

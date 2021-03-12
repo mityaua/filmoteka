@@ -1,0 +1,62 @@
+<div class="modal__backdrop"></div>
+
+<div class="modal__container">
+    <div class="film__image">
+        {{#if poster_path}}
+        <img class="image" src="https://www.themoviedb.org/t/p/w500{{poster_path}}"
+            onerror="this.onerror=null;this.src='https://subscribenow.com.au/time/asia/Solo/Content/Images/noCover.gif'"
+            alt="{{title}}" title="{{title}}" />
+        {{/if}}
+        {{#unless poster_path}}
+        <img class="image" src="https://i.pinimg.com/originals/74/3d/b2/743db230d891b47c1d8c66b161111b91.jpg"
+            alt="film photo">
+        {{/unless}}
+    </div>
+
+
+    <div class="film__information">
+        <div>
+            <h2 class="film__title">{{title}}</h2>
+            <ul>
+                <li class="film__item">
+                    <p class="film__details ">Vote / Votes</p>
+                    <p class="film__info--uper">
+                        <span class=" film__rating--orange">{{vote_average}}</span>
+                        <span class="film__rating--divider"> / </span>
+                        <span>{{vote_count}}</span>
+                    </p>
+                </li>
+                <li class="film__item">
+                    <p class="film__details ">Popularity</p>
+                    <p class="film__info--uper">{{popularity}}</p>
+                </li>
+                <li class="film__item">
+                    <p class="film__details">Original title</p>
+                    <p>{{original_title}}</p>
+                </li>
+                <li class="film__item">
+                    <p class="film__details">Genre</p>
+                    <p class="film__info">
+                        {{#if genres}}
+                        {{#each genres}}
+                        <span>{{this.name}}{{#unless @last}},{{/unless}}</span>
+                        {{/each}}
+                        {{else}}<span>N/A</span>
+                        {{/if}}
+                    </p>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="film__about__title">About</h3>
+            <p class="film__about__text">
+                {{overview}}
+            </p>
+        </div>
+        <div class="film__button__wrapper">
+            <button type="button" class=" film__button btn__watch" data-id="{{id}}">Add to watched</button>
+            <button type="button" class=" film__button btn__queue" data-id="{{id}}">Add to queue</button>
+        </div>
+        <button type="button" class="close__button" data-action="close-modal"></button>
+    </div>
+</div>

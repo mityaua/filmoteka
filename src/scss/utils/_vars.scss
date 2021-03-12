@@ -1,0 +1,43 @@
+// Переменные для шрифтов
+$font-family: Roboto, sans-serif;
+$font-size: 12px;
+$font-weight: 500;
+$font-style: normal;
+$line-height: calc(16 / 12);
+
+// Текст в шапке и на акцентных элементах
+$white-text-color: #ffffff;
+
+// Основной цвет текста
+$primary-text-color: #000000;
+
+// Градиент хедера
+$header-gradient-color: rgba(0, 0, 0, 0.56);
+
+// Фон для ФУТЕРА и стрелок переключения страниц
+$secondary-background-color: #f7f7f7;
+
+// Текст в футере
+$footer-text-color: #545454;
+
+// Выделение текста, пагинация, сердечко в футере
+$accent-color: #ff6b08;
+
+// Ховер кнопок и рейтинг фильмов в карточках
+$hover-rating-color: #ff6b01;
+
+// Детали о фильме
+$detalis-film-color: #8c8c8c;
+
+// Текст нотификашки
+$notify-text-color: #ff001b;
+
+// Иконка киноленты
+$icon-film-color: #818181;
+
+// Переходы и анимация
+$transition-duration: 250ms;
+$timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+// Тень кнопок
+$button-header-library: rgba(255, 107, 1, 0.6);

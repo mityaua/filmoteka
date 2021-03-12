@@ -1,0 +1,29 @@
+.filter {
+  display: flex;
+  justify-content: center;
+
+  &__item {
+    width: 129.53px;
+    height: 44px;
+
+    @media screen and (min-width: $tablet) {
+      width: 136px;
+    }
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    display: block;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 19.94px;
+
+    @media screen and (min-width: $tablet) {
+      margin-right: 15px;
+    }
+  }
+}

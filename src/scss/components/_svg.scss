@@ -1,0 +1,21 @@
+.icon-film {
+  width: 24px;
+  height: 24px;
+
+  animation: tada;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+
+  &:hover,
+  &:focus {
+    animation-play-state: paused;
+  }
+}
+.icon-heart {
+  width: 14px;
+  height: 13px;
+}
+.icon-search {
+  width: 12px;
+  height: 12px;
+}

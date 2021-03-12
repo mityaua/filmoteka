@@ -1,6 +1,71 @@
-// body {
-//   /*
-//    * CSS image reference example.
-//    */
-//   // background-image: url('./images/bg-pattern.png');
-// }
+// Плавный скролл
+
+html {
+  scroll-behavior: smooth;
+}
+
+// Базовые стили
+
+body {
+  background-color: $white-text-color;
+  color: $primary-text-color;
+
+  font-family: $font-family;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  font-style: $font-style;
+  line-height: $line-height;
+}
+
+// Убирает лишние отступы у картинок снизу + добавляет отзывчивость
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+// Убирает подчеркивание у всех ссылок
+
+a {
+  text-decoration: none;
+}
+
+// Обнуляет стиль списка (дубль в плейсхолдерах)
+
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+// Скрывает элемент из потока (оставляет для экранных читалок)
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.opacity {
+  opacity: 0;
+}
+// Обнуляет отступы у текста и элементов списка
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}

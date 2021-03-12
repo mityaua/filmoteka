@@ -1,0 +1,50 @@
+.clear-list {
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  justify-content: center;
+
+  &__title {
+    color: $hover-rating-color;
+    line-height: 1.17;
+    font-size: 30px;
+    margin-bottom: 15px;
+
+    @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
+      line-height: 1.24;
+      font-size: 30px;
+      margin-bottom: 20px;
+      @media screen and (min-width: $desktop) {
+        margin-bottom: 50px;
+        font-size: 36px;
+        line-height: 1.27px;
+      }
+    }
+  }
+
+  &__text {
+    // color: black;
+    margin-bottom: 15px;
+    font-size: 16px;
+    @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
+      margin-bottom: 20px;
+      font-size: 18px;
+      line-height: 1.19px;
+    }
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 20px;
+      font-size: 20px;
+      line-height: 1.21px;
+    }
+  }
+
+  &__link {
+    margin-bottom: 15px;
+    @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
+      margin-bottom: 20px;
+    }
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 20px;
+    }
+  }
+}

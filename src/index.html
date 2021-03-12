@@ -4,9 +4,168 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Filmoteka</title>
+    <title>Filmoteka | Full Movie Library</title>
+    <meta name="description" content="Filmoteka - Catalog your movie library" />
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
   </head>
-
   <body>
+    <!-- Page header -->
+    <header class="header">
+      <div class="navigation__container">
+        <a href="" class="logo">
+          <svg class="logo__svg icon-film">
+            <use href="./images/icons/sprite.svg#film"></use>
+          </svg>
+          <span class="logo__text">Filmoteka</span>
+        </a>
+        <nav class="navigation">
+          <ul class="menu list">
+            <li class="menu__item">
+              <a href="" class="link current menu__link menu__link-home"
+                >Home</a
+              >
+            </li>
+            <li class="menu__item">
+              <a href="" class="link menu__link menu__link-library"
+                >My library</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <form id="search-form" action="" class="search">
+        <input class="search__input" type="text" placeholder="Search for a movie..." />
+        <button class="search__button" type="submit" title="Go!">
+          <svg class="search__button-icon icon-search">
+            <use href="./images/icons/sprite.svg#search"></use>
+          </svg>
+        </button>
+      </form>
+
+      <div class="toolbar container">
+        <!-- Разметка переключателя темы -->
+        <div class="theme-switch">
+          <svg class="theme-switch__icon" role="img" aria-label="Иконка солнца">
+            <use href="./images/icons/sprite.svg#sun"></use>
+          </svg>
+
+          <div class="theme-switch__control">
+            <input
+              class="theme-switch__toggle"
+              type="checkbox"
+              name="theme"
+              id="theme-switch-toggle"
+              aria-label="Переключить между тёмной и светлой темой"
+            />
+            <label
+              aria-hidden="true"
+              class="theme-switch__track"
+              for="theme-switch-toggle"
+            >
+            </label>
+            <div aria-hidden="true" class="theme-switch__marker"></div>
+          </div>
+
+          <svg class="theme-switch__icon" aria-label="Иконка луны">
+            <use href="./images/icons/sprite.svg#moon"></use>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Уведомление об ошибке -->
+      <p class="warning-notification"></p>
+    </header>
+
+    <!-- Trend movies list -->
+    <div class="container">
+      <ul class="collection"></ul>
+
+      <!-- pagination -->
+      <div class="pagination-container">
+        <button class="pagination-button arrow-left">
+          <!-- <svg
+            width="16"
+            height="16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M3.333 8h9.334M8 12.667L12.667 8 8 3.333"
+              stroke="#000"
+              stroke-width="1.333"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg> -->
+        </button>
+        <button class="pagination-button first-button">1</button>
+        <span class="dots" id="previous">...</span>
+        <button class="pagination-button pagination--current" data-index="1">
+          1
+        </button>
+        <button class="pagination-button" data-index="2">2</button>
+        <button class="pagination-button" data-index="3">3</button>
+        <button class="pagination-button" data-index="4">4</button>
+        <button class="pagination-button" data-index="5">5</button>
+        <span class="dots" id="after">...</span>
+        <button class="pagination-button last-button">1000</button>
+        <button class="pagination-button arrow-right">
+          <!-- <svg
+            width="16"
+            height="16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12.667 8H3.333M8 12.667L3.333 8 8 3.333"
+              stroke-width="1.333"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg> -->
+        </button>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <span class="footer-text copyright footer-text-js"
+        >&copy; 2021 | All Rights Reserved |&#160;</span
+      >
+      <span class="footer-text footer-span-js"
+        >Developed with&nbsp;
+        <svg
+          class="footer-svg"
+          width="14"
+          height="13"
+          viewbox="0 0 14 13"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M7 12.88L6.02 11.9C2.38 8.68 0 6.51 0 3.85C0 1.68 1.68 0 3.85 0C5.04 0 6.23 0.56 7 1.47C7.77 0.56 8.96 0 10.15 0C12.32 0 14 1.68 14 3.85C14 6.51 11.62 8.68 7.98 11.9L7 12.88Z"
+            fill="#FF6B08"
+          /></svg
+        >&nbsp;
+        <span class="footer-text"
+          >by&nbsp;
+          <a
+            href="https://github.com/mityaua/filmoteka"
+            target="_blank"
+            class="footer-text footer-link underline"
+            id="js-team-modal"
+            rel="noreferrer noopener"
+            aria-label="Our Github"
+            title="Our Github"
+            >GoIT Students</a
+          >
+        </span>
+      </span>
+    </footer>
+    <!-- Модалки столковая и внешняя -->
+    <div id="modal" class="modal">
+      <!-- <div class="modal__backdrop"></div> -->
+    </div>
   </body>
 </html>

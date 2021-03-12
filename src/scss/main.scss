@@ -1,2 +1,26 @@
+//  Переменные, миксины, плейсхолдеры
+@import './utils/vars';
+@import './utils/breakpoints';
+
+// Базовые стили
 @import 'modern-normalize/modern-normalize.css';
 @import './base/common';
+@import './base/fonts';
+@import './base/container';
+
+// Секции и блоки
+@import './layouts/header';
+@import './layouts/header-library';
+@import './layouts/filter';
+@import './layouts/films-collection';
+@import './layouts/collection-item';
+@import './layouts/pagination';
+@import './layouts/our-team.scss';
+@import './layouts/footer';
+@import './layouts/modal-style';
+@import './layouts/theme-switch';
+@import './layouts/clear-library';
+
+// Компоненты
+@import './components/svg';
+@import './components/buttons';

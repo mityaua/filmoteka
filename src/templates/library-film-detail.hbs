@@ -1,0 +1,34 @@
+<li class="collection__item">
+    <article class="card">
+        <a href="" class="card__link"">
+          {{#if poster_path}}
+          <img class=" card__img" src="https://www.themoviedb.org/t/p/w300{{poster_path}}"
+            onerror="this.onerror=null;this.src='https://subscribenow.com.au/time/asia/Solo/Content/Images/noCover.gif'" loading="lazy"
+            alt="{{title}}" title="{{title}}" data-id="{{id}}" />
+        {{else}}
+        <img class="card__img" src="https://i.pinimg.com/originals/74/3d/b2/743db230d891b47c1d8c66b161111b91.jpg" loading="lazy" alt="{{title}}"
+            title="{{title}}" data-id="{{id}}" />
+        {{/if}}
+        </a>
+        <div class="card__wrap">
+            <a href="">
+                <h2 class="card__title" data-id="{{id}}">{{title}}</h2>
+            </a>
+            <div class="card__data">
+                <ul class="card__genres">
+                    {{#if customGenres}}
+                    {{#each customGenres}}
+                    <li class="card__genre"><a href="" class="card__text">{{this}}{{#unless @last}},{{/unless}}</a></li>
+                    {{/each}}
+                    {{else}}<li class="card__genre card__text">N/A</li>
+                    {{/if}}
+                </ul>
+                {{#if year}}
+                <p class="card__year card__year--library card__text">| {{year}}</p>
+                {{else}}<p class="card__text">| N/A</p>
+                {{/if}}
+                <p class="card__release card__text">{{vote_average}}</p>
+            </div>
+        </div>
+    </article>
+</li>
