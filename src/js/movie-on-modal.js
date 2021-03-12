@@ -1,6 +1,6 @@
 import api from './api/api-service';
 import renderMovieModal from './render-modal';
-import {errorModal} from './components/notify';
+import { errorModal } from './components/notify';
 import { gallery } from './references/refs';
 import { load, save, remove } from './local-storage';
 import NProgress from 'nprogress';
@@ -9,7 +9,7 @@ import 'nprogress/nprogress.css';
 gallery.addEventListener('click', clickOnMovieHandler);
 
 // Click Handler Function
-function clickOnMovieHandler(e) {
+async function clickOnMovieHandler(e) {
   e.preventDefault();
 
   if (e.target.nodeName !== 'IMG' && e.target.nodeName !== 'H2') {
@@ -17,8 +17,32 @@ function clickOnMovieHandler(e) {
   }
 
   let movieId = e.target.dataset.id;
+  await fetchById(movieId);
+  textModalBtn(movieId);
+}
 
-  fetchById(movieId);
+async function textModalBtn(id) {
+  const btnQueue = document.querySelector('.btn__queue');
+  const btnWatch = document.querySelector('.btn__watch');
+  if (inList(id, 'watched')) {
+    console.log('есть такой в watched');
+    btnWatch.textContent = 'Added to watched';
+    btnWatch.disabled = true;
+  } else {
+    console.log('нет такого в watched');
+    btnWatch.textContent = 'Add to watched';
+    btnWatch.disabled = false;
+  }
+
+  if (inList(id, 'queue')) {
+    console.log('есть такой в queue');
+    btnQueue.textContent = 'Added to queue';
+    btnQueue.disabled = true;
+  } else {
+    console.log('нет такого в queue');
+    btnQueue.textContent = 'Add to queue';
+    btnQueue.disabled = false;
+  }
 }
 
 // Outer fetch by ID
@@ -27,7 +51,7 @@ async function fetchById(id) {
 
   try {
     const movieId = await api.getMovieById(id);
-    
+
     renderMovieModal(movieId);
 
     const btnQueue = document.querySelector('.btn__queue');
@@ -62,9 +86,11 @@ async function fetchById(id) {
 
     const watchSet = new Set(watchList);
     if (watchSet.has(id)) {
+      textModalBtn(id);
     } else {
       watchList.push(id);
       save('watched', watchList);
+      textModalBtn(id);
     }
   }
 
@@ -90,11 +116,23 @@ async function fetchById(id) {
 
     const queueSet = new Set(queueList);
     if (queueSet.has(id)) {
+      textModalBtn(id);
     } else {
       queueList.push(id);
       save('queue', queueList);
+      textModalBtn(id);
     }
   }
-  
+
   NProgress.done();
+}
+
+function inList(id, list) {
+  let arrList = [];
+  let localListJson = load(list);
+  if (localListJson) {
+    arrList = [...localListJson];
+  }
+  const listSet = new Set(arrList);
+  return listSet.has(id);
 }
