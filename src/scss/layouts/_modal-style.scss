@@ -184,8 +184,7 @@
 }
 
 .company {
-  display: block;
-  margin-top: 10%;
+  display: none;
 
   &__list {
     display: flex;
@@ -202,7 +201,7 @@
   }
 
   &__img {
-    max-height: 40px;
+    max-height: 20px;
   }
 
   @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
