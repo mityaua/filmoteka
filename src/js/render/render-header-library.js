@@ -18,7 +18,7 @@ import {
   pagiCont,
   headerWarning,
 } from '../references/refs';
-import { addedClassButton, removedClassButton } from '../make-active-button';
+import { addedClassButton, removedClassButton } from '../components/make-active-button';
 
 const writeEvent = event => {
   NProgress.start();
