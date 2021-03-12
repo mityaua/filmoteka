@@ -184,22 +184,13 @@
 }
 
 .company {
-<<<<<<< Updated upstream
-  display: none;
-=======
   display: block;
   margin-top: 10%;
->>>>>>> Stashed changes
 
   &__list {
     display: flex;
     align-items: center;
     justify-content: space-around;
-<<<<<<< Updated upstream
-    max-width: 470px;
-=======
-    // max-width: 470px;
->>>>>>> Stashed changes
   }
 
   &__item {
@@ -211,30 +202,18 @@
   }
 
   &__img {
-<<<<<<< Updated upstream
-    max-height: 25px;
-=======
     max-height: 40px;
->>>>>>> Stashed changes
   }
 
   @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
     display: block;
     position: absolute;
     bottom: 5%;
-<<<<<<< Updated upstream
-    right: 25%;
-    left: 25%;
-
-    &__img {
-      max-height: 40px;
-=======
     right: 50%;
     left: 0%;
 
     &__img {
       max-height: 44px;
->>>>>>> Stashed changes
     }
   }
 
