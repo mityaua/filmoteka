@@ -97,8 +97,8 @@ function renderAllList() {
   if (load('watched')) {
     arrWatchId = load('watched');
   }
-  if (load('watched')) {
-    arrWatchId = load('watched');
+  if (load('queue')) {
+    arrQueueId = load('queue');
   }
   const arrAllId = [...arrWatchId, ...arrQueueId];
 
@@ -107,6 +107,7 @@ function renderAllList() {
   } else {
     for (let id of arrAllId) {
       api.getMovieById(id).then(data => {
+        console.log(id);
         renderLibraryCollection(data);
       });
     }
