@@ -55,7 +55,7 @@ function writeLogoProdCompany({ production_companies, overview }) {
 
   const bun = document.querySelector('.modal__container');
   const mainProdComp = production_companies.find(
-    logo => logo.logo_path !== null,
+    elem => elem.logo_path !== null,
   );
   const markup = prodCompany(mainProdComp);
 
