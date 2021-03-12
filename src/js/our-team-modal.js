@@ -44,7 +44,7 @@ function getTeamInfo(teamId) {
       window.removeEventListener('keydown', closeModalByEsc);
     }
   }
-  const btnCloseRef = document.querySelector('.close__button');
+  const btnCloseRef = document.querySelector('.close__btn');
   btnCloseRef.addEventListener('click', closeModalbyBtn);
   function closeModalbyBtn() {
     modalContent.close();
