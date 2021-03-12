@@ -8,7 +8,7 @@
     padding: 40px 0;
   }
 
-    @media screen and (min-width: $tablet) {
+  @media screen and (min-width: $tablet) {
     padding: 50px 0 60px 0;
   }
 }
@@ -55,4 +55,16 @@
   background-color: $secondary-background-color;
   transform: matrix(-1, 0, 0, 1, 0, 0);
   stroke: #000;
+}
+
+.arrow-left {
+  background-image: url(../images/icons/arrow-left.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.arrow-right {
+  background-image: url(../images/icons/arrow-right.svg);
+  background-position: center;
+  background-repeat: no-repeat;
 }
