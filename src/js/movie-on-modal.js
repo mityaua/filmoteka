@@ -33,12 +33,12 @@ async function textModalBtn(id) {
       btnWatch.textContent = 'Remove from watched';
       btnWatch.classList.add('active');
     }
-
     setTimeout(changeText, 1000);
   } else {
     console.log('нет такого в watched');
     btnWatch.textContent = 'Add to watched';
     btnWatch.classList.remove('active');
+    console.log('удаляем класс active');
     btnWatch.disabled = false;
   }
 
@@ -51,7 +51,6 @@ async function textModalBtn(id) {
       btnQueue.textContent = 'Remove from queue';
       btnQueue.classList.add('active');
     }
-
     setTimeout(changeText, 1000);
   } else {
     console.log('нет такого в queue');
@@ -116,7 +115,6 @@ async function fetchById(id) {
   }
 
   function removeFromWatchedList(id) {
-    // const btnWatch = document.querySelector('.btn__watch');
     console.log('удаляем из watched');
     let watchList = [];
     let localWatchListJson = load('watched');
@@ -133,7 +131,6 @@ async function fetchById(id) {
   }
 
   function removeFromQueueList(id) {
-    // const btnWatch = document.querySelector('.btn__watch');
     console.log('удаляем из queue');
     let queueList = [];
     let localQueueListJson = load('queue');
@@ -152,7 +149,7 @@ async function fetchById(id) {
   function addQueueList() {
     const btnQueue = document.querySelector('.btn__queue');
     if (btnQueue.classList.contains('active')) {
-      removeFromWatchedList(id);
+      removeFromQueueList(id);
     } else {
       let queueList = [];
       let localQueueListJson = load('queue');
