@@ -28,9 +28,17 @@ async function textModalBtn(id) {
     console.log('есть такой в watched');
     btnWatch.textContent = 'Added to watched';
     btnWatch.disabled = true;
+    function changeText() {
+      btnWatch.disabled = false;
+      btnWatch.textContent = 'Remove from watched';
+      btnWatch.classList.add('active');
+    }
+    setTimeout(changeText, 1000);
   } else {
     console.log('нет такого в watched');
     btnWatch.textContent = 'Add to watched';
+    btnWatch.classList.remove('active');
+    console.log('удаляем класс active');
     btnWatch.disabled = false;
   }
 
@@ -38,9 +46,16 @@ async function textModalBtn(id) {
     console.log('есть такой в queue');
     btnQueue.textContent = 'Added to queue';
     btnQueue.disabled = true;
+    function changeText() {
+      btnQueue.disabled = false;
+      btnQueue.textContent = 'Remove from queue';
+      btnQueue.classList.add('active');
+    }
+    setTimeout(changeText, 1000);
   } else {
     console.log('нет такого в queue');
     btnQueue.textContent = 'Add to queue';
+    btnQueue.classList.remove('active');
     btnQueue.disabled = false;
   }
 }
@@ -65,62 +80,104 @@ async function fetchById(id) {
   }
 
   function addWatchList() {
-    let watchList = [];
-    let localWatchListJson = load('watched');
-    if (localWatchListJson) {
-      watchList = [...localWatchListJson];
-    }
-
-    let queueList = [];
-    let localQueueListJson = load('queue');
-    if (localQueueListJson) {
-      queueList = [...localQueueListJson];
-    }
-    let queueSet = new Set(queueList);
-    if (queueSet.has(id)) {
-      remove('queue');
-      let index = queueList.indexOf(id);
-      queueList.splice(index, 1);
-      save('queue', queueList);
-    }
-
-    const watchSet = new Set(watchList);
-    if (watchSet.has(id)) {
-      textModalBtn(id);
+    const btnWatch = document.querySelector('.btn__watch');
+    if (btnWatch.classList.contains('active')) {
+      removeFromWatchedList(id);
     } else {
-      watchList.push(id);
-      save('watched', watchList);
-      textModalBtn(id);
+      let watchList = [];
+      let localWatchListJson = load('watched');
+      if (localWatchListJson) {
+        watchList = [...localWatchListJson];
+      }
+
+      let queueList = [];
+      let localQueueListJson = load('queue');
+      if (localQueueListJson) {
+        queueList = [...localQueueListJson];
+      }
+      let queueSet = new Set(queueList);
+      if (queueSet.has(id)) {
+        remove('queue');
+        let index = queueList.indexOf(id);
+        queueList.splice(index, 1);
+        save('queue', queueList);
+      }
+
+      const watchSet = new Set(watchList);
+      if (watchSet.has(id)) {
+        textModalBtn(id);
+      } else {
+        watchList.push(id);
+        save('watched', watchList);
+        textModalBtn(id);
+      }
     }
   }
 
-  function addQueueList() {
+  function removeFromWatchedList(id) {
+    console.log('удаляем из watched');
+    let watchList = [];
+    let localWatchListJson = load('watched');
+    if (localWatchListJson) {
+      watchList = [...localWatchListJson];
+    }
+
+    remove('watched');
+    let index = watchList.indexOf(id);
+    watchList.splice(index, 1);
+    save('watched', watchList);
+
+    textModalBtn();
+  }
+
+  function removeFromQueueList(id) {
+    console.log('удаляем из queue');
     let queueList = [];
     let localQueueListJson = load('queue');
     if (localQueueListJson) {
       queueList = [...localQueueListJson];
     }
 
-    let watchList = [];
-    let localWatchListJson = load('watched');
-    if (localWatchListJson) {
-      watchList = [...localWatchListJson];
-    }
-    let watchSet = new Set(watchList);
-    if (watchSet.has(id)) {
-      remove('watched');
-      let index = watchList.indexOf(id);
-      watchList.splice(index, 1);
-      save('watched', watchList);
-    }
+    remove('queue');
+    let index = queueList.indexOf(id);
+    queueList.splice(index, 1);
+    save('queue', queueList);
 
-    const queueSet = new Set(queueList);
-    if (queueSet.has(id)) {
-      textModalBtn(id);
+    textModalBtn();
+  }
+
+  function addQueueList() {
+    const btnQueue = document.querySelector('.btn__queue');
+    if (btnQueue.classList.contains('active')) {
+      removeFromQueueList(id);
     } else {
-      queueList.push(id);
-      save('queue', queueList);
-      textModalBtn(id);
+      let queueList = [];
+      let localQueueListJson = load('queue');
+      if (localQueueListJson) {
+        queueList = [...localQueueListJson];
+      }
+
+      let watchList = [];
+      let localWatchListJson = load('watched');
+      if (localWatchListJson) {
+        watchList = [...localWatchListJson];
+      }
+      let watchSet = new Set(watchList);
+      if (watchSet.has(id)) {
+        remove('watched');
+        let index = watchList.indexOf(id);
+        watchList.splice(index, 1);
+        save('watched', watchList);
+      }
+
+      const queueSet = new Set(queueList);
+      if (queueSet.has(id)) {
+        textModalBtn(id);
+      } else {
+        queueList.push(id);
+        save('queue', queueList);
+        textModalBtn(id);
+      }
     }
   }
 
