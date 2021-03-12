@@ -1,4 +1,5 @@
 import modalTemplate from '../templates/modal-film-detail.hbs';
+import prodCompany from '../templates/production-company.hbs';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 import { errorModal } from './components/notify';
@@ -15,6 +16,8 @@ export default function renderMovieModal(data) {
 
     modalBox.classList.add('is-open');
     document.body.style.overflow = 'hidden';
+
+    writeLogoProdCompany(data);
 
     const modalBackdrop = document.querySelector('.modal__backdrop');
     const closeButton = document.querySelector('[data-action="close-modal"]');
@@ -42,4 +45,27 @@ function modalClosinByEsc(event) {
   if (event.code === 'Escape') {
     modalClosing();
   }
+}
+
+// Отрисовка логотипов киностудий
+function writeLogoProdCompany({ production_companies, overview }) {
+<<<<<<< Updated upstream
+  if (overview.length > 484) {
+=======
+  if (overview.length > 500) {
+>>>>>>> Stashed changes
+    return;
+  }
+
+  const bun = document.querySelector('.modal__container');
+<<<<<<< Updated upstream
+
+  const markup = prodCompany(production_companies);
+
+=======
+  const mainProdComp = production_companies.find(logo => logo.logo_path !== null);  
+  const markup = prodCompany(mainProdComp);
+  
+>>>>>>> Stashed changes
+  bun.insertAdjacentHTML('beforeend', markup);
 }
