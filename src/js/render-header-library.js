@@ -92,13 +92,17 @@ function clickQueue(btnWatchedLib, btnQueueLib) {
 
 function renderAllList() {
   gallery.innerHTML = '';
-
-  const arrWatchId = load('watched');
-  const arrQueueId = load('queue');
+  let arrWatchId = [];
+  let arrQueueId = [];
+  if (load('watched')) {
+    arrWatchId = load('watched');
+  }
+  if (load('watched')) {
+    arrWatchId = load('watched');
+  }
   const arrAllId = [...arrWatchId, ...arrQueueId];
-  console.log(arrAllId);
 
-  if (!arrWatchId && !arrQueueId) {
+  if (arrWatchId.length === 0 && arrQueueId.length === 0) {
     plugLib();
   } else {
     for (let id of arrAllId) {

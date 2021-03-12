@@ -9,7 +9,7 @@ import 'nprogress/nprogress.css';
 gallery.addEventListener('click', clickOnMovieHandler);
 
 // Click Handler Function
-function clickOnMovieHandler(e) {
+async function clickOnMovieHandler(e) {
   e.preventDefault();
 
   if (e.target.nodeName !== 'IMG' && e.target.nodeName !== 'H2') {
@@ -17,27 +17,31 @@ function clickOnMovieHandler(e) {
   }
 
   let movieId = e.target.dataset.id;
-  fetchById(movieId);
+  await fetchById(movieId);
   textModalBtn(movieId);
 }
 
-function textModalBtn(id) {
+async function textModalBtn(id) {
   const btnQueue = document.querySelector('.btn__queue');
   const btnWatch = document.querySelector('.btn__watch');
   if (inList(id, 'watched')) {
+    console.log('есть такой в watched');
     btnWatch.textContent = 'Added to watched';
-    save('textBtnWatch', btnWatch.textContent);
+    btnWatch.disabled = true;
   } else {
+    console.log('нет такого в watched');
     btnWatch.textContent = 'Add to watched';
-    save('textBtnWatch', btnWatch.textContent);
+    btnWatch.disabled = false;
   }
 
   if (inList(id, 'queue')) {
+    console.log('есть такой в queue');
     btnQueue.textContent = 'Added to queue';
-    save('textBtnQueue', btnQueue.textContent);
+    btnQueue.disabled = true;
   } else {
+    console.log('нет такого в queue');
     btnQueue.textContent = 'Add to queue';
-    save('textBtnQueue', btnQueue.textContent);
+    btnQueue.disabled = false;
   }
 }
 
@@ -61,8 +65,6 @@ async function fetchById(id) {
   }
 
   function addWatchList() {
-    const btnWatch = document.querySelector('.btn__watch');
-    const btnQueue = document.querySelector('.btn__queue');
     let watchList = [];
     let localWatchListJson = load('watched');
     if (localWatchListJson) {
@@ -84,20 +86,15 @@ async function fetchById(id) {
 
     const watchSet = new Set(watchList);
     if (watchSet.has(id)) {
-      // btnWatch.textContent = 'Added to watched';
       textModalBtn(id);
     } else {
       watchList.push(id);
       save('watched', watchList);
-
-      // btnWatch.textContent = 'Added to watched';
       textModalBtn(id);
     }
   }
 
   function addQueueList() {
-    const btnWatch = document.querySelector('.btn__watch');
-    const btnQueue = document.querySelector('.btn__queue');
     let queueList = [];
     let localQueueListJson = load('queue');
     if (localQueueListJson) {
@@ -119,33 +116,11 @@ async function fetchById(id) {
 
     const queueSet = new Set(queueList);
     if (queueSet.has(id)) {
-      // btnQueue.textContent = 'Added to queue';
       textModalBtn(id);
     } else {
       queueList.push(id);
       save('queue', queueList);
-      // btnQueue.textContent = 'Added to queue';
       textModalBtn(id);
-    }
-  }
-
-  async function textModalBtn(id) {
-    const btnQueue = await document.querySelector('.btn__queue');
-    const btnWatch = await document.querySelector('.btn__watch');
-    if (inList(id, 'watched')) {
-      btnWatch.textContent = 'Added to watched';
-      save('textBtnWatch', btnWatch.textContent);
-    } else {
-      btnWatch.textContent = 'Add to watched';
-      save('textBtnWatch', btnWatch.textContent);
-    }
-
-    if (inList(id, 'queue')) {
-      btnQueue.textContent = 'Added to queue';
-      save('textBtnQueue', btnQueue.textContent);
-    } else {
-      btnQueue.textContent = 'Add to queue';
-      save('textBtnQueue', btnQueue.textContent);
     }
   }
 
