@@ -13,6 +13,13 @@ import { formRef, inputRef, headerWarning } from './references/refs';
 // DOM
 let btns = document.querySelectorAll('.pagination-button');
 const btn1Ref = document.querySelector('[data-index="1"]');
+const btn2Ref = document.querySelector('[data-index="2"]');
+const btn3Ref = document.querySelector('[data-index="3"]');
+const btn4Ref = document.querySelector('[data-index="4"]');
+const btn5Ref = document.querySelector('[data-index="5"]');
+const leftArrowRef = document.querySelector('.arrow-left');
+const prevDotsRef = document.querySelector('#previous');
+const firstPageRef = document.querySelector('.first-button');
 
 // Listener
 formRef.addEventListener('submit', searchingHandler);
@@ -22,8 +29,17 @@ function searchingHandler(event) {
   event.preventDefault();
 
   const page = 1;
+
   btns.forEach(el => el.classList.remove('pagination--current'));
+  btn1Ref.textContent = 1;
+  btn2Ref.textContent = 2;
+  btn3Ref.textContent = 3;
+  btn4Ref.textContent = 4;
+  btn5Ref.textContent = 5;
   btn1Ref.classList.add('pagination--current');
+  leftArrowRef.hidden = true;
+  prevDotsRef.hidden = true;
+  firstPageRef.hidden = true;
 
   const inputedText = inputRef.value.replace(/\s+/g, ' ').trim();
 
