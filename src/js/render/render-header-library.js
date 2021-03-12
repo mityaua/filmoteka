@@ -56,7 +56,7 @@ function clickWatched(btnWatchedLib, btnQueueLib) {
   function renderWatched() {
     gallery.innerHTML = '';
     const arrId = load('watched');
-    console.log(arrId);
+    // console.log(arrId);
 
     addedClassButton(btnWatchedLib);
     removedClassButton(btnQueueLib);
@@ -78,7 +78,7 @@ function clickQueue(btnWatchedLib, btnQueueLib) {
   function renderQueue() {
     gallery.innerHTML = '';
     const arrId = load('queue');
-    console.log(arrId);
+    // console.log(arrId);
 
     addedClassButton(btnQueueLib);
     removedClassButton(btnWatchedLib);
@@ -111,7 +111,7 @@ function renderAllList() {
   } else {
     for (let id of arrAllId) {
       api.getMovieById(id).then(data => {
-        console.log(id);
+        // console.log(id);
         renderLibraryCollection(data);
       });
     }
@@ -124,7 +124,7 @@ function refreshPage() {
 
 function plugLib() {
   const clearMarkup = clearLibrary();
-  console.log('Пошли выберем тебе фильмы');
+  // console.log('Пошли выберем тебе фильмы');
   gallery.insertAdjacentHTML('beforeend', clearMarkup);
 
   const btnGoHome = document.querySelector('.clear-list__link');
