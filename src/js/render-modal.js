@@ -49,13 +49,23 @@ function modalClosinByEsc(event) {
 
 // Отрисовка логотипов киностудий
 function writeLogoProdCompany({ production_companies, overview }) {
+<<<<<<< Updated upstream
   if (overview.length > 484) {
+=======
+  if (overview.length > 500) {
+>>>>>>> Stashed changes
     return;
   }
 
   const bun = document.querySelector('.modal__container');
+<<<<<<< Updated upstream
 
   const markup = prodCompany(production_companies);
 
+=======
+  const mainProdComp = production_companies.find(logo => logo.logo_path !== null);  
+  const markup = prodCompany(mainProdComp);
+  
+>>>>>>> Stashed changes
   bun.insertAdjacentHTML('beforeend', markup);
 }
