@@ -1,4 +1,4 @@
-import { headerRef, pageLabraryRef } from './references/refs';
+import { headerRef, pageLabraryRef } from '../references/refs';
 import { writeEvent, removeEvent } from './render-header-library';
 
 async function renderPageLibrary(event) {

@@ -1,5 +1,5 @@
 import api from './api/api-service';
-import { renderCollection } from './render-collection';
+import { renderCollection } from './render/render-collection';
 import { dataCombine, getGenres } from './data/data-combine';
 import { currentPage, defineResultsPerPage } from './components/pagination';
 

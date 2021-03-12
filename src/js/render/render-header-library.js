@@ -1,7 +1,14 @@
 import { renderLibraryCollection } from './render-collection';
-import filterFilm from '../templates/header-library.hbs';
-import clearLibrary from '../templates/no-film.hbs';
-import api from './api/api-service';
+import filterFilm from '../../templates/header-library.hbs';
+import clearLibrary from '../../templates/no-film.hbs';
+
+import api from '../api/api-service';
+
+import { load, save, remove } from '../storage/local-storage';
+
+import NProgress from 'nprogress';
+import 'nprogress/nprogress.css';
+
 import {
   formRef,
   headerRef,
@@ -10,11 +17,8 @@ import {
   gallery,
   pagiCont,
   headerWarning,
-} from './references/refs';
-import { load, save, remove } from './storage/local-storage';
-import NProgress from 'nprogress';
-import 'nprogress/nprogress.css';
-import { addedClassButton, removedClassButton } from './make-active-button';
+} from '../references/refs';
+import { addedClassButton, removedClassButton } from '../make-active-button';
 
 const writeEvent = event => {
   NProgress.start();

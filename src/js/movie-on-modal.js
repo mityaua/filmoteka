@@ -1,5 +1,5 @@
 import api from './api/api-service';
-import renderMovieModal from './render-modal';
+import renderMovieModal from './render/render-modal';
 import { errorModal } from './components/notify';
 import { gallery } from './references/refs';
 import { load, save, remove } from './storage/local-storage';

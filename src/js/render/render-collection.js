@@ -1,6 +1,6 @@
-import movieTpl from '../templates/film-detail.hbs';
-import movieLibraryTpl from '../templates/library-film-detail.hbs';
-import { gallery } from './references/refs';
+import movieTpl from '../../templates/film-detail.hbs';
+import movieLibraryTpl from '../../templates/library-film-detail.hbs';
+import { gallery } from '../references/refs';
 
 // Функция отрисовки списка трендовых фильмов
 function renderCollection(data) {

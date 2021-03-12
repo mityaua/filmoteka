@@ -1,5 +1,5 @@
 import api from './api/api-service';
-import searchRender from './render-search';
+import searchRender from './render/render-search';
 import { dataCombine, getGenres } from './data/data-combine';
 import { defineResultsPerPage, secret } from './components/pagination';
 
