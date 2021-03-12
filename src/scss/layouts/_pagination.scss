@@ -13,13 +13,14 @@
   }
 }
 
-.pagination-button:not(:last-child),
 .dots {
   margin-right: 16px;
+  margin-left: 16px;
 }
 
 .pagination-button {
-  padding: 0;
+  margin: 0px 2px;
+  padding: 8px;
   background-color: $white-text-color;
   border: none;
   color: $primary-text-color;
@@ -28,8 +29,6 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 1.333;
-  // width: 40px;
-  // height: 40px;
 }
 
 .pagination--current {
