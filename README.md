@@ -47,3 +47,5 @@ _Привет!_ :wave:
 В результате слаженной командной работы :handshake: получился наш проект:
 
 ⬇ [_Welcome!_](https://mityaua.github.io/filmoteka) ⬇
+
+<a href="https://mityaua.github.io/filmoteka/"><img src="https://i.ibb.co/543th4v/Screenshot-2021-06-07-152531.png" alt="Filmoteka" border="0"></a>
